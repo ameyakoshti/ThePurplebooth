@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="veiwport" content="width=device-width, initial-scale=1.0 ">
+		<title>Home Page</title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/bootstrap-responsive.css" />
+
+		<script>
+			function GetStarted() {
+				try {
+					document.myform.action = "facebook_login.php";
+				} catch (error) {
+					alert("something wrong.");
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="fb-root"></div>
+		<script>
+			window.fbAsyncInit = function() {
+				// init the FB JS SDK
+				FB.init({
+					appId : '199598153533305', // App ID from the app dashboard
+					channelUrl : 'http://localhost:8888/codenameDS/channel.html', // Channel file for x-domain comms
+					status : true, // Check Facebook Login status
+					cookie : true, // enable cookies to allow the server to access the session
+					xfbml : true // Look for social plugins on the page
+				});
+
+				// Additional initialization code such as adding Event Listeners goes here
+			};
+
+			// Load the SDK asynchronously
+			( function(d, s, id) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) {
+						return;
+					}
+					js = d.createElement(s);
+					js.id = id;
+					js.src = "//connect.facebook.net/en_US/all.js";
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+
+			function FacebookLogin() {
+
+				FB.Event.subscribe('auth.authResponseChange', function(response) {
+					if (response.status === 'connected') {
+						testAPI();
+					} else if (response.status === 'not_authorized') {
+						FB.login();
+					} else {
+						FB.login();
+					}
+				});
+			}
+
+			function testAPI() {
+				console.log('Welcome!  Fetching your information.... ');
+				FB.api('/me', function(response) {
+					console.log('Good to see you, ' + response.name + '.');
+				});
+			}
+		</script>
+
+		<form name="myform" method="get">
+
+			<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+			<script src="js/bootstrap.js"></script>
+
+			<div class="navbar navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-th-list"></span> </a>
+						<a href="#" class="brand">codenameDS</a>
+
+						<div class="nav-collapse collapse">
+							<ul class="nav pull-right">
+								<li class="active">
+									<a href="#">Home</a>
+								</li>
+								<li>
+									<a href="#">Contact</a>
+								</li>
+								<li>
+									<a href="#">About Us</a>
+								</li>
+								<li>
+									<a href="#loginModal" data-toggle="modal">Login</a>
+								</li>
+							</ul>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="hero-unit">
+				<h1>Welcome and all that shit</h1>
+				<p>
+					All about what this website site does and how it changes your life
+				</p>
+				<p>
+					<button class="btn btn-primary btn-large" onclick="GetStarted()">
+						<i class="icon-camera icon-white"> </i> Get Started
+					</button>
+				</p>
+			</div>
+
+			<div class="container">
+				<div class="row-fluid">
+					<div class="span8">
+						<p>
+							Manchester United Football Club is an English professional football club, based in Old Trafford, Greater Manchester, that plays in the Premier League.Founded as Newton Heath LYR Football Club in 1878, the club changed its name to Manchester United in 1902 and moved to Old Trafford in 1910.
+							Manchester United have won many trophies in English football, including a record 20 League titles, a record 11 FA Cups,[3] four League Cups and a record 19 FA Community Shields. The club has also won three European Cups, one UEFA Cup Winners' Cup, one UEFA Super Cup, one Intercontinental Cup and one FIFA Club World Cup. In 1998–99, the club won a Treble of the Premier League, the FA Cup and the UEFA Champions League, an unprecedented feat for an English club.
+						</p>
+
+						<div class="row-fluid">
+							<div class="span4">
+								<h4>Idea</h4>
+								<p>
+									Understand the complete idea behind this web site
+								</p>
+								<a href="#" class="btn btn-success">Understand</a>
+							</div>
+							<div class="span4">
+								<h4>Partners</h4>
+								<p>
+									Get the list of the <a href="#">partners here</a>
+								</p>
+							</div>
+							<div class="span4">
+								<h4>Support</h4>
+								<p>
+									You can come forward and donate us few dollars for some beer!
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="span4">
+						<ul class="nav nav-list well">
+							<li class="nav-header">
+								Not a memeber yet?
+							</li>
+							<li>
+								<fb:login-button show-faces="true" width="300" max-rows="1"></fb:login-button>
+							</li>
+
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="modal hide" id="loginModal" aria-hidden="true">
+				<div class="modal-header">
+					<h2>codenameDS Login</h2>
+				</div>
+
+				<div class="modal-body">
+					<form>
+						<label>Email</label>
+						<input type="email" class="span4"/>
+						<label>Password</label>
+						<input type="text" class="span4"/>
+						</br>
+						<button class="btn btn-success" type="submit">
+							Login
+						</button>
+						<button class="btn" type="reset">
+							Clear
+						</button>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal" aria-hidden="true">
+						Close
+					</button>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

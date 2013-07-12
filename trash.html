@@ -1,0 +1,47 @@
+FB.login(function(response) {
+if (response.authResponse) {
+console.log('Welcome!  Fetching your information.... ');
+FB.api('/me', function(response) {
+console.log('Good to see you, ' + response.name + '.');
+alert('Good to see you, ' + response.name + '.');
+});
+} else {
+console.log('User cancelled login or did not fully authorize.');
+}
+});
+
+<li class="active">
+	<button class="btn btn-success" type="submit" onclick="FacebookLogin();">
+		Login using Facebook
+	</button>
+</li>
+<li>
+	<a href="#">tab number 1 </a>
+</li>
+<li>
+	<a href="#">tab number 2 </a>
+</li>
+<li class="divider"></li>
+
+		<!--<script src='http://connect.facebook.net/en_US/all.js'></script>
+		<script>
+		window.fbAsyncInit = function() {
+		FB.init({
+		appId : '199598153533305', // App ID
+		channelUrl : 'http://localhost:8888/codenameDS/channel.html', // Channel File
+		status : true, // check login status
+		cookie : true, // enable cookies to allow the server to access the session
+		xfbml : true // parse XFBML
+		});
+		}; ( function(d) {
+		var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		if (d.getElementById(id)) {
+		return;
+		}
+		js = d.createElement('script');
+		js.id = id;
+		js.async = true;
+		js.src = "//connect.facebook.net/en_US/all.js";
+		ref.parentNode.insertBefore(js, ref);
+		}(document));
+		</script>-->
