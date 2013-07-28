@@ -10,7 +10,7 @@
 		<script>
 			function GetStarted() {
 				try {
-					document.myform.action = "facebook_login.php";
+					document.myform.action = "php/facebook_login.php";
 				} catch (error) {
 					alert("something wrong.");
 				}
@@ -26,7 +26,7 @@
 				// init the FB JS SDK
 				FB.init({
 					appId : '199598153533305', // App ID from the app dashboard
-					channelUrl : 'http://localhost:8888/codenameDS/channel.html', // Channel file for x-domain comms
+					channelUrl : 'http://localhost:8888/codenameDS/php/channel.php', // Channel file for x-domain comms
 					status : true, // Check Facebook Login status
 					cookie : true, // enable cookies to allow the server to access the session
 					xfbml : true // Look for social plugins on the page
@@ -89,6 +89,9 @@
 								</li>
 								<li>
 									<a href="#">About Us</a>
+								</li>
+								<li>
+									<a href="php/upload_image.php">Start Uploading!</a>
 								</li>
 								<li>
 									<a href="#loginModal" data-toggle="modal">Login</a>
@@ -170,7 +173,7 @@
 						<input type="email" class="span4"/>
 						<label>Password</label>
 						<input type="text" class="span4"/>
-						</br>
+						<br />
 						<button class="btn btn-success" type="submit">
 							Login
 						</button>
