@@ -52,7 +52,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		<form method="post" enctype="multipart/form-data">
 			
 			<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-			<script src="js/bootstrap.js"></script>
+			<script src="../js/bootstrap.js"></script>
 
 			<div class="navbar navbar-fixed-top">
 				<div class="navbar-inner">
