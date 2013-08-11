@@ -1,5 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
+session_start();
 ?>
 
 <html>
@@ -70,7 +71,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 					<ul class="nav nav-list well">
 						<li>
 							<p>
-								Some time pass here....
+								This is an amazing time pass faggot.
+								<?php echo $_SESSION['codenameDSusername']; ?>
 							</p>
 						</li>
 					</ul>

@@ -73,7 +73,7 @@ if (empty($_COOKIE['SocialAuth'])) {
 <html>
 
 	<head>
-		<title>Social Auth v3.0</title>
+		<title>Login</title>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -84,16 +84,13 @@ if (empty($_COOKIE['SocialAuth'])) {
 	<body>
 		<div id="main">
 			<div id="site_content">
-				<div id="content">
-					<h1>No registration any more, just sign-in!</h1>
+				<div id="content" align="center">
+					<h1>Just sign-in with one of the following social networking web sites!</h1>
 					<?php
 					$data = SocialAuth::getSessionData('SocialAuth');
 					//If user not logged in by any social network, show login urls
 					if (!$data):
 					?>
-					<p>
-						Authorize your sign-in with following networks. Database integration included!
-					</p>
 					<table width="100%">
 						<tr>
 							<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=twitter')"><img src="images/twitter-login.png"/></a></td>
@@ -104,11 +101,14 @@ if (empty($_COOKIE['SocialAuth'])) {
 							<td width="20%"><a href="/codenameDS/index.php""><img src="images/login.png" title="Your login system"/></a></td>
 							</tr>
 							</table>
-							<?php else: ?>
+							<?php else:
+								$_SESSION['codenameDSusername'] = $data['user_name'];
+								header("Location: http://localhost:8888/codenameDS/index.php?username=".$data['user_name'], TRUE);
+							?>
 							<!-- If user logged in by any social network, print details-->
 							<p>Welcome, your details are:</p>
 							<p><pre><?=var_dump($data) ?></pre></p>
-							<p>You signed-in with <?=$data['network_type'] ?>, <a href="?action=logout">Logout?</a></p>
+							<p>You signed-in with <?=$data['provider_id'] ?>, <a href="?action=logout">Logout?</a></p>
 							<?php endif ?>
 							</div>
 							</div>

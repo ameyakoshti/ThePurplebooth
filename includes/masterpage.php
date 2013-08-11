@@ -42,7 +42,25 @@
 						<a href="/codenameDS/gallery.php">Gallery</a>
 					</li>
 					<li>
-						<a href="/codenameDS/socialauth/index.php">Login</a>
+						<?php 	
+						if(session_id() === '') {
+							?> <a href="/codenameDS/socialauth/index.php">Login</a>	<?php
+						}
+						else{ 
+						?>
+						
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+								Hello <?php echo $_SESSION['codenameDSusername']; ?>
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="logout.php">Logout</a>
+								</li>
+							</ul>
+						</div>						
+						<?php }?>				
 					</li>
 				</ul>
 			</div>
