@@ -38,8 +38,6 @@ $conf_db['db_user_field_social_network_type'] = "provider_id";
 //Password stored as md5?
 $conf_db['password_md5'] = true;
 
-
-
 /** Twitter configurations */
 
 //Twitter credentials
