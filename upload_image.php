@@ -1,5 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
+ini_set('memory_limit', '-1');
+ob_start();
 ?>
 
 <?php
@@ -34,7 +36,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		}
 		fclose($fp);
 
-		$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'1','2','$fileName',  '$fileType','$fileSize', '$content','N',NOW())";
+		$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'1','0','$fileName','$fileType','$fileSize', '$content','N',NOW(),NOW())";
 		//empty the temp folder
 		/* $files = glob($_SERVER["DOCUMENT_ROOT"] . '/codenameDS/temp/' . $_FILES["userfile"]["name"]);
 		// get all file names
@@ -51,7 +53,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 ?>
 <script type="text/javascript">
 	alert("File successfully uploaded!");
-	history.back(); 
+	//history.back(); 
 </script>
 <?php
 	mysql_close($link);
@@ -74,7 +76,6 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 			</p>
 			<p>
 				<form method="post" enctype="multipart/form-data">
-					<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 					<input name="userfile" type="file" id="userfile" class="btn btn-success btn-small">
 					<button class="btn btn-primary btn-small" id="upload" name = "upload" type="submit">
 						<i class="icon-camera icon-white"> </i> Upload
@@ -84,4 +85,4 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		</div>
 	</body>
 </html>
-
+<?php ob_end_flush(); ?>

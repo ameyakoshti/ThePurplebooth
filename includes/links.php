@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE >
 <meta charset="UTF-8">
 <meta name="veiwport" content="width=device-width, initial-scale=1.0 ">

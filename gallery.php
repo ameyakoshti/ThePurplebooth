@@ -1,4 +1,3 @@
-<!DOCTYPE >
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 ?>
@@ -31,7 +30,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 				echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			}
 
-			$res = mysqli_query($con, "SELECT ImageID FROM ImageInfo");
+			$res = mysqli_query($con, "SELECT `image_id` FROM `codenameDS`.`imageinfo`");
 
 			echo '<div class="row">';
 			echo '<div class="span12">';
@@ -40,8 +39,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			while ($data = mysqli_fetch_array($res)) {
 				echo '<li class="span3">';
 				echo '<div class="thumbnail">';
-				echo '<a href="viewImage.php?id=' . $data['ImageID'] . '">';
-				echo '<img src="viewImage.php?id=' . $data['ImageID'] . '">';
+				echo '<a href="viewImage.php?id=' . $data['image_id'] . '">';
+				echo '<img src="viewImage.php?id=' . $data['image_id'] . '">';
 				echo '</a>';
 				echo '</div>';
 				echo '</li>';
@@ -50,16 +49,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			echo '</div>';
 			echo '</div>';
 			echo '</ul>';
-
-			/* $result = mysqli_query($con,"SELECT * FROM ImageInfo");
-
-			 while($row = mysqli_fetch_array($result))
-			 {
-			 header("Content-type: image/jpeg");
-			 echo $row['imageContent'];
-			 echo "<br>";
-			 } */
-
+			
 			mysqli_close($con);
 			?>
 		</div>
@@ -75,3 +65,4 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			};
 		</script>
 	</body>
+</html>

@@ -1,8 +1,6 @@
-<?php 
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-session_start();
-
 ?>
 
 <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
