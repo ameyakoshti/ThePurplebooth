@@ -1,6 +1,5 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
-session_start();
 ?>
 
 <html>
@@ -72,7 +71,6 @@ session_start();
 						<li>
 							<p>
 								This is an amazing time pass faggot.
-								<?php echo $_SESSION['codenameDSusername']; ?>
 							</p>
 						</li>
 					</ul>

@@ -1,3 +1,10 @@
+<?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+session_start();
+
+?>
+
 <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 <script src="/codenamDS/js/bootstrap.js"></script>
 
@@ -43,7 +50,7 @@
 					</li>
 					<li>
 						<?php 	
-						if(session_id() === '') {
+						if(!isset($_SESSION['codenameDSusername'])) {
 							?> <a href="/codenameDS/socialauth/index.php">Login</a>	<?php
 						}
 						else{ 
