@@ -7,6 +7,7 @@ session_start();
 
 <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 <script src="/codenamDS/js/bootstrap.js"></script>
+<script src="/codenamDS/js/bootstrap.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {

@@ -63,7 +63,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			mysqli_close($con);
 			?>
 		</div>
-
 		<script src="/codenameDS/js/blueimp-gallery.min.js"></script>
 		<script>
 			document.getElementById('links').onclick = function(event) {

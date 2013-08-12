@@ -36,14 +36,14 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 
 		$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'1','2','$fileName',  '$fileType','$fileSize', '$content','N',NOW())";
 		//empty the temp folder
-		$files = glob($_SERVER["DOCUMENT_ROOT"] . '/codenameDS/temp/' . $_FILES["userfile"]["name"]);
+		/* $files = glob($_SERVER["DOCUMENT_ROOT"] . '/codenameDS/temp/' . $_FILES["userfile"]["name"]);
 		// get all file names
 		foreach ($files as $file) {// iterate files
 			if (is_file($file))
 				unlink($file);
 			// delete file
 		}
-
+ */
 		mysql_query($query) or die('Error, query failed');
 	} catch(Exception $e) {
 		error_log($e);
