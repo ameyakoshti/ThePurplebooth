@@ -39,8 +39,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			while ($data = mysqli_fetch_array($res)) {
 				echo '<li class="span3">';
 				echo '<div class="thumbnail">';
-				echo '<a href="viewImage.php?id=' . $data['image_id'] . '">';
-				echo '<img src="viewImage.php?id=' . $data['image_id'] . '">';
+				echo '<a href="view_image.php?id=' . $data['image_id'] . '">';
+				echo '<img src="view_image.php?id=' . $data['image_id'] . '">';
 				echo '</a>';
 				echo '</div>';
 				echo '</li>';

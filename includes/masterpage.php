@@ -4,13 +4,14 @@ ini_set('display_errors', 'On');
 ?>
 
 <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-<script src="/codenamDS/js/bootstrap.js"></script>
-<script src="/codenamDS/js/bootstrap.js"></script>
+<script src="js/bootstrap.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
 		var pathname = window.location.pathname;
-		if (pathname.search('contact') !== -1) {
+		if (pathname.search('index') !== -1) {
+			$('li:nth-child(1)').addClass('active');
+		} else if (pathname.search('contact') !== -1) {
 			$('li:nth-child(2)').addClass('active');
 		} else if (pathname.search('about') !== -1) {
 			$('li:nth-child(3)').addClass('active');
@@ -19,7 +20,7 @@ ini_set('display_errors', 'On');
 		} else if (pathname.search('gallery') !== -1) {
 			$('li:nth-child(5)').addClass('active');
 		} else {
-			$('li:nth-child(1)').addClass('active');
+			$('li:nth-child(0)').addClass('active');
 		}
 	})
 </script>
@@ -54,15 +55,17 @@ ini_set('display_errors', 'On');
 						}
 						else{ 
 						?>
-						
 						<div class="btn-group">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								Hello <?php echo $_SESSION['codenameDSusername']; ?>
+								<?php echo $_SESSION['codenameDSusername']; ?>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
 								<li>
 									<a href="logout.php">Logout</a>
+								</li>
+								<li>
+									<a href="profile.php">Profile</a>
 								</li>
 							</ul>
 						</div>						
