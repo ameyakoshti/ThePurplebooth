@@ -7,4 +7,5 @@ session_start();
 <link rel="stylesheet" href="/codenameDS/css/bootstrap.css" />
 <link rel="stylesheet" href="/codenameDS/css/bootstrap-responsive.css" />
 <link rel="stylesheet" href="/codenameDS/css/blueimp-gallery.css" />
-<link rel="stylesheet" href="/codenameDS/css/bueimp-gallery-indicator.css" />
+<link rel="stylesheet" href="/codenameDS/css/blueimp-gallery-indicator.css" />
+<link rel="stylesheet" href="/codenameDS/css/codenameDS.css" />
