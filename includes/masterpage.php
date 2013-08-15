@@ -50,14 +50,14 @@ ini_set('display_errors', 'On');
 					</li>
 					<li>
 						<?php 	
-						if(!isset($_SESSION['codenameDSusername'])) {
+						if(!isset($_SESSION['codenameDS_user_name'])) {
 							?> <a href="/codenameDS/socialauth/index.php">Login</a>	<?php
 						}
 						else{ 
 						?>
 						<div class="btn-group">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								<?php echo $_SESSION['codenameDSusername']; ?>
+								<?php echo $_SESSION['codenameDS_user_name']; ?>
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">

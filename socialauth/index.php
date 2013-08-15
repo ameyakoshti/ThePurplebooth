@@ -102,7 +102,8 @@ if (empty($_COOKIE['SocialAuth'])) {
 							</tr>
 							</table>
 							<?php else:
-								$_SESSION['codenameDSusername'] = $data['user_name'];
+								$_SESSION['codenameDS_user_id'] = $data['user_id'];
+								$_SESSION['codenameDS_user_name'] = $data['user_name'];
 								header("Location: http://localhost:8888/codenameDS/index.php?username=".$data['user_name'], TRUE);
 							?>
 							<!-- If user logged in by any social network, print details-->

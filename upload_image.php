@@ -5,7 +5,7 @@ ob_start();
 ?>
 
 <?php
-if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
+if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {	
 	try {
 		$link = mysql_connect('localhost', 'root', 'root');
 		if (!$link) {
@@ -53,11 +53,11 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 ?>
 <script type="text/javascript">
 	alert("File successfully uploaded!");
-	//history.back(); 
+	//history.back();
 </script>
 <?php
-	mysql_close($link);
-	header("Location: http://localhost:8888/codenameDS/gallery.php");
+mysql_close($link);
+header("Location: http://localhost:8888/codenameDS/gallery.php");
 }
 ?>
 
@@ -70,19 +70,35 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 		?>
 		<div class="hero-unit">
-			<h1>This is where you upload the damn file!</h1>
+			<h1>This is where you upload the raw pics!</h1>
+			<?php
+if(!isset($_SESSION['codenameDS_user_name'])){
+			?>
 			<p>
-				Click below to select the file you want to upload
-			</p>
-			<p>
-				<form method="post" enctype="multipart/form-data">
-					<input name="userfile" type="file" id="userfile" class="btn btn-success btn-small">
-					<button class="btn btn-primary btn-small" id="upload" name = "upload" type="submit">
-						<i class="icon-camera icon-white"> </i> Upload
-					</button>
-				</form>
+				... but before you do, we need you to <a href="http://localhost:8888/codenameDS/socialauth/index.php">sign-in or sign-up</a>.
 			</p>
 		</div>
+		<?php
+		}
+		else {
+		?>
+		<p>
+			Click below to select the pic you want to upload
+		</p>
+		</div>
+		<div class="row-fluid">
+			<div class="span4">
+				<p>
+					<form method="post" enctype="multipart/form-data">
+						<input name="userfile" type="file" id="userfile" class="btn">
+						<button class="btn btn-primary btn-small" id="upload" name = "upload" type="submit">
+							<i class="icon-camera icon-white"> </i> Upload
+						</button>
+					</form>
+				</p>
+			</div>
+		</div>
+		<?php } ?>
 	</body>
 </html>
 <?php ob_end_flush(); ?>
