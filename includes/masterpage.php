@@ -62,7 +62,9 @@ ini_set('display_errors', 'On');
 							</button>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="logout.php">Logout</a>
+								</li>
+								<li>
+									<a href="/codenameDS/socialauth/index.php?action=logout">Logout</a>
 								</li>
 								<li>
 									<a href="profile.php">Profile</a>

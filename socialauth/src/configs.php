@@ -6,7 +6,7 @@
 /** General configurations */
 
 //Base path of your application. You must give full path!
-$conf_main['base_path'] = 'http://localhost:8888/codenameDS/socialauth/index.php';
+$conf_main['base_path'] = 'http://localhost:8888/codenameDS/index.php';
 //Default cookie expire time
 $conf_main['expire_time'] = time() + 60*60*24*30;//1 month
 //Domain name

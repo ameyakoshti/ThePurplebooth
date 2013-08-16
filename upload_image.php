@@ -59,8 +59,8 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	}
 }
 
-	if (isset($_POST['uploadmany']) && $_FILES['userfile']['size'] > 0) {
-		error_log("Reached multiple upload");
+	if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
+		//error_log("Reached multiple upload");
 		try {
 			$link = mysql_connect('localhost', 'root', 'root');
 			if (!$link) {
@@ -112,8 +112,6 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 			<?php 
 			mysql_close($link);
 			header("Location: http://localhost:8888/codenameDS/gallery.php");
-
-
 		} catch(Exception $e) {
 			error_log($e);
 		}
