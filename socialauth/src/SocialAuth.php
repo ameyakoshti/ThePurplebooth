@@ -143,6 +143,8 @@ class SocialAuth
 
     public static function clearSessionData($key) {
         setcookie($key, '', -3600, "/");
+		session_destroy();
+		error_log($_SESSION);
     }
 
     /**

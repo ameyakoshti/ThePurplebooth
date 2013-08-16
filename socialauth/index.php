@@ -60,13 +60,11 @@ if (empty($_COOKIE['SocialAuth'])) {
 				echo "Invalid Login system";
 		}
 	}
-} else {
-	if (!empty($_GET['action']) && $_GET['action'] == "logout") {
-		//If action is logout, just expire the cookie
-		SocialAuth::clearSessionData('SocialAuth');
-		//var_dump($_COOKIE);exit;
-		header("Location:" . SocialAuth::getConfig('main', 'base_path'));
-	}
+} 
+if (!empty($_GET['action']) && $_GET['action'] == "logout") {
+	//If action is logout, just expire the cookie
+	SocialAuth::clearSessionData('SocialAuth');
+	header("Location: " . SocialAuth::getConfig('main', 'base_path_codenameDS'));
 }
 ?>
 <!DOCTYPE HTML>
