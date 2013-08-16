@@ -99,8 +99,12 @@ if (empty($_COOKIE['SocialAuth'])) {
 							<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=linkedin')"><img src="images/linkedin-login.png"/></a></td>
 							<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=yahoo')"><img src="images/yahoo-login.png"/></a></td>
 							<td width="20%"><a href="/codenameDS/index.php""><img src="images/login.png" title="Your login system"/></a></td>
-							</tr>
+							</tr>						
 							</table>
+							<p>
+							</br>
+								We do not use your profile details to send messages/post to your friends.
+							</p>
 							<?php else:
 								$_SESSION['codenameDS_user_id'] = $data['user_id'];
 								$_SESSION['codenameDS_user_name'] = $data['user_name'];

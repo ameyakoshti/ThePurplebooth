@@ -59,7 +59,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	}
 }
 
-	if (isset($_POST['uploadmany'])) {
+	if (isset($_POST['uploadmany']) && $_FILES['userfile']['size'] > 0) {
 		error_log("Reached multiple upload");
 		try {
 			$link = mysql_connect('localhost', 'root', 'root');
