@@ -5,52 +5,21 @@ ob_start();
 
 if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	try {
-		$link = mysql_connect('localhost', 'root', 'root');
-		if (!$link) {
-			die('Could not connect: ' . mysql_error());
-		}
-		$db_selected = mysql_select_db('codenameDS', $link);
+		require_once "database/connections.php";
 
 		$fileName = $_FILES['userfile']['name'];
 		$tmpName = $_FILES['userfile']['tmp_name'];
 		$fileSize = $_FILES['userfile']['size'];
 		$fileType = $_FILES['userfile']['type'];
 
-		//error_log("***********************".$fileName."**************************");
+		$success = upload_single_image($fileName,$tmpName,$fileSize,$fileType);
 
-		$cachedFileName = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/temp/" . $_FILES["userfile"]["name"];
-		//move the uploaded file to temp folder
-		move_uploaded_file($_FILES["userfile"]["tmp_name"], $cachedFileName);
-		//create image from the temp file
-		$img = imagecreatefromjpeg($cachedFileName);
-		//compress the temp image by 50% and save it as test.jpg
-		imagejpeg($img, $_SERVER['DOCUMENT_ROOT'] . "/codenameDS/temp/" . $_FILES["userfile"]["name"], 50);
-		//open and upload the compressed test image
-		$fp = fopen($_SERVER['DOCUMENT_ROOT'] . "/codenameDS/temp/" . $_FILES["userfile"]["name"], 'r');
-		$content = fread($fp, filesize($_SERVER['DOCUMENT_ROOT'] . "/codenameDS/temp/" . $_FILES["userfile"]["name"]));
-		$content = addslashes($content);
-		if (!get_magic_quotes_gpc()) {
-			$fileName = addslashes($fileName);
-		}
-		fclose($fp);
-
-		$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'1','0','$fileName','$fileType','$fileSize', '$content','N',NOW(),NOW())";
-		//empty the temp folder
-		$files = glob($_SERVER["DOCUMENT_ROOT"] . '/codenameDS/temp/' . $_FILES["userfile"]["name"]);
-		 // get all file names
-		foreach ($files as $file) {// iterate files
-		if (is_file($file))
-			unlink($file);
-		// delete file
-		}
-
-		mysql_query($query) or die('Error, query failed');
-		?>
-		<script type="text/javascript">
-		alert("File successfully uploaded!");
-		//history.back();
-		</script>
-		<?php
+		if ($success === TRUE){?>		
+			<div id="upload_notification" align="center" class="navbar navbar-fixed-bottom">
+        		<p>File successfully uploaded!</p>
+    		</div>		
+		<?php }
+		
 		mysql_close($link);
 		header("Location: http://localhost:8888/codenameDS/gallery.php");
 
@@ -59,64 +28,33 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	}
 }
 
-	if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
-		//error_log("Reached multiple upload");
-		try {
-			$link = mysql_connect('localhost', 'root', 'root');
-			if (!$link) {
-				die('Could not connect: ' . mysql_error());
-			}
-			$db_selected = mysql_select_db('codenameDS', $link);
-			//print_r($_FILES["uploadedfiles"]);
-			for($i=0;$i<sizeof($_FILES["uploadedfiles"]["name"]);$i++) {
-				//print_r($_FILES["uploadedfiles"][$i]);
-				$fileName =$_FILES["uploadedfiles"]['name'][$i];
-				$tmpName = $_FILES["uploadedfiles"]['tmp_name'][$i];
-				$fileSize = $_FILES["uploadedfiles"]['size'][$i];
-				$fileType = $_FILES["uploadedfiles"]['type'][$i];
-
-				//var_dump("***********************".$fileName."**************************");
-
-				$cachedFileName = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/temp/" . $fileName;
-				//move the uploaded file to temp folder
-				move_uploaded_file($tmpName, $cachedFileName);
-				//create image from the temp file
-				$img = imagecreatefromjpeg($cachedFileName);
-				//compress the temp image by 50% and save it as test.jpg
-				imagejpeg($img, $_SERVER['DOCUMENT_ROOT'] . "/codenameDS/temp/" . $fileName, 50);
-				//open and upload the compressed test image
-				$fp = fopen($_SERVER['DOCUMENT_ROOT'] . "/codenameDS/temp/" . $fileName, 'r');
-				$content = fread($fp, filesize($_SERVER['DOCUMENT_ROOT'] . "/codenameDS/temp/" . $fileName));
-				$content = addslashes($content);
-				if (!get_magic_quotes_gpc()) {
-					$fileName = addslashes($fileName);
-				}
-				fclose($fp);
-				$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'1','0','$fileName','$fileType','$fileSize', '$content','N',NOW(),NOW())";
-				//empty the temp folder
-				$files = glob($_SERVER["DOCUMENT_ROOT"] . '/codenameDS/temp/' . $_FILES["userfile"]["name"]);
-				 // get all file names
-				foreach ($files as $file) {// iterate files
-				if (is_file($file))
-					unlink($file);
-				// delete file
-				}
-
-				mysql_query($query) or die('Error, query failed');
-			}
-			?>
-			<script type="text/javascript">
-			alert("File successfully uploaded!");
-			//history.back();
-			</script>
-			<?php 
-			mysql_close($link);
-			header("Location: http://localhost:8888/codenameDS/gallery.php");
-		} catch(Exception $e) {
-			error_log($e);
+if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
+	try {
+		require_once "database/connections.php";
+		
+		for($i=0;$i<sizeof($_FILES["uploadedfiles"]["name"]);$i++) {
+			$fileName =$_FILES["uploadedfiles"]['name'][$i];
+			$tmpName = $_FILES["uploadedfiles"]['tmp_name'][$i];
+			$fileSize = $_FILES["uploadedfiles"]['size'][$i];
+			$fileType = $_FILES["uploadedfiles"]['type'][$i];
+			
+			$success = upload_single_image($fileName,$tmpName,$fileSize,$fileType);
+		
 		}
+		if ($success === TRUE){?>			
+		<div id="upload_notification" align="center" class="navbar navbar-fixed-bottom">
+        	<p>File successfully uploaded!</p>
+    	</div>	
+		<?php }
+		
+		mysql_close($link);
+		header("Location: http://localhost:8888/codenameDS/gallery.php");
+
+	} catch(Exception $e) {
+		error_log($e);
 	}
-	?>
+}
+?>
 <html>
 <head>
 <title>Upload Picture</title>
@@ -158,7 +96,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 			</button>
 		</form>
 		</p>
-	</div>
+	</div>	
 	<?php } ?>
 </body>
 </html>

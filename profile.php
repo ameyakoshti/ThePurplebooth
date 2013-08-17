@@ -9,7 +9,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 	<body>
 		<?php
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
-		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/functions/users.php';
+		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/database/users.php';
 
 		$user_data = get_user_info($_SESSION['codenameDS_user_id']);
 		print_r($user_data);

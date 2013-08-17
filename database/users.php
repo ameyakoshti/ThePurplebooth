@@ -1,13 +1,5 @@
 <?php
 
-function database_connect(){
-	$link = mysql_connect('localhost', 'root', 'root');
-	if (!$link) {
-		die('Could not connect: ' . mysql_error());
-	}
-	$db_selected = mysql_select_db('codenameDS', $link);
-}
-
 function get_user_info($user_id){
 		$user_id = (int)$user_id;
 		database_connect();
