@@ -1,9 +1,4 @@
 <?php
-/**
- * This class for managing social authorization operations
- *
- * @author Hüseyin BABAL <turkiye.java@gmail.com>
- */
 
 class SocialAuth
 {

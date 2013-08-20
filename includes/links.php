@@ -9,3 +9,4 @@ session_start();
 <link rel="stylesheet" href="/codenameDS/css/blueimp-gallery.css" />
 <link rel="stylesheet" href="/codenameDS/css/blueimp-gallery-indicator.css" />
 <link rel="stylesheet" href="/codenameDS/css/codenameDS.css" />
+<link rel="stylesheet" href="/codenameDS/css/user-profile.css" />

@@ -1,9 +1,4 @@
 <?php
-/**
- * Configurations for social network applications
- * @author Hüseyin BABAL <turkiye.java@gmail.com>
- */
-/** General configurations */
 
 //Base path of socialauth application. You must give full path!
 $conf_main['base_path'] = 'http://localhost:8888/codenameDS/socialauth/index.php';
