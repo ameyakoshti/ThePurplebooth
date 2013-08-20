@@ -8,7 +8,54 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 require_once "database/connections.php";
 ini_set('memory_limit', '-1');
 ob_start();
+?>
 
+<html>
+<head>
+<title>Upload Picture</title>
+</head>
+<body>
+	<?php
+	include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
+	?>
+	<div class="hero-unit">
+		<h1>This is where you upload the raw pics!</h1>
+		<?php
+			if(!isset($_SESSION['codenameDS_user_name'])){
+      	?>
+      	<p>
+        	... but before you do, we need you to <a href="http://localhost:8888/codenameDS/socialauth/index.php">sign-in or sign-up</a>.
+      	</p>
+    </div>
+    	<?php }
+    	else { ?>
+     	<p>
+      		Click below to select the pic you want to upload
+    	</p>
+		<p>	
+		<form method="post" enctype="multipart/form-data">
+			<input name="userfile" type="file" id="userfile"
+				class="btn">
+			<button class="btn btn-primary btn-small" id="upload" name="upload"
+				type="submit">
+				<i class="icon-camera icon-white"> </i> Upload
+			</button>
+		</form>
+
+		<form method="post" enctype="multipart/form-data">
+			<input type="file" name="uploadedfiles[]" multiple id="uploadedfiles[]"
+				class="btn">
+			<button class="btn btn-primary btn-small" id="uploadmany"
+				name="uploadmany" type="submit">
+				<i class="icon-camera icon-white"> </i> Upload Multiple Files
+			</button>
+		</form>
+		</p>
+	</div>
+	<?php } ?>
+</body>
+</html>
+<?php
 if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	try {
 		open_connection();
@@ -100,49 +147,4 @@ if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
 	}
 }
 ?>
-<html>
-<head>
-<title>Upload Picture</title>
-</head>
-<body>
-	<?php
-	include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
-	?>
-	<div class="hero-unit">
-		<h1>This is where you upload the raw pics!</h1>
-		<?php
-			if(!isset($_SESSION['codenameDS_user_name'])){
-      	?>
-      	<p>
-        	... but before you do, we need you to <a href="http://localhost:8888/codenameDS/socialauth/index.php">sign-in or sign-up</a>.
-      	</p>
-    </div>
-    	<?php }
-    	else { ?>
-     	<p>
-      		Click below to select the pic you want to upload
-    	</p>
-		<p>	
-		<form method="post" enctype="multipart/form-data">
-			<input name="userfile" type="file" id="userfile"
-				class="btn">
-			<button class="btn btn-primary btn-small" id="upload" name="upload"
-				type="submit">
-				<i class="icon-camera icon-white"> </i> Upload
-			</button>
-		</form>
-
-		<form method="post" enctype="multipart/form-data">
-			<input type="file" name="uploadedfiles[]" multiple id="uploadedfiles[]"
-				class="btn">
-			<button class="btn btn-primary btn-small" id="uploadmany"
-				name="uploadmany" type="submit">
-				<i class="icon-camera icon-white"> </i> Upload Multiple Files
-			</button>
-		</form>
-		</p>
-	</div>
-	<?php } ?>
-</body>
-</html>
 <?php ob_end_flush(); ?>
