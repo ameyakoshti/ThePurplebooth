@@ -24,6 +24,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 		<div class="imgGallery" id="links">
 			<?php
 
+			//require_once "database/connections.php";
+			
 			$con = mysqli_connect('localhost', 'root', 'root', 'codenameDS');
 			// Check connection
 			if (mysqli_connect_errno()) {
@@ -31,6 +33,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			}
 
 			$res = mysqli_query($con, "SELECT `image_id` FROM `codenameDS`.`imageinfo`");
+			//$res = get_all_images();
 
 			echo '<div class="row">';
 			echo '<div class="span12">';

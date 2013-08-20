@@ -1,18 +1,19 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
+require_once "database/connections.php";
 ini_set('memory_limit', '-1');
 ob_start();
 
 if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	try {
-		require_once "database/connections.php";
+		open_connection();
 
-		$fileName = $_FILES['userfile']['name'];
-		$tmpName = $_FILES['userfile']['tmp_name'];
-		$fileSize = $_FILES['userfile']['size'];
-		$fileType = $_FILES['userfile']['type'];
+		$file_name = $_FILES['userfile']['name'];
+		$tmp_name = $_FILES['userfile']['tmp_name'];
+		$file_size = $_FILES['userfile']['size'];
+		$file_type = $_FILES['userfile']['type'];
 
-		$success = upload_single_image($fileName,$tmpName,$fileSize,$fileType);
+		$success = upload_single_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
 
 		if ($success === TRUE){?>		
 			<div id="upload_notification" align="center" class="navbar navbar-fixed-bottom">
@@ -20,9 +21,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
     		</div>		
 		<?php }
 		
-		mysql_close($link);
-		header("Location: http://localhost:8888/codenameDS/gallery.php");
-
+		close_connection();
 	} catch(Exception $e) {
 		error_log($e);
 	}
@@ -30,26 +29,24 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 
 if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
 	try {
-		require_once "database/connections.php";
+		open_connection();
 		
 		for($i=0;$i<sizeof($_FILES["uploadedfiles"]["name"]);$i++) {
-			$fileName =$_FILES["uploadedfiles"]['name'][$i];
-			$tmpName = $_FILES["uploadedfiles"]['tmp_name'][$i];
-			$fileSize = $_FILES["uploadedfiles"]['size'][$i];
-			$fileType = $_FILES["uploadedfiles"]['type'][$i];
+			$file_name =$_FILES["uploadedfiles"]['name'][$i];
+			$tmp_name = $_FILES["uploadedfiles"]['tmp_name'][$i];
+			$file_size = $_FILES["uploadedfiles"]['size'][$i];
+			$file_type = $_FILES["uploadedfiles"]['type'][$i];
 			
-			$success = upload_single_image($fileName,$tmpName,$fileSize,$fileType);
-		
+			$success = upload_single_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
 		}
+		
 		if ($success === TRUE){?>			
 		<div id="upload_notification" align="center" class="navbar navbar-fixed-bottom">
-        	<p>File successfully uploaded!</p>
+        	<p>Files successfully uploaded!</p>
     	</div>	
 		<?php }
 		
-		mysql_close($link);
-		header("Location: http://localhost:8888/codenameDS/gallery.php");
-
+		close_connection();
 	} catch(Exception $e) {
 		error_log($e);
 	}
