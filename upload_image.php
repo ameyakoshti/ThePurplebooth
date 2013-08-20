@@ -13,7 +13,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		$file_size = $_FILES['userfile']['size'];
 		$file_type = $_FILES['userfile']['type'];
 
-		$success = upload_single_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
+		$success = upload_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
 
 		if ($success === TRUE){?>		
 			<div id="upload_notification" align="center" class="navbar navbar-fixed-bottom">
@@ -37,7 +37,7 @@ if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
 			$file_size = $_FILES["uploadedfiles"]['size'][$i];
 			$file_type = $_FILES["uploadedfiles"]['type'][$i];
 			
-			$success = upload_single_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
+			$success = upload_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
 		}
 		
 		if ($success === TRUE){?>			

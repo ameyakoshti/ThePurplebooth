@@ -1,5 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
+require_once "database/connections.php";
 ?>
 
 <html>
@@ -23,37 +24,19 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 
 		<div class="imgGallery" id="links">
 			<?php
-
-			//require_once "database/connections.php";
-			
-			$con = mysqli_connect('localhost', 'root', 'root', 'codenameDS');
-			// Check connection
-			if (mysqli_connect_errno()) {
-				echo "Failed to connect to MySQL: " . mysqli_connect_error();
-			}
-
-			$res = mysqli_query($con, "SELECT `image_id` FROM `codenameDS`.`imageinfo`");
-			//$res = get_all_images();
+			open_connection();
 
 			echo '<div class="row">';
 			echo '<div class="span12">';
 			echo '<ul class="thumbnails">';
-
-			while ($data = mysqli_fetch_array($res)) {
-				echo '<li class="span3">';
-				echo '<div class="thumbnail">';
-				echo '<a href="view_image.php?id=' . $data['image_id'] . '">';
-				echo '<img src="view_image.php?id=' . $data['image_id'] . '">';
-				echo '</a>';
-				echo '</div>';
-				echo '</li>';
-			}
+			
+			get_all_images();
 
 			echo '</div>';
 			echo '</div>';
 			echo '</ul>';
 			
-			mysqli_close($con);
+			//close_connection();
 			?>
 		</div>
 		<script src="/codenameDS/js/blueimp-gallery.min.js"></script>
