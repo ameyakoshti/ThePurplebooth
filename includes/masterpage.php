@@ -5,7 +5,6 @@ ini_set('display_errors', 'On');
 
 <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 <script src="js/bootstrap.js"></script>
-
 <script type="text/javascript">
 	$(document).ready(function() {
 		var pathname = window.location.pathname;

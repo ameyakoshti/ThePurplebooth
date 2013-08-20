@@ -1,3 +1,8 @@
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+<script src="js/upload_image.js"></script>
+
+<script type="text/javascript" src="js/jNotify.jquery.js"></script>
+
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 require_once "database/connections.php";
@@ -15,13 +20,35 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 
 		$success = upload_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
 
-		if ($success === TRUE){?>		
-			<div id="upload_notification" align="center" class="navbar navbar-fixed-bottom">
-        		<p>File successfully uploaded!</p>
-    		</div>		
-		<?php }
+		if ($success === TRUE){?>
+			<script type="text/javascript">
+				jSuccess(
+					    'Upload Image Sucessful!',
+					    {
+					      autoHide : true,
+					      TimeShown : 2000,
+					      HorizontalPosition : 'center',
+					      ShowOverlay : false
+					    }
+					   );
+			</script>	
+			<?php 
+		 }
+		 else {?>
+		 	<sript type="text/javascript">
+		 		 jError(
+		 				    'Upload Image Failed!',
+		 				    {
+		 				      autoHide : true,
+		 				      TimeShown : 2000,
+		 				      HorizontalPosition : 'center',
+		 				      ShowOverlay : false
+		 				    }
+		 				  );
+		 	</script>
+		 		<?php }
 		
-		close_connection();
+		//close_connection();
 	} catch(Exception $e) {
 		error_log($e);
 	}
@@ -41,12 +68,33 @@ if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
 		}
 		
 		if ($success === TRUE){?>			
-		<div id="upload_notification" align="center" class="navbar navbar-fixed-bottom">
-        	<p>Files successfully uploaded!</p>
-    	</div>	
+		<script type="text/javascript">
+			jSuccess(
+				    'Upload Images Sucessful!',
+				    {
+				      autoHide : true,
+				      TimeShown : 2000,
+				      HorizontalPosition : 'center',
+				      ShowOverlay : false
+				    }
+				   );
+		</script>	
+		<?php }
+		else {?>
+		<script type="text/javascript">
+				jError(
+					    'Upload Images Failed!',
+					    {
+					      autoHide : true,
+					      TimeShown : 2000,
+					      HorizontalPosition : 'center',
+					      ShowOverlay : false
+					    }
+					  );
+		</script>	
 		<?php }
 		
-		close_connection();
+		//close_connection();
 	} catch(Exception $e) {
 		error_log($e);
 	}
@@ -93,7 +141,7 @@ if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
 			</button>
 		</form>
 		</p>
-	</div>	
+	</div>
 	<?php } ?>
 </body>
 </html>
