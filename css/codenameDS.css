@@ -1,10 +1,45 @@
 .imgGallery {
-	margin-top : 55px;
-	margin-left : 89px;
+	margin-top: 55px;
+	margin-left: 89px;
 }
 
 .modal-image {
-	max-width:600px;
-	max-height:400px;
+	max-width: 600px;
+	max-height: 400px;
 }
 
+#img_container {
+	width: 150px;
+	height: 150px;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+.buttonProfilePic {
+	position: absolute;
+	bottom: -18px;
+	right: 30px;
+	width: 100px;
+	height: 30px;
+	background: transparent;
+	border: none;
+	font-size: 0;
+}
+
+.buttonProfilePicSave {
+	position: absolute;
+	bottom: -50px;
+	right: 25px;
+	width: 100px;
+	height: 30px;
+	background: transparent;
+	border: none;
+	font-size: 12;
+}
+
+input[type="file"] {
+	background: transparent;
+	border: none;
+	outline: none;
+}

@@ -4,7 +4,7 @@ require_once "database/connections.php";
 ?>
 <html>
 	<head>
-		<title>Gallery</title>
+		<title>User Profile</title>
 	</head>
 	<body>
 		<?php
@@ -16,9 +16,8 @@ require_once "database/connections.php";
 			//console.log("the current time is:", Date.now());
 			$(document).ready(function () { 
 
-				$("#target").click(function() {
-
-				
+				$("#img_container").click(function() {
+					$("#userfile").show();
 				});
 			});			
 		</script>	
@@ -29,10 +28,23 @@ require_once "database/connections.php";
 			<div id="content" class="clearfix">
 				<section id="left">
 					<div id="userStats" class="clearfix">
-						<div class="pic" id="target">
-							<a href="#"><img src="img/user_avatar.jpg" width="150" height="150"/></a>
-						</div>
-	
+						
+						<div id="img_container" class="pic">
+							<?php if(!isset($user_data['profile_picture'])) {?>
+						   		<a href="#"><img src="img/user_avatar.jpg" width="150" height="150"/></a>
+						    <?php } else {
+						    	$location = $user_data['profile_picture'];
+								//console.log($location);
+						    	echo "<img src='$location' width='150' height='150'>";
+						    } ?>
+						    <form method="post" enctype="multipart/form-data">
+	 							<input type="file" style="display: none;" id="userfile" name="userfile" class="buttonProfilePic" >
+							    <button class="buttonProfilePicSave" id="upload" name="upload" type="submit">
+								 Save
+								</button>
+							</form>
+						</div>						
+						
 						<div class="data" id="user_data">
 							<h3><?php echo $user_data['user_name'];?></h3>
 							<p><?php echo $user_data['email'];?></p>
@@ -93,3 +105,57 @@ require_once "database/connections.php";
 			</div>
 		</body>
 </html>
+
+<?php
+if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
+	try {
+		open_connection();
+
+		$file_name = $_FILES['userfile']['name'];
+		$tmp_name = $_FILES['userfile']['tmp_name'];
+		$file_size = $_FILES['userfile']['size'];
+		$file_type = $_FILES['userfile']['type'];
+
+		$success = upload_profile_picture($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
+
+		if ($success === TRUE){?>
+			<script type="text/javascript">
+				jSuccess(
+					    'Upload Image Sucessful!',
+					    {
+					      autoHide : true,
+					      TimeShown : 2000,
+					      HorizontalPosition : 'center',
+					      ShowOverlay : false
+					    }
+					   );
+			</script>	
+			<?php 
+		 }
+		 else {?>
+		 	<sript type="text/javascript">
+		 		 jError(
+		 				    'Upload Image Failed!',
+		 				    {
+		 				      autoHide : true,
+		 				      TimeShown : 2000,
+		 				      HorizontalPosition : 'center',
+		 				      ShowOverlay : false
+		 				    }
+		 				  );
+		 	</script>
+		 		<?php }
+		
+			echo '<script type="text/javascript">';
+	        echo 'location.reload(false)';
+	        echo '</script>';
+	        echo '<noscript>';
+	        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
+	        echo '</noscript>';		
+		
+		//close_connection();
+	} catch(Exception $e) {
+		error_log($e);
+	}
+}
+?>
