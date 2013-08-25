@@ -43,6 +43,7 @@ input[type="file"] {
 	background: transparent;
 	border: none;
 	outline: none;
+}
 
 .oneImage{
 	display:inline-block;
