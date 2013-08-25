@@ -15,4 +15,5 @@ function close_connection(){
 
 require_once "users.php";
 require_once "image_info.php";
+require_once "image_comment.php";
 ?>

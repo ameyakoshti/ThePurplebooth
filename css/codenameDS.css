@@ -8,6 +8,7 @@
 	max-height: 400px;
 }
 
+
 #img_container {
 	width: 150px;
 	height: 150px;
@@ -42,4 +43,32 @@ input[type="file"] {
 	background: transparent;
 	border: none;
 	outline: none;
+
+.oneImage{
+	display:inline-block;
+}
+
+.selectedImage{
+	max-width:600px;
+	max-height:400px;
+	float:left;
+	margin-top:55px;
+	margin-left:15px;
+}
+
+.selectedImage img {
+	height:100%;
+}
+
+.comments {
+	float:right;
+	max-width:600px;
+	max-height:400px;
+	margin-left:20px;
+	margin-top:55px;
+}
+
+.enterComment {
+	resize:none;
+	width:400px;
 }

@@ -1,5 +1,4 @@
 <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-<script src="js/upload_image.js"></script>
 
 <script type="text/javascript" src="js/jNotify.jquery.js"></script>
 
