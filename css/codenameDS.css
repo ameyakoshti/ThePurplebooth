@@ -69,7 +69,11 @@ input[type="file"] {
 	margin-top:55px;
 }
 
-.enterComment {
+.enterComment, .enterReply {
 	resize:none;
 	width:400px;
+}
+
+.threadedComment {
+	margin-left:50px;
 }
