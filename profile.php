@@ -67,7 +67,7 @@ require_once "database/connections.php";
 						</div>
 					</div>
 	
-					<h1>About Me:</h1>
+					<h2>About Me:</h2>
 					<p>
 						I need to create a new columm to store data for about me. i just realised that will have to drop the complete table are create it again! #dumb
 					</p>

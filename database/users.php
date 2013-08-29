@@ -15,12 +15,12 @@ function update_user_info($user_id) {
 
 function upload_profile_picture($user_id, $file_name, $tmp_name, $file_size, $file_type) {
 	try {
-		$file_location = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/avatars/" . $file_name;
-		$file_location_db =  "/codenameDS/avatars/" . $file_name;
+		$file_location = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/avatars/" . $user_id . ".jpg";
+		$file_location_db = "/codenameDS/avatars/" . $user_id . ".jpg";
 		move_uploaded_file($tmp_name, $file_location);
 
 		$query = "UPDATE `codenameDS`.`users` SET `profile_picture`='$file_location_db' WHERE `user_id`='$user_id'";
-		
+
 		mysql_query($query) or die('Error, query failed');
 
 		return TRUE;
