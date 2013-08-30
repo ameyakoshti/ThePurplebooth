@@ -32,6 +32,7 @@ function startUp() {
 					data : {
 						'insert_comment' : true,
 						'user_id' : userid,
+						'user_name' : username,
 						'image_id' : imageid,
 						'comment_text' : this.value
 					},
@@ -72,6 +73,7 @@ function startUp() {
 							data : {
 								'reply_comment' : true,
 								'user_id' : userid,
+								'user_name' : username,
 								'image_id' : imageid,
 								'comment_text' : this.value,
 								'comment_id' : $(this).parent('li').data('commentid')
