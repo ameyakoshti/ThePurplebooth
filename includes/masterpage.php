@@ -3,7 +3,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 ?>
 
-
 <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="js/jNotify.jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
