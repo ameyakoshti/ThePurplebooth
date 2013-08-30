@@ -1,7 +1,6 @@
 <?php
-
-$link;
 function open_connection(){
+	$link;
 	$link = mysql_connect('localhost', 'root', 'root');
 	if (!$link) {
 		die('Could not connect: ' . mysql_error());
@@ -10,10 +9,6 @@ function open_connection(){
 }
 
 function close_connection(){
-	mysql_close($link);
+	//mysql_close($link);
 }
-
-require_once "users.php";
-require_once "image_info.php";
-require_once "image_comment.php";
 ?>

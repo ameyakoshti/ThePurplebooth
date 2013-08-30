@@ -1,6 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
-require_once "database/connections.php";
+require_once "database/image_info.php";
 ?>
 
 <html>
@@ -9,7 +9,7 @@ require_once "database/connections.php";
 	</head>
 	<body>
 		<?php
-		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
+			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 		?>
 
 		<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
@@ -23,27 +23,19 @@ require_once "database/connections.php";
 		</div>
 
 		<div class="imgGallery" id="links">
-			<?php
-			open_connection();
-
-			echo '<div class="row">';
-			echo '<div class="span12">';
-			echo '<ul class="thumbnails">';
-			
-			get_all_images();
-
-			echo '</div>';
-			echo '</div>';
-			echo '</ul>';
-			
-			//close_connection();
+			<?php		
+				echo '<div class="row">';
+				echo '<div class="span12">';
+				echo '<ul class="thumbnails">';
+				
+				get_all_images();
+	
+				echo '</div>';
+				echo '</div>';
+				echo '</ul>';			
 			?>
 		</div>
 		<script src="/codenameDS/js/blueimp-gallery.min.js"></script>
 		<script src="/codenameDS/js/gallery/gallery.js"></script>
-		<script>
-			
-			
-		</script>
 	</body>
 </html>

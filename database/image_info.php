@@ -1,4 +1,7 @@
 <?php
+require_once "connections.php";
+open_connection();
+
 function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type) {
 	try {
 		$cached_file_name = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/temp/" . $file_name;
@@ -36,7 +39,7 @@ function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type) {
 }
 
 function get_image_by_id($id){
-	$query = "SELECT * FROM codenameDS.imageinfo where image_id=".$id;
+	$query = "SELECT * FROM `codenameDS`.`imageinfo` where `image_id`=".$id;
 	$res = mysql_query($query);
 	while ($data = mysql_fetch_array($res)) {
 		echo '<div class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '"></div>';
@@ -60,8 +63,5 @@ function get_all_images() {
 }
 
 function get_filtered_images(string $filter) {
-}
-
-function get_user_images(int $user_id) {
 }
 ?>

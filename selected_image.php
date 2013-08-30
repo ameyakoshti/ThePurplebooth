@@ -19,6 +19,7 @@ require_once "database/connections.php";
 		<script src="/codenameDS/js/selected_image/selected_image.js"></script>
 		<div class="oneImage">
 			<?php
+				open_connection();
 				get_image_by_id($_GET['image_id']);
 			?>		
 			<div class="comments">

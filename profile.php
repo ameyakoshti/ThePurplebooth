@@ -1,7 +1,8 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
-require_once "database/connections.php";
+require_once "database/users.php";
 ?>
+
 <html>
 	<head>
 		<title>User Profile</title>
@@ -9,7 +10,6 @@ require_once "database/connections.php";
 	<body>
 		<?php
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
-			open_connection();
 			$user_data = get_user_info($_SESSION['codenameDS_user_id']);
 		?>
 		<script type="text/javascript">

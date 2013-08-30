@@ -1,56 +1,59 @@
 $(document).ready(function(){
-		startUp();
+		//startUp();
 		getAllComments();
 });
 
 function getAllComments() {
-	var resp = $.ajax({
-						url : '/codenameDS/database/image_comment.php',
-						data : {
-							'select_comments' : true,
-							'image_id' : imageid
-						},
-						type : 'get',
-						success : function(output) {
-							displayComments(output);
-						}
-					});
+		var resp = $.ajax({
+		url : '/codenameDS/database/image_comment.php',
+		data : {
+			'select_comments' : true,
+			'image_id' : imageid
+		},
+		type : 'get',
+		success : function(output) {
+			displayComments(output);
+		}
+	});
 }
 
 function startUp() {
 	$('.enterComment').keyup(
-			function(event) {
-				if (event.keyCode == 13 && event.shiftKey) {
-					event.stopPropagation();
-					var content = this.value;
-					var caret = getCaret(this);
-					this.value = content.substring(0, caret) + "\n"
-							+ content.substring(caret, content.length);
-				} else if (event.keyCode == 13) {
-					$.ajax({
-						url : '/codenameDS/database/image_comment.php',
-						data : {
-							'insert_comment' : true,
-							'user_id' : userid,
-							'image_id' : imageid,
-							'comment_text' : this.value
-						},
-						type : 'post',
-						async: false,
-						success : function(output) {
-							getAllComments();
-						}
-					});
-				}
-			});
+		function(event) {
+			// if enter + shift is pressed then add new line
+			if (event.keyCode == 13 && event.shiftKey) {
+				event.stopPropagation();
+				var content = this.value;
+				var caret = getCaret(this);
+				this.value = content.substring(0, caret) + "\n"
+						+ content.substring(caret, content.length);
+			} else if (event.keyCode == 13) { // enter pressed, new comment added
+				$.ajax({
+					url : '/codenameDS/database/image_comment.php',
+					data : {
+						'insert_comment' : true,
+						'user_id' : userid,
+						'image_id' : imageid,
+						'comment_text' : this.value
+					},
+					type : 'post',
+					async: false,
+					success : function(output) {
+						getAllComments();
+					}
+				});
+			}
+		});
 	
+	// remove text area for reply boxes
 	$(document).keyup(function(e) {
 		  if (e.keyCode == 27) { 
 			  $('.enterReply').hide();
 			  $('.replyComment').show();
-		  }   // esc
+		  }
 		});
 	
+	// add new text box for reply box and add listeners with similar configurations as above
 	$('.replyComment').click(function(e){
 		$(this).parent('li').append('<textarea class="enterReply" placeholder="Enter reply here...">');
 		$(this).hide();
@@ -104,8 +107,6 @@ function displayComments(output) {
 				replied.push(cmntid);
 			}
 		});
-		
-
 	}
 	content += '</ul><textarea class="enterComment" placeholder="Enter comment here..."></textarea>';
 	$('.comments').html(content);

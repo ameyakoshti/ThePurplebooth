@@ -1,4 +1,7 @@
 <?php
+require_once "connections.php";
+open_connection();
+
 if(isset($_POST['insert_comment'])){
 	insert_comment($_POST['user_id'],$_POST['image_id'],$_POST['comment_text']);
 }
@@ -13,7 +16,6 @@ if(isset($_POST['reply_comment'])){
 
 function insert_reply_comment($user_id,$image_id,$comment_text,$comment_id){
 	try {
-
 		$text = str_replace("\n", "<br/>", $comment_text);
 		$query = "Insert into codenameDS.replycomment values (DEFAULT,".$user_id.",".$comment_id.",'".$text."',NOW())";
 		error_log($query);
@@ -27,7 +29,6 @@ function insert_reply_comment($user_id,$image_id,$comment_text,$comment_id){
 
 function insert_comment($user_id,$image_id,$comment_text){
 	try {
-
 		$text = str_replace("\n", "<br/>", $comment_text);
 		$query = "Insert into codenameDS.imagecomment values (DEFAULT,".$user_id.",'".$text."',".$image_id.",NOW())";
 		error_log($query);
@@ -42,9 +43,9 @@ function insert_comment($user_id,$image_id,$comment_text){
 function select_comments($image_id){
 	try {
 		$query = "SELECT * 
-FROM codenameDS.imagecomment
-LEFT JOIN codenameDS.replycomment ON codenameDS.imagecomment.comment_id = codenameDS.replycomment.reply_comment_id
-WHERE codenameDS.imagecomment.comment_image_id =".$image_id;
+			FROM codenameDS.imagecomment
+			LEFT JOIN codenameDS.replycomment ON codenameDS.imagecomment.comment_id = codenameDS.replycomment.reply_comment_id
+			WHERE codenameDS.imagecomment.comment_image_id =".$image_id;
 		error_log($query);
 		$res = mysql_query($query);
 		$result = array();
@@ -61,5 +62,4 @@ WHERE codenameDS.imagecomment.comment_image_id =".$image_id;
 		return FALSE;
 	}
 }
-
 ?>

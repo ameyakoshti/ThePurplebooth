@@ -1,4 +1,6 @@
 <?php
+require_once "connections.php";
+open_connection();
 
 function get_user_info($user_id) {
 	$user_id = (int)$user_id;
