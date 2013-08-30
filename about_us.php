@@ -5,16 +5,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 <html>
 	<head>
 		<title>About us</title>
+		<link href='/codenameDS/css/home.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<?php
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 		?>
-		<div class="hero-unit">
-			<h1>About us</h1>
-			<p>
-				We are the <strong>codecoasters</strong> !
-			</p>
+		<div class="hero-unit" style="padding: 0px !important; font-size: 35px; color: #fff; text-shadow: 0 1px 1px rgba(0,0,0,.4);">
+			<img src="/codenameds/img/masthead.jpg"/>
+			<div style="width: 550px; line-height: 40px; top: 200; position: absolute; z-index: 10; margin: 0px 0px 0px 40px;">We are a small group of developers and designers in California</div>
 		</div>
 
 		<div class="container">
@@ -34,20 +33,36 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 						We found out that the photo editing quirks were based not only on personal preferences, but also our skillset and the time it took to employ. 
 						Afterall, our busy schedules gave us barely enough time to pursue our photography hobby. 
 						Many of our fellow photography enthusiasts had the same dilemma - we would all like to spend more time taking photos and less time processing the images. 
-						Wouldn't it be awesome to leave the processing to the experts, whether enthusiasts like ourselves, or professionals ? That was the inception of thepurpleboot.com.
+						Wouldn't it be awesome to leave the processing to the experts, whether enthusiasts like ourselves, or professionals ? That was the inception of thepurplebooth.com.
  					</br>
  					</br>
-						While the idea to start thepurpleboot.com was a stereotypical AHA moment, the journey since then has been a start contrast. 
+						While the idea to start thepurplebooth.com was a stereotypical AHA moment, the journey since then has been a start contrast. 
 						Our busy schedules along with personal and professional commitments have been a greater challenge than we expected. 
-						But our passion for photography and entrepreneurship as well as the nerd skills we have acquired through a combined 25 years of engineering experience drove the creation of thepurpleboot.com.
+						But our passion for photography and entrepreneurship as well as the nerd skills we have acquired through a combined 25 years of engineering experience drove the creation of thepurplebooth.com.
  					</br>
  					</br>
-						Through thepurpleboot.com we wish to bring together photographers and photo editors, ametuers and experts alike, and give them an opportunity to share and showcase their skills and talents.
+						Through thepurplebooth.com we wish to bring together photographers and photo editors, ametuers and experts alike, and give them an opportunity to share and showcase their skills and talents.
 					</p>
+				</div>
+					
+				<div id="devp_info" class="span4" style="margin-left: 25px;">
+					<div class="pull_right" style="margin: 5px 0px 30px 0px;">
+						<img src="/codenameds/img/team/ameyajoshi.jpg" class="img-circle" style="max-width: 40% !important">
+						<span style="margin-left: 20px;">Ameya Joshi</span>
+					</div>
+					
+	 				<div class="pull_right" style="margin: 5px 0px 30px 0px;">
+						<img src="/codenameds/img/team/ameyakoshti.jpg" class="img-circle" style="max-width: 40% !important">
+						<span style="margin-left: 20px;">Ameya Koshti</span>
+					</div>
+	 				
+	 				<div class="pull_right" style="margin: 5px 0px 30px 0px;">
+						<img src="/codenameds/img/team/sheetal.jpg" class="img-circle" style="max-width: 40% !important">
+						<span style="margin-left: 20px;">Sheetal Paranjpe</span>
+					</div>
+ 				</div>
 
 				</div>
 			</div>
-		</div>
-
 	</body>
 </html>

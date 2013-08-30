@@ -4,78 +4,75 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 
 <html>
 	<head>
-		<title>Home Page</title>
+		<title>The Purple Booth</title>
+		<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+		<link href='/codenameDS/css/home.css' rel='stylesheet' type='text/css'>
 	</head>
-
+	
 	<body>
+		
+		<div class="container" style="width: auto;">
+		
 		<?php
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 		?>
-		<div class="hero-unit">
-			<h1>Welcome and all that stuff</h1>
-			<p>
-				All about what this website site does and how it changes your
-				life
-			</p>
-			<p>
-				<button class="btn btn-primary btn-large" onclick="GetStarted()">
-					<i class="icon-camera icon-white"> </i> Get Started
-				</button>
-			</p>
-		</div>
-
-		<div class="container">
-			<div class="row-fluid">
-				<div class="span8">
-					<p>
-						Manchester United Football Club is an English professional
-						football club, based in Old Trafford, Greater Manchester, that
-						plays in the Premier League.Founded as Newton Heath LYR Football
-						Club in 1878, the club changed its name to Manchester United in
-						1902 and moved to Old Trafford in 1910. Manchester United have won
-						many trophies in English football, including a record 20 League
-						titles, a record 11 FA Cups,[3] four League Cups and a record 19
-						FA Community Shields. The club has also won three European Cups,
-						one UEFA Cup Winners' Cup, one UEFA Super Cup, one
-						Intercontinental Cup and one FIFA Club World Cup. In 1998–99, the
-						club won a Treble of the Premier League, the FA Cup and the UEFA
-						Champions League, an unprecedented feat for an English club.
-					</p>
-
-					<div class="row-fluid">
-						<div class="span4">
-							<h4>Idea</h4>
-							<p>
-								Understand the complete idea behind this web site
-							</p>
-							<a href="#" class="btn btn-success">Understand</a>
-						</div>
-						<div class="span4">
-							<h4>Partners</h4>
-							<p>
-								Get the list of the <a href="#">partners here</a>
-							</p>
-						</div>
-						<div class="span4">
-							<h4>Support</h4>
-							<p>
-								You can come forward and donate us few dollars for some
-								beer!
-							</p>
+		
+			<!-- Carousel ================================================== -->
+			<div id="myCarousel" class="carousel slide">
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="/codenameDS/img/home/carousel/bg_dogcat.jpg">
+						<div class="container">
+							<div class="carousel-caption">
+								<h1>Dog & Cat</h1>
+								<p class="lead">This is how you can change the way your photos look..</p>
+								<a class="btn btn-large btn-primary" href="#">Sign up today</a>
+							</div>
 						</div>
 					</div>
-
+					<div class="item">
+						<img src="http://lorempixel.com/1280/1024/technics" alt="">
+						<div class="container">
+							<div class="carousel-caption">
+								<h1>Another Image.</h1>
+								<p class="lead">Some more caption here respective to the image</p>
+								<a class="btn btn-large btn-primary" href="#">Sign up today</a>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img src="http://lorempixel.com/1280/1024/abstract" alt="">
+						<div class="container">
+							<div class="carousel-caption">
+								<h1>One more</h1>
+								<p class="lead">No more explanation.</p>
+								<a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="span4">
-					<ul class="nav nav-list well">
-						<li>
-							<p>
-								This is an amazing time pass faggot.
-							</p>
-						</li>
-					</ul>
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev">&#139;</a> 
+				<a class="right carousel-control" href="#myCarousel" data-slide="next">&#155;</a>
+			</div>
+			<!-- /.carousel -->
+			
+			<div id="img-container">
+				<div style="margin: 20px 20px 20px 50px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
 				</div>
 			</div>
+			
+			<hr class="featurette-divider">
+			
+			<!-- FOOTER -->
+			<footer>
+				<p class="pull-right"> <a href="#">Back to top</a> </p>
+				<p> Copyright 2013, The Purple Booth, Inc. | <a href="#">Privacy</a> | <a href="#">Terms</a> </p>
+			</footer>
 		</div>
 	</body>
 </html>
