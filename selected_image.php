@@ -1,6 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
-require_once "database/connections.php";
+require_once "database/image_info.php";
 ?>
 
 <html>
@@ -19,7 +19,6 @@ require_once "database/connections.php";
 		<script src="/codenameDS/js/selected_image/selected_image.js"></script>
 		<div class="oneImage">
 			<?php
-				open_connection();
 				get_image_by_id($_GET['image_id']);
 			?>		
 			<div class="comments">
