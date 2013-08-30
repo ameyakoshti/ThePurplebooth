@@ -8,6 +8,8 @@ ini_set('display_errors', 'On');
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/mosaic.1.0.1.js"></script>
 
+<link href='/codenameDS/css/home.css' rel='stylesheet' type='text/css'>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		var pathname = window.location.pathname;

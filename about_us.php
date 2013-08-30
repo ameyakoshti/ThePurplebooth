@@ -5,7 +5,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 <html>
 	<head>
 		<title>About us</title>
-		<link href='/codenameDS/css/home.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<?php

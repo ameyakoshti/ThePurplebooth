@@ -6,7 +6,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 	<head>
 		<title>The Purple Booth</title>
 		<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
-		<link href='/codenameDS/css/home.css' rel='stylesheet' type='text/css'>
 	</head>
 	
 	<body>
