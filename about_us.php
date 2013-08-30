@@ -63,6 +63,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
  				</div>
 
 				</div>
+				
+			<hr class="featurette-divider">
+			<!-- FOOTER -->
+			<footer>
+				<p class="pull-right"> <a href="#">Back to top</a> </p>
+				<p> Copyright 2013, The Purple Booth, Inc. | <a href="#">Privacy</a> | <a href="#">Terms</a> </p>
+			</footer>
+			
 			</div>
 	</body>
 </html>
