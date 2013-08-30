@@ -1,6 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 require_once "database/users.php";
+require_once "database/user_rating.php";
 ?>
 
 <html>
@@ -25,7 +26,8 @@ require_once "database/users.php";
 		</br>
 		</br>
 			<div id="content" class="clearfix">
-				<section id="left">
+				<!--<section id="left">-->
+				<div class="span-6 centerOfTheScreen">
 					<div id="userStats" class="clearfix">
 						
 						<div id="img_container" class="pic">
@@ -70,8 +72,17 @@ require_once "database/users.php";
 					<p>
 						I need to create a new columm to store data for about me. i just realised that will have to drop the complete table are create it again! #dumb
 					</p>
-				</section>
-	
+					
+					<script type="text/javascript">
+						<?php if(isset($_SESSION["codenameDS_user_id"]))echo "var userid = '".$_SESSION["codenameDS_user_id"]."';";?>
+					</script>			
+					<script src="/codenameDS/js/profile/profile.js"></script>
+					<div class="reviews">						
+					</div>
+									
+				</div>
+				<!--</section>-->
+				<!--
 				<section id="right">
 					<div class="gcontent">
 						<div class="head">
@@ -100,7 +111,7 @@ require_once "database/users.php";
 							</p>
 						</div>
 					</div>
-				</section>
+				</section>-->
 			</div>
 		</body>
 </html>

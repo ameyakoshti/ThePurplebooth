@@ -77,3 +77,9 @@ input[type="file"] {
 .threadedComment {
 	margin-left:50px;
 }
+
+.centerOfTheScreen { 
+	float: none;
+	margin-left: auto;
+	margin-right: auto; 
+}
