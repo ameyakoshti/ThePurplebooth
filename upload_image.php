@@ -1,10 +1,6 @@
-<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-
-<script type="text/javascript" src="js/jNotify.jquery.js"></script>
-
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
-require_once "database/connections.php";
+require_once "database/image_info.php";
 ini_set('memory_limit', '-1');
 ob_start();
 ?>
@@ -15,7 +11,7 @@ ob_start();
 </head>
 <body>
 	<?php
-	include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
+		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 	?>
 	<div class="hero-unit">
 		<h1>This is where you upload the raw pics!</h1>
@@ -57,8 +53,6 @@ ob_start();
 <?php
 if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	try {
-		open_connection();
-
 		$file_name = $_FILES['userfile']['name'];
 		$tmp_name = $_FILES['userfile']['tmp_name'];
 		$file_size = $_FILES['userfile']['size'];
@@ -93,8 +87,6 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		 				  );
 		 	</script>
 		 		<?php }
-		
-		//close_connection();
 	} catch(Exception $e) {
 		error_log($e);
 	}
@@ -102,8 +94,6 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 
 if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
 	try {
-		open_connection();
-		
 		for($i=0;$i<sizeof($_FILES["uploadedfiles"]["name"]);$i++) {
 			$file_name =$_FILES["uploadedfiles"]['name'][$i];
 			$tmp_name = $_FILES["uploadedfiles"]['tmp_name'][$i];
@@ -139,8 +129,6 @@ if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
 					  );
 		</script>	
 		<?php }
-		
-		//close_connection();
 	} catch(Exception $e) {
 		error_log($e);
 	}

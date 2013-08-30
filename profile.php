@@ -13,7 +13,6 @@ require_once "database/users.php";
 			$user_data = get_user_info($_SESSION['codenameDS_user_id']);
 		?>
 		<script type="text/javascript">
-			//console.log("the current time is:", Date.now());
 			$(document).ready(function () { 
 
 				$("#img_container").click(function() {
@@ -109,8 +108,6 @@ require_once "database/users.php";
 <?php
 if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	try {
-		open_connection();
-
 		$file_name = $_FILES['userfile']['name'];
 		$tmp_name = $_FILES['userfile']['tmp_name'];
 		$file_size = $_FILES['userfile']['size'];
@@ -151,9 +148,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	        echo '</script>';
 	        echo '<noscript>';
 	        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
-	        echo '</noscript>';		
-		
-		//close_connection();
+	        echo '</noscript>';
 	} catch(Exception $e) {
 		error_log($e);
 	}

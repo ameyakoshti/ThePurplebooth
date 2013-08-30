@@ -4,9 +4,9 @@ ini_set('display_errors', 'On');
 ?>
 
 <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-<script src="js/bootstrap.js"></script>
-
+<script type="text/javascript" src="js/jNotify.jquery.js"></script>
 <script type="text/javascript" src="js/mosaic.1.0.1.js"></script>
+<script src="js/bootstrap.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
