@@ -1,9 +1,9 @@
-$(document).ready(function(){
-		getAllReviews();
+$(document).ready(function() {
+	getAllReviews();
 });
 
 function getAllReviews() {
-		var resp = $.ajax({
+	var resp = $.ajax({
 		url : '/codenameDS/database/user_rating.php',
 		data : {
 			'select_reviews' : true,
@@ -22,8 +22,9 @@ function displayReviews(output) {
 	var content = "<ul>";
 	// if no reviews then handle the foreach loop
 	if (output != null || output != "") {
-		$.each(res, function(id,value) {
-			content+="<li>"+value.reviews+" (rated by: <a href=http://localhost:8888/codenameDS/profile.php?username="+value.rated_by_user_name+">"+value.rated_by_user_name+"</a> ) </li>";			
+		$.each(res, function(id, value) {
+			content += "<li> Rating " + value.stars + "</li>";
+			content += "<li>" + value.reviews + " (rated by: <a href=http://localhost:8888/codenameDS/profile.php?username=" + value.rated_by_user_name + ">" + value.rated_by_user_name + "</a> ) </li>";
 		});
 	}
 	content += '</ul>';
