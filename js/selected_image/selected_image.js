@@ -98,7 +98,7 @@ function displayComments(output) {
 		$.each(res, function(id,value) {
 			var cmntid = value.comment_id;
 			if(replied.indexOf(cmntid)==-1){
-				content += "<li data-commentid="+value.comment_id+">"+value.comment_text+" "+value.comment_timestamp+"<br/>";
+				content += "<li data-commentid="+value.comment_id+">"+value.comment_text+ " (commented by: <a href=http://localhost:8888/codenameDS/profile.php?username=" + value.comment_user_name + ">" + value.comment_user_name + "</a> )"+" on "+value.comment_timestamp+"<br/>";
 			if(typeof userid==='undefined'){
 					
 			}
@@ -109,7 +109,7 @@ function displayComments(output) {
 			if(value.reply_id != null && replied.indexOf(cmntid)==-1){
 				$.each(res, function(id,val) {
 					if(cmntid == val.reply_comment_id){
-						content += "<li class='threadedComment' data-replyid="+val.reply_id+">"+val.reply_text+" "+val.reply_timestamp+"</li>";
+						content += "<li class='threadedComment' data-replyid="+val.reply_id+">"+val.reply_text+ " (commented by: <a href=http://localhost:8888/codenameDS/profile.php?username=" + val.reply_user_name + ">" + val.reply_user_name + "</a> )"+" on "+val.reply_timestamp+"</li>";
 					}
 				});
 				replied.push(cmntid);
