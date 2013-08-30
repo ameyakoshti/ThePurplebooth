@@ -54,6 +54,7 @@ function startUp() {
 	
 	// add new text box for reply box and add listeners with similar configurations as above
 	$('.replyComment').click(function(e){
+		if(userid!="")
 		$(this).parent('li').append('<textarea class="enterReply" placeholder="Enter reply here...">');
 		$(this).hide();
 		$('.enterReply').keyup(
@@ -94,9 +95,15 @@ function displayComments(output) {
 		var replied = [];
 		$.each(res, function(id,value) {
 			var cmntid = value.comment_id;
-			if(replied.indexOf(cmntid)==-1)
-				content += "<li data-commentid="+value.comment_id+">"+value.comment_text+" "+value.comment_timestamp+"<br/><a class='replyComment' >Reply</a></li>";
-			
+			if(replied.indexOf(cmntid)==-1){
+				content += "<li data-commentid="+value.comment_id+">"+value.comment_text+" "+value.comment_timestamp+"<br/>";
+			if(typeof userid==='undefined'){
+					
+			}
+			else {
+				content+="<a class='replyComment' >Reply</a></li>";
+			}
+			}
 			if(value.reply_id != null && replied.indexOf(cmntid)==-1){
 				$.each(res, function(id,val) {
 					if(cmntid == val.reply_comment_id){
@@ -107,7 +114,13 @@ function displayComments(output) {
 			}
 		});
 	}
-	content += '</ul><textarea class="enterComment" placeholder="Enter comment here..."></textarea>';
+	if(typeof userid==='undefined'){
+		content += '</ul>Please Register or Login to Comment!';
+	}
+	else {
+		content += '</ul><textarea class="enterComment" placeholder="Enter comment here..."></textarea>';
+		
+	}
 	$('.comments').html(content);
 	startUp();
 }

@@ -12,9 +12,9 @@ require_once "database/image_info.php";
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 		?>
 		<script type="text/javascript">
-			var userid = <?php echo $_SESSION["codenameDS_user_id"];?>;
-			var username = <?php echo "'".$_SESSION["codenameDS_user_name"]."'";?>;
-			var imageid = <?php echo $_GET['image_id'];?>
+			<?php if(isset($_SESSION["codenameDS_user_id"]))echo "var userid = '".$_SESSION["codenameDS_user_id"]."';";?>
+			<?php if(isset($_SESSION["codenameDS_user_name"]))echo "var username = '".$_SESSION["codenameDS_user_name"]."';";?>
+			<?php if(isset($_GET['image_id'])) echo 'var imageid = '.$_GET['image_id'].";";?>
 		</script>			
 		<script src="/codenameDS/js/selected_image/selected_image.js"></script>
 		<div class="oneImage">
