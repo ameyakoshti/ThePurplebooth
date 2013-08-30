@@ -67,7 +67,7 @@ ini_set('display_errors', 'On');
 								<li>
 								</li>
 								<li>
-									<a href="profile.php">Profile</a>
+									<a href="profile.php?username=<?php echo $_SESSION['codenameDS_user_name']; ?>">Profile</a>
 								</li>
 								<li>
 									<a href="/codenameDS/socialauth/index.php?action=logout">Logout</a>

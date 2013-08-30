@@ -11,7 +11,20 @@ require_once "database/user_rating.php";
 	<body>
 		<?php
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
-			$user_data = get_user_info($_SESSION['codenameDS_user_id']);
+			$user_name_profile_view = $_GET['username'];
+			$user_name_session = $_SESSION['codenameDS_user_name'];
+			
+			if ($user_name_profile_view != "") {
+				$user_data = get_user_info($user_name_profile_view);	
+					
+				// current user is viewing his/her own profile				
+				if(strcmp($user_name_profile_view,$user_name_session) == 0){
+						$allow_edit = TRUE;
+				}
+			}
+			else{
+				// redirect to user not found page
+			}
 		?>
 		<script type="text/javascript">
 			$(document).ready(function () { 
@@ -73,8 +86,9 @@ require_once "database/user_rating.php";
 						I need to create a new columm to store data for about me. i just realised that will have to drop the complete table are create it again! #dumb
 					</p>
 					
+					<h2>Review:</h2>
 					<script type="text/javascript">
-						<?php if(isset($_SESSION["codenameDS_user_id"]))echo "var userid = '".$_SESSION["codenameDS_user_id"]."';";?>
+						<?php if($user_name_profile_view != "")echo "var username = '".$user_name_profile_view."';";?>
 					</script>			
 					<script src="/codenameDS/js/profile/profile.js"></script>
 					<div class="reviews">						

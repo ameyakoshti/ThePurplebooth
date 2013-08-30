@@ -7,7 +7,7 @@ function getAllReviews() {
 		url : '/codenameDS/database/user_rating.php',
 		data : {
 			'select_reviews' : true,
-			'user_id' : userid
+			'user_name_rating' : username
 		},
 		type : 'get',
 		success : function(output) {
@@ -23,7 +23,7 @@ function displayReviews(output) {
 	// if no reviews then handle the foreach loop
 	if (output != null || output != "") {
 		$.each(res, function(id,value) {
-			content+="<li>"+value.reviews+"</li>";			
+			content+="<li>"+value.reviews+" (rated by: <a href=http://localhost:8888/codenameDS/profile.php?username="+value.rated_by_user_name+">"+value.rated_by_user_name+"</a> ) </li>";			
 		});
 	}
 	content += '</ul>';

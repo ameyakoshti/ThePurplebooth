@@ -2,8 +2,12 @@
 require_once "connections.php";
 open_connection();
 
-function get_reviews_by_user_id($id){
-	$query = "SELECT * FROM `codenameDS`.`userrating` where `user_id`=".$id;
+if(isset($_GET['select_reviews'])){
+	get_reviews_by_user_id($_GET['user_name_rating']);
+}
+
+function get_reviews_by_user_id($user_name_rating){
+	$query = "SELECT * FROM `codenameDS`.`userrating` where `user_name` = \"$user_name_rating\"";
 	$res = mysql_query($query);
 
 	$result = array();
@@ -13,7 +17,6 @@ function get_reviews_by_user_id($id){
 		 $i++;
 	}
 	$response = json_encode($result);
-	//error_log($response);
 	echo $response;
 }
 ?>
