@@ -30,7 +30,7 @@ ini_set('display_errors', 'On');
 </script>
 
 <div class="navbar-wrapper" >
-<div class="navbar navbar-default navbar-inverse" >
+<div class="navbar navbar-default navbar-inverse navbar-static-top" >
 	<div class="navbar-inner" id="navbar">
 		<div class="container">
 			<a class="btn btn-navbar" data-toggle="collapse"
