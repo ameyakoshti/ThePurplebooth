@@ -69,21 +69,24 @@ ob_start();
      	</div>
 
      	<div>
-			<p>Choose a category for the image</p>
-			<div class="btn-group">
-				<button id="btnCatergories" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<p>Choose a category for the image</p>			
+			<select name="category">
+			    <?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/categories.php'; ?>
+			</select>
+			<!--<div class="btn-group">
+				<button id="catergory" name='category' type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 					Categories
 					<span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
 					<?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/categories.php'; ?>
 				</ul>
-			</div>	
+			</div>	-->
 		</div>
 		
 		<div>
      		<p>What kind of work would you like to be done on your image?</p>
-     		<textarea id="editdetails" name="editdetails" class="enterComment" placeholder="Description"/></textarea>
+     		<textarea id="description" name="description" class="enterComment" placeholder="Description"/></textarea>
      	</div>
 		
 		<div>
@@ -118,8 +121,11 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		$tmp_name = $_FILES['userfile']['tmp_name'];
 		$file_size = $_FILES['userfile']['size'];
 		$file_type = $_FILES['userfile']['type'];
+		$title = $_POST['title'];
+		$description = $_POST['description'];
+		$category = $_POST['category'];
 		
-		$success = upload_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
+		$success = upload_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type,$title,$description,$category);
 
 		if ($success === TRUE){?>
 			<script type="text/javascript">

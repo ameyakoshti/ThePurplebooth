@@ -23,10 +23,22 @@ require_once "database/image_info.php";
 				<span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=all">All</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=myimages">My Images</a></li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=portraits">Portraits</a> </li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=landscapes">Landscapes</a> </li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=myimages">My Images</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=wildlife">Wildlife</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=architecture">Architecture</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=street">Street</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=wedding">Wedding</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=macro">Macro</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=abstract">Abstract</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=hdr">HDR</a> </li>
 			</ul>
 		</div>		
 

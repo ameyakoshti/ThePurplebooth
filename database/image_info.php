@@ -2,8 +2,9 @@
 require_once "connections.php";
 open_connection();
 
-function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type) {
+function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $title, $description, $category) {
 	try {
+		//console.log($category);
 		$cached_file_name = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/temp/" . $file_name;
 		//move the uploaded file to temp folder
 		move_uploaded_file($tmp_name, $cached_file_name);
@@ -20,7 +21,7 @@ function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type) {
 		}
 		fclose($fp);
 
-		$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'$user_id','0','$file_name','$file_type','$file_size', '$content','N',NOW(),NOW())";
+		$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'$user_id','0','$file_name','$file_type','$file_size', '$content',NULL,'$title','$description','$category','N',NOW(),NOW(),'0')";
 		//empty the temp folder
 		$files = glob($_SERVER["DOCUMENT_ROOT"] . '/codenameDS/temp/' . $file_name);
 		// get all file names
