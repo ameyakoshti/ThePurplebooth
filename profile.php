@@ -15,14 +15,20 @@ require_once "database/user_rating.php";
 			$user_name_session = $_SESSION['codenameDS_user_name'];
 			
 			if ($user_name_profile_view != "") {
+				$user_found = TRUE;	
 				$user_data = get_user_info($user_name_profile_view);	
 					
 				// current user is viewing his/her own profile				
 				if(strcmp($user_name_profile_view,$user_name_session) == 0){
-						$allow_edit = TRUE;
+					$allow_edit = TRUE;
+				}
+				else{
+					$allow_edit = FALSE;
 				}
 			}
 			else{
+				$allow_edit = FALSE;
+				$user_found = FALSE;
 				// redirect to user not found page
 			}
 		?>
@@ -50,18 +56,20 @@ require_once "database/user_rating.php";
 						    	$location = $user_data['profile_picture'];
 								//console.log($location);
 						    	echo "<img src='$location' width='150' height='150'>";
-						    } ?>
+						    } 
+						    if ($allow_edit == TRUE){?>
 						    <form method="post" enctype="multipart/form-data">
 	 							<input type="file" style="display: none;" id="userfile" name="userfile" class="buttonProfilePic" >
 							    <button class="buttonProfilePicSave" id="upload" name="upload" type="submit">
 								 Save
 								</button>
 							</form>
+							<?php }?>
 						</div>						
 						
 						<div class="data" id="user_data">
-							<h3><?php echo $user_data['user_name'];?></h3>
-							<p><?php echo $user_data['email'];?></p>
+							<h3><?php if($user_found) {echo $user_data['user_name'];}else{echo "Invalid User";}?></h3>
+							<p><?php if($user_found) {echo $user_data['email'];}?></p>
 							<div class="socialMediaLinks">
 								<a href="http://twitter.com/jakerocheleau" rel="me" target="_blank"><img src="img/twitter.png" alt="@jakerocheleau" /></a>
 								<a href="http://gowalla.com/users/JakeRocheleau" rel="me" target="_blank"><img src="img/gowalla.png" /></a>
@@ -69,13 +77,13 @@ require_once "database/user_rating.php";
 							<div class="sep"></div>
 							<ul class="numbers clearfix">
 								<li>
-									Reputation<strong>185</strong>
+									Rating<strong><?php if($user_found) {echo $user_data['rating'];}?></strong>
 								</li>
 								<li>
-									Checkins<strong>344</strong>
+									Creativity<strong><?php if($user_found) {echo $user_data['creativity'];}?></strong>
 								</li>
 								<li class="nobrdr">
-									Days Out<strong>127</strong>
+									Class<strong><?php if($user_found) {echo $user_data['class'];}?></strong>
 								</li>
 							</ul>
 						</div>
@@ -83,7 +91,7 @@ require_once "database/user_rating.php";
 	
 					<h2>About Me:</h2>
 					<p>
-						I need to create a new columm to store data for about me. i just realised that will have to drop the complete table are create it again! #dumb
+						<?php if($user_found) {echo $user_data['about_me'];}?>
 					</p>
 					
 					<h2>Review:</h2>
