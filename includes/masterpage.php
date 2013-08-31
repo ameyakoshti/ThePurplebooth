@@ -82,7 +82,7 @@ ini_set('display_errors', 'On');
                             <li><a href="/codenameDS/socialauth/index.php?action=logout">Logout</a></li>
                             <?php }?>
                 		</ul>
-              </li>-->
+              		</li>-->
 				</ul>
 			</div>
 		</div>
