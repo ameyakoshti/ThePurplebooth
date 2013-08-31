@@ -43,7 +43,33 @@ ini_set('display_errors', 'On');
 					<li><a href="/codenameDS/about_us.php">About Us</a></li>
 					<li><a href="/codenameDS/upload_image.php">Upload Image</a></li>
 					<li><a href="/codenameDS/gallery.php">Gallery</a></li>
-					<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['codenameDS_user_name']; ?> <b class="caret"></b></a>
+					<li>
+						<?php 	
+						
+						if(!isset($_SESSION['codenameDS_user_name'])) {
+							?> <a href="/codenameDS/socialauth/index.php">Login</a>	<?php
+						}
+						else{ 
+						?>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+								<?php echo $_SESSION['codenameDS_user_name']; ?>
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li>
+								</li>
+								<li>
+									<a href="profile.php?username=<?php echo $_SESSION['codenameDS_user_name']; ?>">Profile</a>
+								</li>
+								<li>
+									<a href="/codenameDS/socialauth/index.php?action=logout">Logout</a>
+								</li>
+							</ul>
+						</div>						
+						<?php }?>				
+					</li>
+					<!--<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['codenameDS_user_name']; ?> <b class="caret"></b></a>
                     	<ul class="dropdown-menu">
 	                    	<?php 	
 							if(!isset($_SESSION['codenameDS_user_name'])) {
@@ -56,7 +82,7 @@ ini_set('display_errors', 'On');
                             <li><a href="/codenameDS/socialauth/index.php?action=logout">Logout</a></li>
                             <?php }?>
                 		</ul>
-                	</li>
+              </li>-->
 				</ul>
 			</div>
 		</div>
