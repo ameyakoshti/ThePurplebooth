@@ -46,19 +46,24 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 					
 				<div id="devp_info" class="span4" style="margin-left: 25px;">
 					<div class="pull_right" style="margin: 5px 0px 30px 0px;">
+						<img src="/codenameds/img/team/sheetalparanjpe.jpg" class="img-circle" style="max-width: 40% !important">
+						<span style="margin-left: 20px;">Sheetal Paranjpe</span>
+					</div>
+					
+					<div class="pull_right" style="margin: 5px 0px 30px 0px;">
 						<img src="/codenameds/img/team/ameyajoshi.jpg" class="img-circle" style="max-width: 40% !important">
 						<span style="margin-left: 20px;">Ameya Joshi</span>
+					</div>
+					
+					<div class="pull_right" style="margin: 5px 0px 30px 0px;">
+						<img src="/codenameds/img/team/sushimkoshti.jpg" class="img-circle" style="max-width: 40% !important">
+						<span style="margin-left: 20px;">Sushim Koshti</span>
 					</div>
 					
 	 				<div class="pull_right" style="margin: 5px 0px 30px 0px;">
 						<img src="/codenameds/img/team/ameyakoshti.jpg" class="img-circle" style="max-width: 40% !important">
 						<span style="margin-left: 20px;">Ameya Koshti</span>
-					</div>
-	 				
-	 				<div class="pull_right" style="margin: 5px 0px 30px 0px;">
-						<img src="/codenameds/img/team/sheetal.jpg" class="img-circle" style="max-width: 40% !important">
-						<span style="margin-left: 20px;">Sheetal Paranjpe</span>
-					</div>
+					</div>				
  				</div>
 
 				</div>

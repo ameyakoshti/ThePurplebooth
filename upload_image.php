@@ -61,18 +61,15 @@ ob_start();
     </div>
     	<?php }
     	else { ?>
-     	<p>
-      		Click below to select the pic you want to upload
-    	</p>
-		<p>	
-		<form method="post" enctype="multipart/form-data">
-			<input name="userfile" type="file" id="userfile"
-				class="btn">
-			<button class="btn btn-primary btn-small" id="upload" name="upload"
-				type="submit">
-				<i class="icon-camera icon-white"> </i> Upload
-			</button>
-			
+        </br>
+        <form method="post" enctype="multipart/form-data">
+     	<div>
+     		<p>Choose a title for the image</p>
+     		<textarea id="title" name="title" class="enterComment" placeholder="Title"/></textarea>
+     	</div>
+
+     	<div>
+			<p>Choose a category for the image</p>
 			<div class="btn-group">
 				<button id="btnCatergories" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 					Categories
@@ -82,17 +79,34 @@ ob_start();
 					<?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/categories.php'; ?>
 				</ul>
 			</div>	
+		</div>
+		
+		<div>
+     		<p>What kind of work would you like to be done on your image?</p>
+     		<textarea id="editdetails" name="editdetails" class="enterComment" placeholder="Description"/></textarea>
+     	</div>
+		
+		<div>
+	     	<p>Click below to select the pic you want to upload</p>
+			<p>
+			
+				<input name="userfile" type="file" id="userfile"
+					class="btn">
+				<button class="btn btn-primary btn-small" id="upload" name="upload"
+					type="submit">
+					<i class="icon-camera icon-white"> </i> Upload
+				</button>			
+			</p>
+		</div>
 		</form>
-
-		<form method="post" enctype="multipart/form-data">
+		<!--<form method="post" enctype="multipart/form-data">
 			<input type="file" name="uploadedfiles[]" multiple id="uploadedfiles[]"
 				class="btn">
 			<button class="btn btn-primary btn-small" id="uploadmany"
 				name="uploadmany" type="submit">
 				<i class="icon-camera icon-white"> </i> Upload Multiple Files
 			</button>
-		</form>
-		</p>
+		</form>-->		
 	</div>
 	<?php } ?>
 </body>
