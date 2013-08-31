@@ -93,6 +93,7 @@ require_once "database/user_rating.php";
 					<p>
 						<?php if($user_found) {echo $user_data['about_me'];}?>
 					</p>
+					<p>Check out my images<a href="http://localhost:8888/codenameDS/gallery.php?category=myimages"> here</a></p>
 					
 					<h2>Review:</h2>
 					<script type="text/javascript">

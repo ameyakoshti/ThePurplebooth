@@ -38,8 +38,8 @@ function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type) {
 	}
 }
 
-function get_image_by_id($id){
-	$query = "SELECT * FROM `codenameDS`.`imageinfo` where `image_id`=".$id;
+function get_image_by_id($id) {
+	$query = "SELECT * FROM `codenameDS`.`imageinfo` where `image_id`=" . $id;
 	$res = mysql_query($query);
 	while ($data = mysql_fetch_array($res)) {
 		echo '<div class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '"></div>';
@@ -49,19 +49,45 @@ function get_image_by_id($id){
 function get_all_images() {
 	$query = "SELECT `image_id` FROM `codenameDS`.`imageinfo`";
 	$res = mysql_query($query);
-	//var_dump($res);
 	while ($data = mysql_fetch_array($res)) {
 		echo '<li class="span3">';
 		echo '<div class="thumbnail">';
 		echo '<a class="imageClick" href="view_image.php?id=' . $data['image_id'] . '">';
 		echo '<img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
 		echo '</a>';
-		echo '<div><button data-imgid="'. $data['image_id'] .'" class="btn btn-primary btn-small goToImage">Go To Image</button></div>';
+		echo '<div><button data-imgid="' . $data['image_id'] . '" class="btn btn-primary btn-small goToImage">Go To Image</button></div>';
 		echo '</div>';
 		echo '</li>';
 	}
 }
 
-function get_filtered_images(string $filter) {
+function get_filtered_images($filter) {
+	$query = "SELECT `image_id` FROM `codenameDS`.`imageinfo` where `category`=\"$filter\"";
+	$res = mysql_query($query);
+	while ($data = mysql_fetch_array($res)) {
+		echo '<li class="span3">';
+		echo '<div class="thumbnail">';
+		echo '<a class="imageClick" href="view_image.php?id=' . $data['image_id'] . '">';
+		echo '<img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
+		echo '</a>';
+		echo '<div><button data-imgid="' . $data['image_id'] . '" class="btn btn-primary btn-small goToImage">Go To Image</button></div>';
+		echo '</div>';
+		echo '</li>';
+	}
+}
+
+function get_my_images($user_id) {
+	$query = "SELECT `image_id` FROM `codenameDS`.`imageinfo` where `user_id`=\"$user_id\"";
+	$res = mysql_query($query);
+	while ($data = mysql_fetch_array($res)) {
+		echo '<li class="span3">';
+		echo '<div class="thumbnail">';
+		echo '<a class="imageClick" href="view_image.php?id=' . $data['image_id'] . '">';
+		echo '<img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
+		echo '</a>';
+		echo '<div><button data-imgid="' . $data['image_id'] . '" class="btn btn-primary btn-small goToImage">Go To Image</button></div>';
+		echo '</div>';
+		echo '</li>';
+	}
 }
 ?>

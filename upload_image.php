@@ -13,6 +13,43 @@ ob_start();
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 	?>
+	
+	<script type="text/javascript">
+		$(document).ready(function (){
+			$("#landscape").click(function() {
+					$("#btnCatergories").html('Landscape');
+			});
+			$("#portrait").click(function() {
+					$("#btnCatergories").html('Portrait');
+			});
+			$("#wildlife").click(function() {
+					$("#btnCatergories").html('Wildlife');
+			});
+			$("#architecture").click(function() {
+					$("#btnCatergories").html('Architecture');
+			});
+			$("#street").click(function() {
+					$("#btnCatergories").html('Street');
+			});
+			$("#wedding").click(function() {
+					$("#btnCatergories").html('Wedding');
+			});
+			$("#bw").click(function() {
+					$("#btnCatergories").html('Black & White');
+			});
+			$("#macro").click(function() {
+					$("#btnCatergories").html('Macro');
+			});
+			$("#abstract").click(function() {
+					$("#btnCatergories").html('Abstract');
+			});
+			$("#hdr").click(function() {
+					$("#btnCatergories").html('HDR');
+			});
+			
+		});
+	</script>
+	
 	<div class="hero-unit">
 		<h1>This is where you upload the raw pics!</h1>
 		<?php
@@ -35,6 +72,16 @@ ob_start();
 				type="submit">
 				<i class="icon-camera icon-white"> </i> Upload
 			</button>
+			
+			<div class="btn-group">
+				<button id="btnCatergories" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					Categories
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/categories.php'; ?>
+				</ul>
+			</div>	
 		</form>
 
 		<form method="post" enctype="multipart/form-data">
@@ -57,7 +104,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		$tmp_name = $_FILES['userfile']['tmp_name'];
 		$file_size = $_FILES['userfile']['size'];
 		$file_type = $_FILES['userfile']['type'];
-
+		
 		$success = upload_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
 
 		if ($success === TRUE){?>
