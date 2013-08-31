@@ -65,7 +65,7 @@ ob_start();
         <form method="post" enctype="multipart/form-data">
      	<div>
      		<p>Choose a title for the image</p>
-     		<textarea id="title" name="title" class="enterComment" placeholder="Title"/></textarea>
+     		<textarea id="title" name="title" class="enterComment" placeholder="Title" required></textarea>
      	</div>
 
      	<div>
@@ -86,7 +86,7 @@ ob_start();
 		
 		<div>
      		<p>What kind of work would you like to be done on your image?</p>
-     		<textarea id="description" name="description" class="enterComment" placeholder="Description"/></textarea>
+     		<textarea id="description" name="description" class="enterComment" placeholder="Description" required></textarea>
      	</div>
 		
 		<div>
