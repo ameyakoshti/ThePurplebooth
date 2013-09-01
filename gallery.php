@@ -10,7 +10,7 @@ require_once "database/users.php";
 	</head>
 	<body>
 		
-		<div class="container" style="width: auto;">
+		<div class="container" style="width: auto; min-height: 100%;">
 		<?php
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 			$category = $_GET['category'];
@@ -107,10 +107,9 @@ require_once "database/users.php";
 		<script src="/codenameDS/js/blueimp-gallery.min.js"></script>
 		<script src="/codenameDS/js/gallery/gallery.js"></script>
 		
+	</div>
 		<?php
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
 		?>
-		
-		</div>
 	</body>
 </html>

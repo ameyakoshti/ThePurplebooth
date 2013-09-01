@@ -8,6 +8,7 @@ require_once "database/image_info.php";
 		<title>Selected Image</title>
 	</head>
 	<body>	
+	<div class="container" style="min-height: 100%;">
 		<?php
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 		?>
@@ -26,5 +27,11 @@ require_once "database/image_info.php";
 				
 			</div>
 		</div>
+		<!-- End Container -->
+		</div>
+		
+		<?php
+		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+		?>
 	</body>
 </html>

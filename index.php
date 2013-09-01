@@ -12,7 +12,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 	
 	<body>
 		
-		<div class="container" style="width: auto;">
+		<div class="container" style="width: auto; min-height: 100%;">
 		
 		<?php
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
@@ -104,10 +104,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
 				</div>
 			</div>
-			
+
+		</div>
 			<?php
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
 			?>
-		</div>
 	</body>
 </html>

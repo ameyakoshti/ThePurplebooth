@@ -15,7 +15,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			<div style="width: 550px; line-height: 40px; top: 200; position: absolute; z-index: 10; margin: 0px 0px 0px 40px;">We are a small group of developers and designers in California</div>
 		</div>
 
-		<div class="container">
+		<div class="container" style="min-height: 100%;">
 			<div class="row-fluid">
 				<div class="span8">
 					<p>

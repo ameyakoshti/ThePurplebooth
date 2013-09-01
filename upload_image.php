@@ -10,6 +10,7 @@ ob_start();
 <title>Upload Picture</title>
 </head>
 <body>
+<div class="container" style="min-height: 100%;">
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 	?>
@@ -74,6 +75,8 @@ ob_start();
 				<i class="icon-camera icon-white"> </i> Upload Multiple Files
 			</button>
 		</form>-->		
+	</div>
+<!-- 	End Container -->
 	</div>
 	<?php } ?>
 	<?php

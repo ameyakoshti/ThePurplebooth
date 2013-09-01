@@ -9,6 +9,7 @@ require_once "database/user_rating.php";
 		<title>User Profile</title>
 	</head>
 	<body>
+	<div class="container" style="min-height: 100%;">
 		<?php
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 			$user_name_profile_view = $_GET['username'];
@@ -137,6 +138,12 @@ require_once "database/user_rating.php";
 					</div>
 				</section>-->
 			</div>
+		
+		</div> <!--  End container -->
+		<?php
+		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+		?>
+		
 		</body>
 </html>
 
