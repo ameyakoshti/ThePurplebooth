@@ -114,19 +114,4 @@ function get_filtered_images($category, $project, $user_id) {
 		echo "<h4>This user has not uploaded or worked on any images</h4>";
 	}
 }
-
-function get_my_images($user_id) {
-	$query = "SELECT `image_id` FROM `codenameDS`.`imageinfo` where `user_id`=\"$user_id\"";
-	$res = mysql_query($query);
-	while ($data = mysql_fetch_array($res)) {
-		echo '<li class="span3">';
-		echo '<div class="thumbnail">';
-		echo '<a class="imageClick" href="view_image.php?id=' . $data['image_id'] . '">';
-		echo '<img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
-		echo '</a>';
-		echo '<div><button data-imgid="' . $data['image_id'] . '" class="btn btn-primary btn-small goToImage">Go To Image</button></div>';
-		echo '</div>';
-		echo '</li>';
-	}
-}
 ?>
