@@ -74,8 +74,8 @@ require_once "database/users.php";
 			<?php
 			if ($user_id !="all"){
 				echo "<h4>You are viewing ".$user_data['user_name']."'s gallery</h4>";
-			}
-			?>
+				?><p>Click <a href="/codenameDS/gallery.php?category=all&project=all&userid=all">here</a> to view complete gallery</p>
+			<?php } ?>
 		</div>
 		
 
