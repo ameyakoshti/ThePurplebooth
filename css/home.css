@@ -215,3 +215,26 @@ body {
 		background-color: #000000 !important;
 		border: 0px;
 	}
+	
+	.category-row {
+		margin-bottom: 20px;
+		position: relative;
+		width: 230px;
+		float: left;
+	}
+	#category-container {
+		margin-left: 50px; 
+	}
+	#category-container p {
+    	white-space: nowrap;
+		width: 225px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		position: absolute;
+		bottom: 1px;
+		word-wrap: break-word;
+		color: #ffffff;
+		text-align: center;
+		font-family: Raleway;
+		font-size: 18px;
+	}
