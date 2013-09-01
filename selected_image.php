@@ -17,10 +17,11 @@ require_once "database/image_info.php";
 			<?php if(isset($_GET['image_id'])) echo 'var imageid = '.$_GET['image_id'].";";?>
 		</script>			
 		<script src="/codenameDS/js/selected_image/selected_image.js"></script>
+		<script src="/codenameDS/js/selected_image/edit_me.js"></script>
 		<div class="oneImage">
 			<?php
 				get_image_by_id($_GET['image_id']);
-			?>		
+			?>	
 			<div class="comments">
 				
 			</div>

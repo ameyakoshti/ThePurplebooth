@@ -61,6 +61,10 @@ input[type="file"] {
 	height:100%;
 }
 
+.editImage {
+	margin-top:10px;
+}
+
 .comments {
 	float:right;
 	max-width:600px;

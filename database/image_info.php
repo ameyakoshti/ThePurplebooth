@@ -1,5 +1,6 @@
 <?php
 require_once "connections.php";
+require_once 'edit_request.php';
 open_connection();
 
 function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $title, $description, $category) {
@@ -21,7 +22,7 @@ function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $
 		}
 		fclose($fp);
 
-		$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'$user_id','0','$file_name','$file_type','$file_size', '$content',NULL,'$title','$description','$category','N',NOW(),NOW(),'0')";
+		$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'$user_id',NULL,'$file_name','$file_type','$file_size', '$content',NULL,'$title','$description','$category','N',NOW(),NOW(),'0')";
 		//empty the temp folder
 		$files = glob($_SERVER["DOCUMENT_ROOT"] . '/codenameDS/temp/' . $file_name);
 		// get all file names
@@ -42,9 +43,15 @@ function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $
 function get_image_by_id($id) {
 	$query = "SELECT * FROM `codenameDS`.`imageinfo` where `image_id`=" . $id;
 	$res = mysql_query($query);
+	$imageHTML = "";
 	while ($data = mysql_fetch_array($res)) {
-		echo '<div class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '"></div>';
+		$imageHTML = $imageHTML.'<div data-imageid="'.$data['image_id'].'" data-userid="'.$data['user_id'].'" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
 	}
+	error_log($id);
+	$imageHTML = $imageHTML.'<div class="requests">'.get_requests_for_image($id).'</div>';
+	error_log($imageHTML);
+	$imageHTML = $imageHTML.'<button class="btn btn-primary btn-small editImage">Edit Me!</button></div>';
+	echo $imageHTML;
 }
 
 function get_all_images() {
