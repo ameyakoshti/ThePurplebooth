@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2013 at 03:48 PM
+-- Generation Time: Sep 01, 2013 at 04:19 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -72,7 +72,6 @@ CREATE TABLE IF NOT EXISTS `imagecomment` (
 CREATE TABLE IF NOT EXISTS `imageinfo` (
   `image_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned NOT NULL,
-  `user_name` varchar(45) NOT NULL,
   `partner_id` int(11) unsigned DEFAULT NULL,
   `name` varchar(45) NOT NULL,
   `type` varchar(45) DEFAULT NULL,
@@ -90,9 +89,8 @@ CREATE TABLE IF NOT EXISTS `imageinfo` (
   KEY `user_id` (`user_id`),
   KEY `partner_id` (`partner_id`),
   KEY `partner_id_2` (`partner_id`),
-  KEY `user_id_2` (`user_id`),
-  KEY `user_name` (`user_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+  KEY `user_id_2` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 -- --------------------------------------------------------
 
