@@ -47,10 +47,12 @@ function get_image_by_id($id) {
 	$imageHTML = "";
 	while ($data = mysql_fetch_array($res)) {
 		$imageHTML = $imageHTML.'<div data-imageid="'.$data['image_id'].'" data-userid="'.$data['user_id'].'" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
+		$imageHTML = $imageHTML.'<div class="requests">'."<h4>Title : ".$data["title"].'</h4></div>';
+		$imageHTML = $imageHTML.'<div class="requests">'."<h4>Description : ".$data["description"].'</h4></div>';
 	}
-	error_log($id);
+	//error_log($id);
 	$imageHTML = $imageHTML.'<div class="requests">'.get_requests_for_image($id).'</div>';
-	error_log($imageHTML);
+	//error_log($imageHTML);
 	$imageHTML = $imageHTML.'<button class="btn btn-primary btn-small editImage">Edit Me!</button></div>';
 	echo $imageHTML;
 }
