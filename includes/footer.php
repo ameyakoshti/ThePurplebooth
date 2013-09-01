@@ -1,5 +1,5 @@
 <!-- FOOTER -->
-<div id="footer" style="margin: 20px;">
+<div id="footer" class="footer" style="margin: 20px;">
 	<footer>
 		<hr class="featurette-divider">
 		<p class="pull-right"><a href="#">Back to top</a></p>
