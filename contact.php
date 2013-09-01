@@ -7,9 +7,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 		<title>Contact</title>
 	</head>
 	<body>
+
 		<?php
-		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
+			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 		?>
+
 		<div class="hero-unit">
 			<h1>Contact us</h1>
 			<p>
@@ -48,6 +50,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 				</div>
 			</form>
 		</div>
+			<?php
+		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+		?>
 	</body>
 </html>
 <?php 

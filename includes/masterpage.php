@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 ?>
 
-<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="js/jNotify.jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/mosaic.1.0.1.js"></script>
@@ -38,51 +38,25 @@ ini_set('display_errors', 'On');
 
 			<div class="nav-collapse collapse">
 				<ul class="nav pull-right" id="codenameDSnavigationbar">
-					<li><a href="/codenameDS/index.php"><i class="icon-home icon-white"></i>Home</a></li>
+					<li><a href="/codenameDS/index.php"><i class="icon-home" style="color: #9b00F0;"></i>&nbsp;Home</a></li>
 					<li><a href="/codenameDS/contact.php">Contact</a></li>
 					<li><a href="/codenameDS/about_us.php">About Us</a></li>
 					<li><a href="/codenameDS/upload_image.php">Upload Image</a></li>
 					<li><a href="/codenameDS/gallery.php?category=all">Gallery</a></li>
 					<li>
-						<?php 	
-						
-						if(!isset($_SESSION['codenameDS_user_name'])) {
-							?> <a href="/codenameDS/socialauth/index.php">Login</a>	<?php
-						}
-						else{ 
-						?>
-						<div class="btn-group">
-							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								<?php echo $_SESSION['codenameDS_user_name']; ?>
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu">
-								<li>
-								</li>
-								<li>
-									<a href="profile.php?username=<?php echo $_SESSION['codenameDS_user_name']; ?>">Profile</a>
-								</li>
-								<li>
-									<a href="/codenameDS/socialauth/index.php?action=logout">Logout</a>
-								</li>
-							</ul>
-						</div>						
-						<?php }?>				
+					<?php 	
+					if(!isset($_SESSION['codenameDS_user_name'])) {
+						?> <a href="/codenameDS/socialauth/index.php">Login</a>	<?php
+					}
+					else{ 
+					?>
+					<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['codenameDS_user_name']; ?> <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="profile.php?username=<?php echo $_SESSION['codenameDS_user_name']; ?>">Profile</a></li>
+							<li><a href="/codenameDS/socialauth/index.php?action=logout">Logout</a></li>
+						</ul>
+					<?php } ?>
 					</li>
-					<!--<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['codenameDS_user_name']; ?> <b class="caret"></b></a>
-                    	<ul class="dropdown-menu">
-	                    	<?php 	
-							if(!isset($_SESSION['codenameDS_user_name'])) {
-							?> 
-							<li><a href="/codenameDS/socialauth/index.php">Login</a></li>
-							<?php
-							} else{ 
-							?>
-                            <li><a href="profile.php?username=<?php echo $_SESSION['codenameDS_user_name']; ?>">Profile</a></li>
-                            <li><a href="/codenameDS/socialauth/index.php?action=logout">Logout</a></li>
-                            <?php }?>
-                		</ul>
-              		</li>-->
 				</ul>
 			</div>
 		</div>

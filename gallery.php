@@ -75,5 +75,9 @@ require_once "database/image_info.php";
 		</div>
 		<script src="/codenameDS/js/blueimp-gallery.min.js"></script>
 		<script src="/codenameDS/js/gallery/gallery.js"></script>
+		
+		<?php
+		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+		?>
 	</body>
 </html>

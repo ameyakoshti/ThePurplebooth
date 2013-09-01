@@ -54,8 +54,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 				<a class="right carousel-control" href="#myCarousel" data-slide="next">&#155;</a>
 			</div>
 			<!-- /.carousel -->
-			
-			<div id="img-container">
+			<div id="category-heading">
+				<div class="span3"><h3 class="featurette-heading" style="font-family: Calligraffiti"><i>Image Categories</i></h3></div>
+				<div class="span9" style="margin: 10px 0px 30px 0px"><hr class="featurette-divider"></div>
+			</div>
+			<div id="category-container">
+				<div style="margin: 20px 20px 20px 50px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+				</div>
 				<div style="margin: 20px 20px 20px 50px;">
 					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
 					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
@@ -65,13 +75,37 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 				</div>
 			</div>
 			
-			<hr class="featurette-divider">
+			<div id="photographers-heading">
+				<div class="span4"><h3 class="featurette-heading" style="font-family: Calligraffiti"><i>Featured Photographers</i></h3></div>
+				<div class="span8" style="margin: 10px 0px 30px 0px"><hr class="featurette-divider"></div>
+			</div>
+			<div id="photographers-container">
+				<div style="margin: 20px 20px 20px 50px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+				</div>
+			</div>
 			
-			<!-- FOOTER -->
-			<footer>
-				<p class="pull-right"> <a href="#">Back to top</a> </p>
-				<p> Copyright 2013, The Purple Booth, Inc. | <a href="#">Privacy</a> | <a href="#">Terms</a> </p>
-			</footer>
+			<div id="projects-heading">
+				<div class="span3"><h3 class="featurette-heading" style="font-family: Calligraffiti"><i>Featured Projects</i></h3></div>
+				<div class="span9" style="margin: 10px 0px 30px 0px"><hr class="featurette-divider"></div>
+			</div>
+			<div id="projects-container">
+				<div style="margin: 20px 20px 20px 50px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+				</div>
+			</div>
+			
+			<?php
+			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+			?>
 		</div>
 	</body>
 </html>
