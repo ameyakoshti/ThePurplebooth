@@ -13,43 +13,7 @@ ob_start();
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 	?>
-	
-	<script type="text/javascript">
-		$(document).ready(function (){
-			$("#landscape").click(function() {
-					$("#btnCatergories").html('Landscape');
-			});
-			$("#portrait").click(function() {
-					$("#btnCatergories").html('Portrait');
-			});
-			$("#wildlife").click(function() {
-					$("#btnCatergories").html('Wildlife');
-			});
-			$("#architecture").click(function() {
-					$("#btnCatergories").html('Architecture');
-			});
-			$("#street").click(function() {
-					$("#btnCatergories").html('Street');
-			});
-			$("#wedding").click(function() {
-					$("#btnCatergories").html('Wedding');
-			});
-			$("#bw").click(function() {
-					$("#btnCatergories").html('Black & White');
-			});
-			$("#macro").click(function() {
-					$("#btnCatergories").html('Macro');
-			});
-			$("#abstract").click(function() {
-					$("#btnCatergories").html('Abstract');
-			});
-			$("#hdr").click(function() {
-					$("#btnCatergories").html('HDR');
-			});
-			
-		});
-	</script>
-	
+
 	<div class="hero-unit">
 		<h1>This is where you upload the raw pics!</h1>
 		<?php

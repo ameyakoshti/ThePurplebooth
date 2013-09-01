@@ -30,8 +30,8 @@ require_once "database/image_info.php";
 				<li></li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=all">All</a> </li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=myimages">My Images</a></li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=portraits">Portraits</a> </li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=landscapes">Landscapes</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=portrait">Portraits</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=landscape">Landscapes</a> </li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=wildlife">Wildlife</a> </li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=architecture">Architecture</a> </li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=street">Street</a> </li>
