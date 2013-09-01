@@ -42,7 +42,7 @@ ini_set('display_errors', 'On');
 					<li><a href="/codenameDS/contact.php">Contact</a></li>
 					<li><a href="/codenameDS/about_us.php">About Us</a></li>
 					<li><a href="/codenameDS/upload_image.php">Upload Image</a></li>
-					<li><a href="/codenameDS/gallery.php?category=all">Gallery</a></li>
+					<li><a href="/codenameDS/gallery.php?category=all&project=all&userid=all">Gallery</a></li>
 					<li>
 					<?php 	
 					if(!isset($_SESSION['codenameDS_user_name'])) {

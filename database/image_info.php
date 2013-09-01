@@ -36,7 +36,7 @@ function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $
 
 		return TRUE;
 	} catch(exception $e) {
-		console.log($e);
+		console . log($e);
 		return FALSE;
 	}
 }
@@ -46,14 +46,14 @@ function get_image_by_id($id) {
 	$res = mysql_query($query);
 	$imageHTML = "";
 	while ($data = mysql_fetch_array($res)) {
-		$imageHTML = $imageHTML.'<div data-imageid="'.$data['image_id'].'" data-userid="'.$data['user_id'].'" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
-		$imageHTML = $imageHTML.'<div class="requests">'."<h4>Title : ".$data["title"].'</h4></div>';
-		$imageHTML = $imageHTML.'<div class="requests">'."<h4>Description : ".$data["description"].'</h4></div>';
+		$imageHTML = $imageHTML . '<div data-imageid="' . $data['image_id'] . '" data-userid="' . $data['user_id'] . '" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
+		$imageHTML = $imageHTML . '<div class="requests">' . "<h4>Title : " . $data["title"] . '</h4></div>';
+		$imageHTML = $imageHTML . '<div class="requests">' . "<h4>Description : " . $data["description"] . '</h4></div>';
 	}
 	//error_log($id);
-	$imageHTML = $imageHTML.'<div class="requests">'.get_requests_for_image($id).'</div>';
+	$imageHTML = $imageHTML . '<div class="requests">' . get_requests_for_image($id) . '</div>';
 	//error_log($imageHTML);
-	$imageHTML = $imageHTML.'<button class="btn btn-primary btn-small editImage">Edit Me!</button></div>';
+	$imageHTML = $imageHTML . '<button class="btn btn-primary btn-small editImage">Edit Me!</button></div>';
 	echo $imageHTML;
 }
 
@@ -72,10 +72,35 @@ function get_all_images() {
 	}
 }
 
-function get_filtered_images($filter) {
-	$query = "SELECT `image_id` FROM `codenameDS`.`imageinfo` where `category`=\"$filter\"";
+function get_filtered_images($category, $project, $user_id) {
+
+	$where_clause = "";
+	if ($category != "all" || $project != "all" || $user_id != "all") {
+		$where_clause = "where ";
+	}
+
+	if ($user_id != "all")
+		$where_clause = $where_clause . "`user_id`=\"$user_id\" and ";
+
+	if ($category != "all")
+		$where_clause = $where_clause . "`category`=\"$category\" and ";
+
+	if ($project != "all") {
+		if ($project == "new") {
+			$where_clause = $where_clause . "`closed_project`=0 and ";
+		} else if ($project == "completed") {
+			$where_clause = $where_clause . "`closed_project`=1 and ";
+		}
+	}
+	
+	$where_clause = substr($where_clause, 0, -4);;
+	$query = "SELECT `image_id` FROM `codenameDS`.`imageinfo` $where_clause";
+	//echo $query;
 	$res = mysql_query($query);
+	
+	$empty_result = TRUE;  
 	while ($data = mysql_fetch_array($res)) {
+		$empty_result = FALSE;		
 		echo '<li class="span3">';
 		echo '<div class="thumbnail">';
 		echo '<a class="imageClick" href="view_image.php?id=' . $data['image_id'] . '">';
@@ -84,6 +109,9 @@ function get_filtered_images($filter) {
 		echo '<div><button data-imgid="' . $data['image_id'] . '" class="btn btn-primary btn-small goToImage">Go To Image</button></div>';
 		echo '</div>';
 		echo '</li>';
+	}
+	if ($empty_result){
+		echo "<h4>This user has not uploaded or worked on any images</h4>";
 	}
 }
 

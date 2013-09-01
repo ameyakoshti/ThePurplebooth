@@ -13,6 +13,7 @@ require_once "database/user_rating.php";
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 			$user_name_profile_view = $_GET['username'];
 			$user_name_session = $_SESSION['codenameDS_user_name'];
+			$user_data_profile_view = get_user_info($user_name_profile_view);
 			
 			if ($user_name_profile_view != "") {
 				$user_found = TRUE;	
@@ -93,7 +94,7 @@ require_once "database/user_rating.php";
 					<p>
 						<?php if($user_found) {echo $user_data['about_me'];}?>
 					</p>
-					<p>Check out my images<a href="http://localhost:8888/codenameDS/gallery.php?category=myimages"> here</a></p>
+					<p>Check out my images<a href="http://localhost:8888/codenameDS/gallery.php?category=all&project=all&userid=<?php echo $user_data_profile_view["user_id"];?>"> here</a></p>
 					
 					<h2>Review:</h2>
 					<script type="text/javascript">

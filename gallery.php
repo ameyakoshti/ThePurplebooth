@@ -1,6 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 require_once "database/image_info.php";
+require_once "database/users.php";
 ?>
 
 <html>
@@ -11,6 +12,10 @@ require_once "database/image_info.php";
 		<?php
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 			$category = $_GET['category'];
+			$project = $_GET['project'];
+			$user_id = $_GET['userid'];
+			$user_data = get_user_info_by_id($user_id);
+			$logged_user_id = $_SESSION['codenameDS_user_id'];			
 		?>
 		
 		</br>
@@ -35,19 +40,41 @@ require_once "database/image_info.php";
 				<li></li>
 				<li></li>
 				<li></li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=all">All</a> </li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=myimages">My Images</a></li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=portrait">Portraits</a> </li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=landscape">Landscapes</a> </li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=wildlife">Wildlife</a> </li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=architecture">Architecture</a> </li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=street">Street</a> </li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=wedding">Wedding</a> </li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=macro">Macro</a> </li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=abstract">Abstract</a> </li>
-				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=hdr">HDR</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=all&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">All</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=portrait&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Portrait</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=landscape&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Landscape</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=wildlife&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Wildlife</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=architecture&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Architecture</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=street&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Street</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=wedding&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Wedding</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=macro&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Macro</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=abstract&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Abstract</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=hdr&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">HDR</a> </li>
 			</ul>
-		</div>		
+		</div>
+		
+		<div class="btn-group">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				Project <?php echo "- ".ucfirst($project);?>
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=all&userid=<?php echo $user_id;?>">All</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=new&userid=<?php echo $user_id;?>">New</a></li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=completed&userid=<?php echo $user_id;?>">Completed</a></li>
+			</ul>
+		</div>
+		
+		</br>
+		
+		<div>
+			<?php
+			if ($user_id !="all"){
+				echo "<h4>You are viewing ".$user_data['user_name']."'s gallery</h4>";
+			}
+			?>
+		</div>
+		
 
 		<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
 			<div class="slides"></div>
@@ -65,16 +92,8 @@ require_once "database/image_info.php";
 				echo '<div class="span12">';
 				echo '<ul class="thumbnails">';
 				
-				if($category=='all'){
-					get_all_images();
-				}
-				else if($category=='myimages'){
-					get_my_images($_SESSION['codenameDS_user_id']);
-				}
-				else {
-					get_filtered_images($category);
-				}
-	
+				get_filtered_images($category,$project,$user_id);
+
 				echo '</div>';
 				echo '</div>';
 				echo '</ul>';			
