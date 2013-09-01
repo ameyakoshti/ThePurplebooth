@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+
+/*     Footer Styles go here.. */
+
+	#footer {
+		background-color: #000000; 
+		margin-top: 20px; 
+		height: 100px;
+		margin-bottom: 60px;
+	}
+	#footer > .container > p > a {
+		color: #AC89FD;
+	}
+	
+	#footer > .container {
+		padding-top: 20px;
+	}
