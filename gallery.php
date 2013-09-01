@@ -19,7 +19,14 @@ require_once "database/image_info.php";
 		
 		<div class="btn-group">
 			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-				Category <?php echo "- ".ucfirst($category); ?>
+				Category <?php 
+				if($category == 'myimages'){
+					echo "- "."My Images";
+				}
+				else{
+					echo "- ".ucfirst($category);
+				} 
+				?>
 				<span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu">
