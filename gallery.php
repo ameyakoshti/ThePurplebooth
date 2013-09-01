@@ -9,6 +9,8 @@ require_once "database/users.php";
 		<title>Gallery</title>
 	</head>
 	<body>
+		
+		<div class="container" style="width: auto;">
 		<?php
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 			$category = $_GET['category'];
@@ -108,5 +110,7 @@ require_once "database/users.php";
 		<?php
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
 		?>
+		
+		</div>
 	</body>
 </html>

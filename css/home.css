@@ -24,7 +24,7 @@ body {
     .carousel {
       margin-bottom: 60px;
     }
-
+    
     .carousel .container {
       position: relative;
       z-index: 9;
@@ -184,7 +184,7 @@ body {
       font-size: 16px;
       font-weight: bold;
       text-shadow: 0 -1px 0 rgba(0,0,0,.5);
-      color: #9b00F0;
+      color: #AC89FD;
     }
 
     /* Navbar links: increase padding for taller navbar */
@@ -194,10 +194,16 @@ body {
     }
     
     .navbar .nav .active > a {
-      color: #9b00F0;
+      color: #AC89FD;
     }
 
     /* Offset the responsive button for proper vertical alignment */
     .navbar .btn-navbar {
       margin-top: 10px;
     }
+    
+/*     Footer Styles go here.. */
+
+	#footer > .container > p > a {
+		color: #AC89FD;
+	}
