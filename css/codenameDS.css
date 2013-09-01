@@ -74,6 +74,17 @@ input[type="file"] {
 	width:400px;
 }
 
+.enterCommentContactUs {
+	resize:none;
+	height: 150px !important;
+	width:400px;
+}
+
+.enterEmailContactUs {
+	resize:none;
+	width:400px;
+}
+
 .threadedComment {
 	margin-left:50px;
 }

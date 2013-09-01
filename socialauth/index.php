@@ -106,6 +106,7 @@ if (!empty($_GET['action']) && $_GET['action'] == "logout") {
 							<?php else:
 								$_SESSION['codenameDS_user_id'] = $data['user_id'];
 								$_SESSION['codenameDS_user_name'] = $data['user_name'];
+								$_SESSION['codenameDS_email'] = $data['email'];
 								header("Location: http://localhost:8888/codenameDS/index.php?username=".$data['user_name'], TRUE);
 							?>
 							<!-- If user logged in by any social network, print details-->
