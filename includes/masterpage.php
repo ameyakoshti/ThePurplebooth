@@ -34,7 +34,7 @@ ini_set('display_errors', 'On');
 	<div class="navbar-inner" id="navbar">
 		<div class="container">
 			<a class="btn btn-navbar" data-toggle="collapse"
-			data-target=".nav-collapse"> <span class="icon-th-list"></span> </a><a href="/codenameDS/index.php" class="brand">The Purple Booth &#153;</a>
+			data-target=".nav-collapse"> <span class="icon-th-list"></span> </a><a href="/codenameDS/index.php" class="brand">thepurplebooth &#153;</a>
 
 			<div class="nav-collapse collapse">
 				<ul class="nav pull-right" id="codenameDSnavigationbar">
@@ -52,6 +52,8 @@ ini_set('display_errors', 'On');
 					?>
 					<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['codenameDS_user_name']; ?> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
+							<li></li>
+							<li></li>
 							<li><a href="profile.php?username=<?php echo $_SESSION['codenameDS_user_name']; ?>">Profile</a></li>
 							<li><a href="/codenameDS/socialauth/index.php?action=logout">Logout</a></li>
 						</ul>

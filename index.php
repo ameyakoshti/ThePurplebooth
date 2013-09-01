@@ -55,7 +55,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			</div>
 			<!-- /.carousel -->
 			<div id="category-heading">
-				<div class="span3"><h3 class="featurette-heading" style="font-family: Calligraffiti"><i>Image Categories</i></h3></div>
+				<div class="span3"><h3 class="featurette-heading"><i>Image Categories</i></h3></div>
 				<div class="span9" style="margin: 10px 0px 30px 0px"><hr class="featurette-divider"></div>
 			</div>
 			<div id="category-container">
@@ -76,7 +76,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			</div>
 			
 			<div id="photographers-heading">
-				<div class="span4"><h3 class="featurette-heading" style="font-family: Calligraffiti"><i>Featured Photographers</i></h3></div>
+				<div class="span4"><h3 class="featurette-heading"><i>Featured Photographers</i></h3></div>
 				<div class="span8" style="margin: 10px 0px 30px 0px"><hr class="featurette-divider"></div>
 			</div>
 			<div id="photographers-container">
@@ -90,7 +90,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			</div>
 			
 			<div id="projects-heading">
-				<div class="span3"><h3 class="featurette-heading" style="font-family: Calligraffiti"><i>Featured Projects</i></h3></div>
+				<div class="span3"><h3 class="featurette-heading"><i>Featured Editors</i></h3></div>
 				<div class="span9" style="margin: 10px 0px 30px 0px"><hr class="featurette-divider"></div>
 			</div>
 			<div id="projects-container">
