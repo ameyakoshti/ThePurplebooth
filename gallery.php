@@ -53,6 +53,8 @@ require_once "database/users.php";
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=macro&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Macro</a> </li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=abstract&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Abstract</a> </li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=hdr&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">HDR</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=event&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Event</a> </li>
+				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=sport&project=<?php echo $project;?>&userid=<?php echo $user_id;?>">Sport</a> </li>
 			</ul>
 		</div>
 		

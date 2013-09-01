@@ -7,3 +7,5 @@
 <option value="macro">Macro</option>
 <option value="abstract">Abstract</option>
 <option value="hdr">HDR</option>
+<option value="event">Event</option>
+<option value="sport">Sport</option>

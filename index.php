@@ -62,18 +62,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			</div>
 			<div id="category-container">
 				<div style="margin: 20px 20px 20px 50px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/abstract.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/landscape.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/street.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/portrait.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/wildlife.jpg" class="img-polaroid" style="margin-left:10px;">
 				</div>
 				<div style="margin: 20px 20px 20px 50px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/architecture.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/macro.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/hdr.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/event.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/sport.jpg" class="img-polaroid" style="margin-left:10px;">
 				</div>
 			</div>
 			
