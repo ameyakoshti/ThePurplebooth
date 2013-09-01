@@ -76,6 +76,9 @@ ob_start();
 		</form>-->		
 	</div>
 	<?php } ?>
+	<?php
+		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+	?>
 </body>
 </html>
 <?php

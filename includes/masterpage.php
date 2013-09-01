@@ -13,16 +13,10 @@ ini_set('display_errors', 'On');
 <script type="text/javascript">
 	$(document).ready(function() {
 		var pathname = window.location.pathname;
-		if (pathname.search('index') !== -1) {
+		if (pathname.search('upload') !== -1) {
 			$('li:nth-child(1)').addClass('active');
-		} else if (pathname.search('contact') !== -1) {
-			$('li:nth-child(2)').addClass('active');
-		} else if (pathname.search('about') !== -1) {
-			$('li:nth-child(3)').addClass('active');
-		} else if (pathname.search('upload') !== -1) {
-			$('li:nth-child(4)').addClass('active');
 		} else if (pathname.search('gallery') !== -1) {
-			$('li:nth-child(5)').addClass('active');
+			$('li:nth-child(2)').addClass('active');
 		} else {
 			$('li:nth-child(0)').addClass('active');
 		}
@@ -38,9 +32,9 @@ ini_set('display_errors', 'On');
 
 			<div class="nav-collapse collapse">
 				<ul class="nav pull-right" id="codenameDSnavigationbar">
-					<li><a href="/codenameDS/index.php"><i class="icon-home" style="color: #9b00F0;"></i>&nbsp;Home</a></li>
+					<!--<li><a href="/codenameDS/index.php"><i class="icon-home" style="color: #9b00F0;"></i>&nbsp;Home</a></li>
 					<li><a href="/codenameDS/contact.php">Contact</a></li>
-					<li><a href="/codenameDS/about_us.php">About Us</a></li>
+					<li><a href="/codenameDS/about_us.php">About Us</a></li>-->
 					<li><a href="/codenameDS/upload_image.php">Upload Image</a></li>
 					<li><a href="/codenameDS/gallery.php?category=all&project=all&userid=all">Gallery</a></li>
 					<li>

@@ -59,6 +59,8 @@ require_once "database/users.php";
 				<span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu">
+				<li></li>
+				<li></li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=all&userid=<?php echo $user_id;?>">All</a> </li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=new&userid=<?php echo $user_id;?>">New</a></li>
 				<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=completed&userid=<?php echo $user_id;?>">Completed</a></li>
