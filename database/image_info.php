@@ -3,7 +3,7 @@ require_once "connections.php";
 require_once 'edit_request.php';
 open_connection();
 
-function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $title, $description, $category) {
+function upload_image($user_id, $user_name, $file_name, $tmp_name, $file_size, $file_type, $title, $description, $category) {
 	try {
 		//console.log($category);
 		$cached_file_name = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/temp/" . $file_name;
@@ -22,7 +22,7 @@ function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $
 		}
 		fclose($fp);
 
-		$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'$user_id',NULL,'$file_name','$file_type','$file_size','$content',NULL,'$title','$description','$category','N',NOW(),NOW(),'0')";
+		$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'$user_id','$user_name',NULL,'$file_name','$file_type','$file_size','$content',NULL,'$title','$description','$category','N',NOW(),NOW(),'0')";
 		//empty the temp folder
 		$files = glob($_SERVER["DOCUMENT_ROOT"] . '/codenameDS/temp/' . $file_name);
 		// get all file names
@@ -49,6 +49,7 @@ function get_image_by_id($id) {
 		$imageHTML = $imageHTML . '<div data-imageid="' . $data['image_id'] . '" data-userid="' . $data['user_id'] . '" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
 		$imageHTML = $imageHTML . '<div class="title">' . "<h4>Title : " . $data["title"] . '</h4></div>';
 		$imageHTML = $imageHTML . '<div class="desc">' . "<h4>Description : " . $data["description"] . '</h4></div>';
+		$imageHTML = $imageHTML . '<div class="prifileLink">Image uploaded by <a href="profile.php?username='.$data['user_name'].'">'.$data['user_name'].'</a></div>';
 	}
 	//error_log($id);
 	$imageHTML = $imageHTML . '<div class="requests">' . get_requests_for_image($id) . '</div>';

@@ -92,7 +92,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		$description = $_POST['description'];
 		$category = $_POST['category'];
 		
-		$success = upload_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type,$title,$description,$category);
+		$success = upload_image($_SESSION['codenameDS_user_id'],$_SESSION['codenameDS_user_name'],$file_name,$tmp_name,$file_size,$file_type,$title,$description,$category);
 
 		if ($success === TRUE){?>
 			<script type="text/javascript">

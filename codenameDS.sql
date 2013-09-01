@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2013 at 05:35 PM
+-- Generation Time: Sep 01, 2013 at 03:48 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `editrequest` (
   `request_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`request_id`),
   KEY `request_user_id` (`request_user_id`,`request_image_id`,`request_image_user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=69 ;
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `imagecomment` (
   KEY `comment_user_id_3` (`comment_user_id`),
   KEY `comment_image_id_3` (`comment_image_id`),
   KEY `comment_user_name_2` (`comment_user_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -72,6 +72,7 @@ CREATE TABLE IF NOT EXISTS `imagecomment` (
 CREATE TABLE IF NOT EXISTS `imageinfo` (
   `image_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned NOT NULL,
+  `user_name` varchar(45) NOT NULL,
   `partner_id` int(11) unsigned DEFAULT NULL,
   `name` varchar(45) NOT NULL,
   `type` varchar(45) DEFAULT NULL,
@@ -89,8 +90,9 @@ CREATE TABLE IF NOT EXISTS `imageinfo` (
   KEY `user_id` (`user_id`),
   KEY `partner_id` (`partner_id`),
   KEY `partner_id_2` (`partner_id`),
-  KEY `user_id_2` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+  KEY `user_id_2` (`user_id`),
+  KEY `user_name` (`user_name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 -- --------------------------------------------------------
 
@@ -112,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `replycomment` (
   KEY `reply_user_name_2` (`reply_user_name`),
   KEY `reply_user_id_2` (`reply_user_id`),
   KEY `reply_comment_id_2` (`reply_comment_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 -- --------------------------------------------------------
 
@@ -132,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `userrating` (
   KEY `user_id_idx` (`user_id`),
   KEY `user_id` (`user_id`),
   KEY `rated_by_user_id` (`rated_by_user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -166,8 +168,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Constraints for table `imagecomment`
 --
 ALTER TABLE `imagecomment`
-  ADD CONSTRAINT `imagecomment_ibfk_2` FOREIGN KEY (`comment_image_id`) REFERENCES `imageinfo` (`image_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `imagecomment_ibfk_1` FOREIGN KEY (`comment_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `imagecomment_ibfk_1` FOREIGN KEY (`comment_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `imagecomment_ibfk_2` FOREIGN KEY (`comment_image_id`) REFERENCES `imageinfo` (`image_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `imageinfo`
@@ -180,16 +182,16 @@ ALTER TABLE `imageinfo`
 -- Constraints for table `replycomment`
 --
 ALTER TABLE `replycomment`
-  ADD CONSTRAINT `replycomment_ibfk_2` FOREIGN KEY (`reply_comment_id`) REFERENCES `imagecomment` (`comment_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `replycomment_ibfk_1` FOREIGN KEY (`reply_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `replycomment_ibfk_1` FOREIGN KEY (`reply_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `replycomment_ibfk_2` FOREIGN KEY (`reply_comment_id`) REFERENCES `imagecomment` (`comment_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `userrating`
 --
 ALTER TABLE `userrating`
-  ADD CONSTRAINT `userrating_ibfk_2` FOREIGN KEY (`rated_by_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `rated_by_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `userrating_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `userrating_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `userrating_ibfk_2` FOREIGN KEY (`rated_by_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
