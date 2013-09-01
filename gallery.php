@@ -15,7 +15,8 @@ require_once "database/users.php";
 			$project = $_GET['project'];
 			$user_id = $_GET['userid'];
 			$user_data = get_user_info_by_id($user_id);
-			$logged_user_id = $_SESSION['codenameDS_user_id'];			
+			if(isset($_SESSION['codenameDS_user_id']))
+				$logged_user_id = $_SESSION['codenameDS_user_id'];			
 		?>
 		
 		</br>

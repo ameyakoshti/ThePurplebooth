@@ -1,11 +1,33 @@
 $(document).ready(function(){
+	if(userid==$('.selectedImage').data('userid'))
+		$('.editImage').hide();
 	$('.editImage').click(function(event){
-		make_edit_request(event.target);
+		make_request(event.target);
 	});
 });
 
+function make_request(trgtObj){
+	var res = $.ajax({
+		url : '/codenameDS/database/edit_request.php',
+		data : {
+			'check_valid_request' : true,
+			'request_user_id' : userid
+		},
+		type : 'get',
+		async: false,
+		success : function(output) {
+			console.log(output);
+			if(output==0){
+				make_edit_request(trgtObj);
+			}
+			else{
+				alert("You have already made a request");
+			}
+		}
+	});
+}
+
 function make_edit_request(targtObj){
-	console.log($(targtObj).parent().data('imageid'));
 	$.ajax({
 		url : '/codenameDS/database/edit_request.php',
 		data : {
