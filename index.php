@@ -22,30 +22,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			<div id="myCarousel" class="carousel slide">
 				<div class="carousel-inner">
 					<div class="item active">
-						<img src="/codenameDS/img/home/carousel/bg_dogcat.jpg">
+						<img src="/codenameDS/img/home/carousel/DSC_0001.jpg">
 						<div class="container">
 							<div class="carousel-caption">
-								<h1>Dog & Cat</h1>
+								<h1>Griffith Observatory</h1>
 								<p class="lead">This is how you can change the way your photos look..</p>
 								<a class="btn btn-large btn-primary" href="#">Sign up today</a>
 							</div>
 						</div>
 					</div>
 					<div class="item">
-						<img src="http://lorempixel.com/1280/1024/technics" alt="">
+						<img src="/codenameDS/img/home/carousel/DSC_0002.jpg">
 						<div class="container">
 							<div class="carousel-caption">
-								<h1>Another Image.</h1>
+								<h1>Way to Cape Town</h1>
 								<p class="lead">Some more caption here respective to the image</p>
 								<a class="btn btn-large btn-primary" href="#">Sign up today</a>
 							</div>
 						</div>
 					</div>
 					<div class="item">
-						<img src="http://lorempixel.com/1280/1024/abstract" alt="">
+						<img src="/codenameDS/img/home/carousel/DSC_0003.jpg">
 						<div class="container">
 							<div class="carousel-caption">
-								<h1>One more</h1>
+								<h1>Grand Canyon</h1>
 								<p class="lead">No more explanation.</p>
 								<a class="btn btn-large btn-primary" href="#">Browse gallery</a>
 							</div>
