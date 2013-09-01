@@ -73,7 +73,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 					<img src="/codenameDS/img/home_catergories/macro.jpg" class="img-polaroid" style="margin-left:10px;">
 					<img src="/codenameDS/img/home_catergories/hdr.jpg" class="img-polaroid" style="margin-left:10px;">
 					<img src="/codenameDS/img/home_catergories/event.jpg" class="img-polaroid" style="margin-left:10px;">
-					<img src="/codenameDS/img/home_catergories/sport.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/product.jpg" class="img-polaroid" style="margin-left:10px;">
 				</div>
 			</div>
 			
