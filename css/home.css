@@ -64,6 +64,7 @@ body {
       line-height: 1.25;
       color: #fff;
       text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      font-family: Raleway;
     }
     .carousel-caption .btn {
       margin-top: 10px;
@@ -206,4 +207,8 @@ body {
 
 	#footer > .container > p > a {
 		color: #AC89FD;
+	}
+	
+	.carousel-caption > p {
+		font-family: Raleway;
 	}
