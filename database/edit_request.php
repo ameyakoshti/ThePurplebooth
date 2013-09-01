@@ -7,7 +7,7 @@ if(isset($_POST['insert_edit_request'])){
 }
 
 if(isset($_GET['check_valid_request'])){
-	check_valid_requester($_GET['request_user_id']);
+	check_valid_requester($_GET['request_user_id'],$_GET['image_id']);
 }
 
 function insert_edit_request($req_usr_id,$req_img_id,$req_img_usr_id){
@@ -23,8 +23,9 @@ function insert_edit_request($req_usr_id,$req_img_id,$req_img_usr_id){
 	}
 }
 
-function check_valid_requester($user_id){
-	$query = "SELECT COUNT(  `request_id` ) AS editRequests FROM editrequest WHERE  `request_user_id` =".$user_id;
+function check_valid_requester($user_id,$imgid){
+	$query = "SELECT COUNT(  `request_id` ) AS editRequests FROM editrequest WHERE  `request_user_id` =".$user_id ." and `request_image_id`=".$imgid;
+	error_log($query);
 	$reqs = mysql_query($query);
 	while ($data = mysql_fetch_array($reqs)) {
 		$result = $data['editRequests'];

@@ -12,7 +12,8 @@ function make_request(trgtObj){
 		url : '/codenameDS/database/edit_request.php',
 		data : {
 			'check_valid_request' : true,
-			'request_user_id' : userid
+			'request_user_id' : userid,
+			'image_id' : imageid
 		},
 		type : 'get',
 		async: false,
