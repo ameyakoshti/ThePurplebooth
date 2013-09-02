@@ -62,43 +62,43 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			</div>
 			<div id="category-container">
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/abstract.jpg" class="img-polaroid">
+					<img src="/codenameDS/img/home_catergories/abstract.jpg">
 					<p>Abstract</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/landscape.jpg" class="img-polaroid">
+					<img src="/codenameDS/img/home_catergories/landscape.jpg">
 					<p>Landscape</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/street.jpg" class="img-polaroid">
+					<img src="/codenameDS/img/home_catergories/street.jpg">
 					<p>Street</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/portrait.jpg" class="img-polaroid">
+					<img src="/codenameDS/img/home_catergories/portrait.jpg">
 					<p>Portrait</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/wildlife.jpg" class="img-polaroid">
+					<img src="/codenameDS/img/home_catergories/wildlife.jpg">
 					<p>Wildlife</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/architecture.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/architecture.jpg">
 					<p>Architecture</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/macro.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/macro.jpg">
 					<p>Macro</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/hdr.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/hdr.jpg">
 					<p>HDR</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/event.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/event.jpg">
 					<p>Event</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/product.jpg" class="img-polaroid" style="margin-left:10px;">
+					<img src="/codenameDS/img/home_catergories/product.jpg">
 					<p>Product</p>
 				</div>
 			</div>
