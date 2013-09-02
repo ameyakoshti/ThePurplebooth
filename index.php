@@ -62,43 +62,43 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			</div>
 			<div id="category-container">
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/abstract.jpg">
+					<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/abstract.jpg"></a>
 					<p>Abstract</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/landscape.jpg">
+					<a href="/codenameDS/gallery.php?category=landscape&project=all&userid=all"><img src="/codenameDS/img/home_catergories/landscape.jpg"></a>
 					<p>Landscape</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/street.jpg">
+					<a href="/codenameDS/gallery.php?category=street&project=all&userid=all"><img src="/codenameDS/img/home_catergories/street.jpg"></a>
 					<p>Street</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/portrait.jpg">
+					<a href="/codenameDS/gallery.php?category=portrait&project=all&userid=all"><img src="/codenameDS/img/home_catergories/portrait.jpg"></a>
 					<p>Portrait</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/wildlife.jpg">
+					<a href="/codenameDS/gallery.php?category=wildlife&project=all&userid=all"><img src="/codenameDS/img/home_catergories/wildlife.jpg"></a>
 					<p>Wildlife</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/architecture.jpg">
+					<a href="/codenameDS/gallery.php?category=architecture&project=all&userid=all"><img src="/codenameDS/img/home_catergories/architecture.jpg"></a>
 					<p>Architecture</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/macro.jpg">
+					<a href="/codenameDS/gallery.php?category=macro&project=all&userid=all"><img src="/codenameDS/img/home_catergories/macro.jpg"></a>
 					<p>Macro</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/hdr.jpg">
+					<a href="/codenameDS/gallery.php?category=hdr&project=all&userid=all"><img src="/codenameDS/img/home_catergories/hdr.jpg"></a>
 					<p>HDR</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/event.jpg">
+					<a href="/codenameDS/gallery.php?category=event&project=all&userid=all"><img src="/codenameDS/img/home_catergories/event.jpg"></a>
 					<p>Event</p>
 				</div>
 				<div class="category-row">
-					<img src="/codenameDS/img/home_catergories/product.jpg">
+					<a href="/codenameDS/gallery.php?category=product&project=all&userid=all"><img src="/codenameDS/img/home_catergories/product.jpg"></a>
 					<p>Product</p>
 				</div>
 			</div>

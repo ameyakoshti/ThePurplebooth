@@ -116,7 +116,12 @@ function get_filtered_images($category, $project, $user_id) {
 		echo '</li>';
 	}
 	if ($empty_result){
-		echo "<h4>This user has not uploaded or worked on any images</h4>";
+		if ($user_id != "all"){
+			echo "<h4>This user has not uploaded or worked on any images</h4>";
+		}
+		else {
+			echo "<h4>There are no images in this category yet!</h4>";		
+		}
 	}
 }
 ?>
