@@ -238,3 +238,10 @@ body {
 		font-family: Raleway;
 		font-size: 18px;
 	}
+	
+
+
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+background-image : none;
+background-color : #8A2BE2;
+}
