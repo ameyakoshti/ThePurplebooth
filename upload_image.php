@@ -14,7 +14,6 @@ ob_start();
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
 	?>
-
 	<div class="hero-unit">
 		<h1>This is where you upload the raw pics!</h1>
 		<?php

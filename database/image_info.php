@@ -27,11 +27,11 @@ function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $
 		//empty the temp folder
 		$files = glob($_SERVER["DOCUMENT_ROOT"] . '/codenameDS/temp/' . $file_name);
 		// get all file names
-		foreach ($files as $file) {// iterate files
+		/*foreach ($files as $file) {// iterate files
 			if (is_file($file))
 				unlink($file);
 			// delete file
-		}
+		}*/
 
 		mysql_query($query) or die('Error, query failed');
 

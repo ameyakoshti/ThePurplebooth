@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2013 at 04:19 PM
+-- Generation Time: Sep 03, 2013 at 12:21 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -33,10 +33,11 @@ CREATE TABLE IF NOT EXISTS `editrequest` (
   `request_user_id` int(11) unsigned NOT NULL,
   `request_image_user_id` int(11) unsigned NOT NULL,
   `request_image_id` int(11) NOT NULL,
+  `request_status` tinyint(1) NOT NULL DEFAULT '0',
   `request_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`request_id`),
   KEY `request_user_id` (`request_user_id`,`request_image_id`,`request_image_user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=69 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=76 ;
 
 -- --------------------------------------------------------
 
@@ -61,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `imagecomment` (
   KEY `comment_user_id_3` (`comment_user_id`),
   KEY `comment_image_id_3` (`comment_image_id`),
   KEY `comment_user_name_2` (`comment_user_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `imageinfo` (
   KEY `partner_id` (`partner_id`),
   KEY `partner_id_2` (`partner_id`),
   KEY `user_id_2` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
 
 -- --------------------------------------------------------
 
@@ -112,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `replycomment` (
   KEY `reply_user_name_2` (`reply_user_name`),
   KEY `reply_user_id_2` (`reply_user_id`),
   KEY `reply_comment_id_2` (`reply_comment_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

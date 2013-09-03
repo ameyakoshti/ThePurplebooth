@@ -1,4 +1,11 @@
 $(document).ready(function() {
+	$("#img_container").click(function() {
+		$("#userfile").show();
+	});
+	$('#myTab a').click(function (e) {
+		  e.preventDefault();
+		  $(this).tab('show');
+		});
 	getAllReviews();
 });
 
