@@ -29,7 +29,7 @@ ini_set('display_errors', 'On');
 	<div class="navbar-inner" id="navbar">
 		<div class="container">
 			<a class="btn btn-navbar" data-toggle="collapse"
-			data-target=".nav-collapse"> <span class="icon-th-list"></span> </a><a href="/codenameDS/index.php" class="brand">thepurplebooth &#153;</a>
+			data-target=".nav-collapse"> <span class="icon-th-list"></span> </a><a href="/codenameDS/index.php" class="brand"><img alt="" style="margin-right:4px" width="25px" height="25px" src="img/purplebooth (2).png">thepurplebooth &#153;</a>
 
 			<div class="nav-collapse collapse">
 				<ul class="nav pull-right" id="codenameDSnavigationbar">
