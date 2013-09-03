@@ -5,8 +5,9 @@
 	#footer {
 		background-color: #242628; 
 		margin-top: 20px; 
-		height: 100px;
+		height: 140px;
 		margin-bottom: 60px;
+		color: #F5F5F5;
 	}
 	#footer > .container > p > a {
 		color: #AC89FD;
