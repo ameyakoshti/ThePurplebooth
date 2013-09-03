@@ -27,18 +27,20 @@
 							<?php if($user_found) {
 								echo $user_data['user_name'];
 							}else{echo "Invalid User";
-}?>
+							}?>
 						</h3>
 						<p>
 							<?php if($user_found) {
 								echo $user_data['email'];
-}?>
+							}?>
 						</p>
 						<div class="socialMediaLinks">
-							<a href="http://twitter.com/jakerocheleau" rel="me"
-								target="_blank"><img src="img/twitter.png" alt="@jakerocheleau" />
-							</a> <a href="http://gowalla.com/users/JakeRocheleau" rel="me"
-								target="_blank"><img src="img/gowalla.png" /> </a>
+							<a href="#">
+								<img src="img/twitter.png"/>
+							</a>
+							<a href="#">
+								<img src="img/flickr.png"/>
+							</a>
 						</div>
 						<div class="sep"></div>
 						<ul class="numbers clearfix">
@@ -65,7 +67,7 @@
 				<p>
 					<?php if($user_found) {
 						echo $user_data['about_me'];
-}?>
+					}?>
 				</p>
 				<p>
 					Check out my gallery<a
@@ -81,35 +83,4 @@
 				<div class="reviews"></div>
 
 			</div>
-			<!--</section>-->
-			<!--
-				<section id="right">
-					<div class="gcontent">
-						<div class="head">
-							<h1>Badges</h1>
-						</div>
-						<div class="boxy">
-							<p>
-								Badges you have earned!
-							</p>
-	
-							<div class="badgeCount">
-								<a href="#"><img src="img/foursquare-badge.png" /></a>
-								<a href="#"><img src="img/foursquare-badge.png" /></a>
-								<a href="#"><img src="img/foursquare-badge.png" /></a>
-							</div>
-						</div>
-					</div>
-	
-					<div class="gcontent">
-						<div class="head">
-							<h1>Something</h1>
-						</div>
-						<div class="boxy">
-							<p>
-								Some other stuff about you
-							</p>
-						</div>
-					</div>
-				</section>-->
-		</div>
+</div>
