@@ -54,6 +54,9 @@ ini_set('display_errors', 'On');
 						</ul>
 					<?php } ?>
 					</li>
+					<li>
+						<img src="img/notification.ico" height="30px" width="30px" style="margin-top:10px"/>
+					</li>
 				</ul>
 			</div>
 		</div>
