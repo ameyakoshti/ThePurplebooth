@@ -109,11 +109,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			</div>
 			<div id="photographers-container">
 				<div style="margin: 20px 20px 20px 50px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="img/200X150.gif" class="img-polaroid" style="margin-left:10px;">
+					<img src="img/200X150.gif" class="img-polaroid" style="margin-left:10px;">
+					<img src="img/200X150.gif" class="img-polaroid" style="margin-left:10px;">
+					<img src="img/200X150.gif" class="img-polaroid" style="margin-left:10px;">
+					<img src="img/200X150.gif" class="img-polaroid" style="margin-left:10px;">
 				</div>
 			</div>
 			
@@ -123,11 +123,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			</div>
 			<div id="projects-container">
 				<div style="margin: 20px 20px 20px 50px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
-					<img src="http://placehold.it/200X150" class="img-polaroid" style="margin-left:10px;">
+					<img src="img/200X150.gif" class="img-polaroid" style="margin-left:10px;">
+					<img src="img/200X150.gif" class="img-polaroid" style="margin-left:10px;">
+					<img src="img/200X150.gif" class="img-polaroid" style="margin-left:10px;">
+					<img src="img/200X150.gif" class="img-polaroid" style="margin-left:10px;">
+					<img src="img/200X150.gif" class="img-polaroid" style="margin-left:10px;">
 				</div>
 			</div>
 
