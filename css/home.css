@@ -211,8 +211,8 @@ body {
 	a.btn.btn-large.btn-primary {
 		color: #AC89FD;
 		border-radius: 0px;
-		background-image: linear-gradient(to bottom, #000000, #000000);
-		background-color: #000000 !important;
+		background-image: linear-gradient(to bottom, #242628, #242628);
+		background-color: #242628 !important;
 		border: 0px;
 	}
 	
