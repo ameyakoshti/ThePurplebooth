@@ -9,10 +9,15 @@
 		margin-bottom: 60px;
 		color: #F5F5F5;
 	}
-	#footer > .container > p > a {
-		color: #AC89FD;
-	}
 	
 	#footer > .container {
 		padding-top: 20px;
+	}
+	
+	#boring-stuff a {
+		color: #AC89FD;
+	}
+	
+	#follow-us a {
+		color: #AC89FD;
 	}

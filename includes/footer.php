@@ -9,19 +9,23 @@
 					thepurplebooth was created by the codecoasters team to help Photographers around the world have an easier time focussing on their photgraphy skills and Editors focus on the designing and creative skills.
 				</p>
 			</div>
-			<div class="span4">
-				<h4>Follow Us</h4>
-				<p>
-					<a href="https://www.facebook.com/pages/thepurpleboothcom/195280113973157"><img src="img/facebook.png"/></a>
-					&nbsp;
-					<a href="https://twitter.com/thepurplebooth"><img src="img/twitter.png"/></a>
-					&nbsp;
-					<a href="#"></&nsbp><img src="img/google.png"/></a>
-					</br><a href="/codenameDS/contact.php">Contact Us</a>
-					</br><a href="/codenameDS/about_us.php">About Us</a>
-				</p>
+			<div id="follow-us" class="span3">
+				<span><h4>Follow Us</h4></span>
+				<div class="row-fluid" style="margin-bottom: 10px; color: #AC89FD;">
+					<div class="span6">
+						<a href="https://www.facebook.com/pages/thepurpleboothcom/195280113973157"><img src="img/facebook.png"/></a>
+						<a href="https://twitter.com/thepurplebooth"><img src="img/twitter.png"/></a>
+						<a href="#"><img src="img/google.png"/></a>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span6">
+						<div> <a href="/codenameDS/contact.php">Contact Us</a></div>
+						<div> <a href="/codenameDS/about_us.php">About Us</a></div>
+					</div>
+				</div>
 			</div>
-			<div class="span4">
+			<div id="boring-stuff" class="span5">
 				<h4>Boring Stuff</h4>
 				<p>
 					Copyright © 2013 We Are thepurplebooth, Inc. All Rights Reserved | Site Map | <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a>
