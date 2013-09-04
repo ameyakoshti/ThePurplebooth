@@ -6,82 +6,84 @@ ob_start();
 ?>
 
 <html>
-<head>
-<title>Upload Picture</title>
-</head>
-<body>
-<div class="container" style="min-height: 100%;">
-	<?php
-		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
-	?>
-	<div class="hero-unit">
-		<h1>This is where you upload the raw pics!</h1>
-		<?php
-			if(!isset($_SESSION['codenameDS_user_name'])){
-      	?>
-      	<p>
-        	... but before you do, we need you to <a href="http://localhost:8888/codenameDS/socialauth/index.php">sign-in or sign-up</a>.
-      	</p>
-    </div>
-    	<?php }
-    	else { ?>
-        </br>
-        <form method="post" enctype="multipart/form-data">
-     	<div>
-     		<p>Choose a title for the image</p>
-     		<textarea id="title" name="title" class="enterComment" placeholder="Title" required></textarea>
-     	</div>
-
-     	<div>
-			<p>Choose a category for the image</p>			
-			<select name="category">
-			    <?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/categories.php'; ?>
-			</select>
-			<!--<div class="btn-group">
-				<button id="catergory" name='category' type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					Categories
-					<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu">
-					<?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/categories.php'; ?>
-				</ul>
-			</div>	-->
-		</div>
+	<head>
+		<title>Upload Picture</title>
+		<link href='/codenameDS/css/upload_image.css' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+			<?php
+				include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
+			?>
+			<div id="upload-signup" class="container-fluid">
+				<div class="row-fluid">
+					<div class="span10 offset1" style="padding-top: 100px;">
+						<h2 style="font-family: Raleway;">This is where you upload the raw pics!</h2>
+						<?php
+							if(!isset($_SESSION['codenameDS_user_name'])){
+				      	?>
+				      	<p>
+				        	... but before you do, we need you to <a href="http://localhost:8888/codenameDS/socialauth/index.php">sign-in or sign-up</a>.
+				      	</p>
+				    </div>
+			    </div>
+		    </div>
+		   	<?php } else { ?>
+		    <div class="container-fluid" style="min-height: 100%">
+		        <form method="post" enctype="multipart/form-data">
+		     	<div>
+		     		<p>Choose a title for the image</p>
+		     		<textarea id="title" name="title" class="enterComment" placeholder="Title" required></textarea>
+		     	</div>
 		
-		<div>
-     		<p>What kind of work would you like to be done on your image?</p>
-     		<textarea id="description" name="description" class="enterComment" placeholder="Description" required></textarea>
-     	</div>
-		
-		<div>
-	     	<p>Click below to select the pic you want to upload</p>
-			<p>
-			
-				<input name="userfile" type="file" id="userfile"
-					class="btn">
-				<button class="btn btn-primary btn-small" id="upload" name="upload"
-					type="submit">
-					<i class="icon-camera icon-white"> </i> Upload
-				</button>			
-			</p>
-		</div>
-		</form>
-		<!--<form method="post" enctype="multipart/form-data">
-			<input type="file" name="uploadedfiles[]" multiple id="uploadedfiles[]"
-				class="btn">
-			<button class="btn btn-primary btn-small" id="uploadmany"
-				name="uploadmany" type="submit">
-				<i class="icon-camera icon-white"> </i> Upload Multiple Files
-			</button>
-		</form>-->		
-	</div>
-<!-- 	End Container -->
-	</div>
-	<?php } ?>
-	<?php
-		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
-	?>
-</body>
+		     	<div>
+					<p>Choose a category for the image</p>			
+					<select name="category">
+					    <?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/categories.php'; ?>
+					</select>
+					<!--<div class="btn-group">
+						<button id="catergory" name='category' type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							Categories
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/categories.php'; ?>
+						</ul>
+					</div>	-->
+				</div>
+				
+				<div>
+		     		<p>What kind of work would you like to be done on your image?</p>
+		     		<textarea id="description" name="description" class="enterComment" placeholder="Description" required></textarea>
+		     	</div>
+				
+				<div>
+			     	<p>Click below to select the pic you want to upload</p>
+					<p>
+					
+						<input name="userfile" type="file" id="userfile"
+							class="btn">
+						<button class="btn btn-primary btn-small" id="upload" name="upload"
+							type="submit">
+							<i class="icon-camera icon-white"> </i> Upload
+						</button>			
+					</p>
+				</div>
+				</form>
+				<!--<form method="post" enctype="multipart/form-data">
+					<input type="file" name="uploadedfiles[]" multiple id="uploadedfiles[]"
+						class="btn">
+					<button class="btn btn-primary btn-small" id="uploadmany"
+						name="uploadmany" type="submit">
+						<i class="icon-camera icon-white"> </i> Upload Multiple Files
+					</button>
+				</form>-->		
+			</div>
+		<!-- 	End Container -->
+			<?php } ?>
+			<?php
+				include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+			?>
+	</body>
 </html>
 <?php
 if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
