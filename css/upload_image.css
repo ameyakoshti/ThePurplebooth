@@ -8,6 +8,14 @@ html body {
 	min-height: 100%;
 }
 
-.container-fluid {
-	margin-bottom: -210px;
+.container-fluid textarea, .container-fluid select {
+	border-radius: 0px;
+}
+
+#upload, #upload-signup {
+	font-family: Raleway;
+	font-size: 16px;
+}
+#image-title {
+	
 }
