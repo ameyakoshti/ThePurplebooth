@@ -4,19 +4,11 @@
 html, body {
 	height: 100%;
 }
-body {
-/* 	background: url('/codenameDS/img/home/purple-pattern.jpg') 0 0 repeat-y; */
 
-/* background: rgb(226,226,226); Old browsers */
-/* background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 47%, rgba(219,219,219,1) 78%, rgba(219,219,219,1) 100%, rgba(254,254,254,1) 100%); FF3.6+ */
-/* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,1)), color-stop(47%,rgba(219,219,219,1)), color-stop(78%,rgba(219,219,219,1)), color-stop(100%,rgba(219,219,219,1)), color-stop(100%,rgba(254,254,254,1))); Chrome,Safari4+ */
-/* background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 47%,rgba(219,219,219,1) 78%,rgba(219,219,219,1) 100%,rgba(254,254,254,1) 100%); Chrome10+,Safari5.1+ */
-/* background: -o-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 47%,rgba(219,219,219,1) 78%,rgba(219,219,219,1) 100%,rgba(254,254,254,1) 100%); Opera 11.10+ */
-/* background: -ms-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 47%,rgba(219,219,219,1) 78%,rgba(219,219,219,1) 100%,rgba(254,254,254,1) 100%); IE10+ */
-/* background: linear-gradient(to bottom,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 47%,rgba(219,219,219,1) 78%,rgba(219,219,219,1) 100%,rgba(254,254,254,1) 100%); W3C */
-/* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); IE6-9 */
+.container-fluid {
+	padding: 0px !important; 
 }
-
+      
 /* CUSTOMIZE THE CAROUSEL
     -------------------------------------------------- */
 
@@ -25,7 +17,7 @@ body {
       margin-bottom: 60px;
     }
     
-    .carousel .container {
+    .carousel .container-fluid {
       position: relative;
       z-index: 9;
     }
@@ -116,11 +108,8 @@ body {
         margin-left: -20px;
         margin-right: -20px;
       }
-      .carousel .container {
-
-      }
-      .carousel .item {
-        height: 300px;
+      .carousel .container-fluid {
+      	height: 300px;
       }
       .carousel img {
         height: 300px;
@@ -219,11 +208,14 @@ body {
 	.category-row {
 		margin-bottom: 40px;
 		position: relative;
-		width: 230px;
-		float: left;
 	}
+	
+	#category-heading {
+		margin-left: 50px;
+	}
+	
 	#category-container {
-		margin-left: 50px; 
+		margin-left: 75px; 
 	}
 	#category-container p {
     	white-space: nowrap;
