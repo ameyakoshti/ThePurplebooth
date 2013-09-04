@@ -45,7 +45,7 @@ html, body {
 
     .carousel-caption {
       background-color: transparent;
-      position: static;
+      position: relative;
       max-width: 550px;
       padding: 0 20px;
       margin-top: 200px;
@@ -210,13 +210,10 @@ html, body {
 		position: relative;
 	}
 	
-	#category-heading {
+	#category-heading, #photographers-heading, #projects-heading {
 		margin-left: 50px;
 	}
 	
-	#category-container {
-		margin-left: 75px; 
-	}
 	#category-container p {
     	white-space: nowrap;
 		width: 225px;
