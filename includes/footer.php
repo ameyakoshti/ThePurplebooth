@@ -11,7 +11,7 @@
 			</div>
 			<div id="follow-us" class="span3">
 				<span><h4>Follow Us</h4></span>
-				<div class="row-fluid" style="margin-bottom: 10px; color: #AC89FD;">
+				<div class="row-fluid" style="margin-bottom: 10px;">
 					<div class="span6">
 						<a href="https://www.facebook.com/pages/thepurpleboothcom/195280113973157"><img src="img/facebook.png"/></a>
 						<a href="https://twitter.com/thepurplebooth"><img src="img/twitter.png"/></a>
