@@ -18,7 +18,7 @@ function insert_reply_comment($user_id,$user_name,$image_id,$comment_text,$comme
 	try {
 		$text = str_replace("\n", "<br/>", $comment_text);
 		$query = "Insert into codenameDS.replycomment values (DEFAULT,".$user_id.",'".$user_name."',".$comment_id.",'".$text."',NOW())";
-		error_log($query);
+		//error_log($query);
 		mysql_query($query) or die('Error, query failed');
 		return TRUE;
 	} catch(Exception $ex) {
@@ -31,7 +31,7 @@ function insert_comment($user_id,$user_name,$image_id,$comment_text){
 	try {
 		$text = str_replace("\n", "<br/>", $comment_text);
 		$query = "Insert into codenameDS.imagecomment values (DEFAULT,".$user_id.",'".$text."',".$image_id.",NOW(),'".$user_name."')";
-		error_log($query);
+		//error_log($query);
 		mysql_query($query) or die('Error, query failed');
 		return TRUE;
 	} catch(Exception $ex) {
@@ -46,7 +46,7 @@ function select_comments($image_id){
 			FROM codenameDS.imagecomment
 			LEFT JOIN codenameDS.replycomment ON codenameDS.imagecomment.comment_id = codenameDS.replycomment.reply_comment_id
 			WHERE codenameDS.imagecomment.comment_image_id =".$image_id;
-		error_log($query);
+		//error_log($query);
 		$res = mysql_query($query);
 		$result = array();
 		$i = 0;
@@ -55,7 +55,7 @@ function select_comments($image_id){
 			 $i++;
 		}
 		$response = json_encode($result);
-		error_log($response);
+		//error_log($response);
 		echo $response;
 	} catch(Exception $ex) {
 		error_log($ex);

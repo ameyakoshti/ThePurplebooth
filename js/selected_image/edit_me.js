@@ -18,7 +18,7 @@ function make_request(trgtObj){
 		type : 'get',
 		async: false,
 		success : function(output) {
-			console.log(output);
+			//console.log(output);
 			if(output==0){
 				make_edit_request(trgtObj);
 			}

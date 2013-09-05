@@ -67,7 +67,7 @@ function startUp() {
 						this.value = content.substring(0, caret) + "\n"
 								+ content.substring(caret, content.length);
 					} else if (event.keyCode == 13) {
-						console.log($(this).parent('li').data('commentid'));
+						//console.log($(this).parent('li').data('commentid'));
 						$.ajax({
 							url : '/codenameDS/database/image_comment.php',
 							data : {

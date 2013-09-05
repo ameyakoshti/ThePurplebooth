@@ -90,6 +90,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		$title = $_POST['title'];
 		$description = $_POST['description'];
 		$category = $_POST['category'];
+		$success = FALSE;
 		
 		$success = upload_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type,$title,$description,$category);
 
@@ -151,15 +152,15 @@ if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
 		<?php }
 		else {?>
 		<script type="text/javascript">
-				jError(
-					    'Upload Images Failed!',
-					    {
-					      autoHide : true,
-					      TimeShown : 2000,
-					      HorizontalPosition : 'center',
-					      ShowOverlay : false
-					    }
-					  );
+			jError(
+				   'Upload Images Failed!',
+				   {
+				     autoHide : true,
+				     TimeShown : 2000,
+				     HorizontalPosition : 'center',
+				     ShowOverlay : false
+				   }
+				  );
 		</script>	
 		<?php }
 	} catch(Exception $e) {

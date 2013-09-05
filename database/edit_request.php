@@ -21,7 +21,7 @@ if(isset($_GET['get_request_by'])){
 function insert_edit_request($req_usr_id,$req_img_id,$req_img_usr_id){
 	try {
 		$query = "Insert into codenameDS.editrequest values (DEFAULT,".$req_usr_id.",".$req_img_usr_id.",".$req_img_id.",DEFAULT,NOW())";
-		error_log($query);
+		//error_log($query);
 		mysql_query($query) or die('Error, query failed');
 		$res = get_requests_for_image($req_img_id);
 		echo $res;
@@ -42,7 +42,7 @@ function get_requests_got_by($userid){
 			$result[] = $data;
 		}
 		$response = json_encode($result);
-		error_log($response);
+		//error_log($response);
 		echo $response;
 	} catch(Exception $ex) {
 		error_log($ex);
@@ -61,7 +61,7 @@ function get_requests_made_by($userid){
 			$result[] = $data;
 		}
 		$response = json_encode($result);
-		error_log($response);
+		//error_log($response);
 		echo $response;
 	} catch(Exception $ex) {
 		error_log($ex);
@@ -71,7 +71,7 @@ function get_requests_made_by($userid){
 
 function check_valid_requester($user_id,$imgid){
 	$query = "SELECT COUNT(  `request_id` ) AS editRequests FROM editrequest WHERE  `request_user_id` =".$user_id ." and `request_image_id`=".$imgid;
-	error_log($query);
+	//error_log($query);
 	$reqs = mysql_query($query);
 	while ($data = mysql_fetch_array($reqs)) {
 		$result = $data['editRequests'];
@@ -81,7 +81,7 @@ function check_valid_requester($user_id,$imgid){
 
 function get_requests_for_image($id){
 	$getRequests = "SELECT COUNT(  `request_id` ) AS editRequests FROM editrequest WHERE  `request_image_id` =".$id;
-	error_log($getRequests);
+	//error_log($getRequests);
 	$reqs = mysql_query($getRequests);
 	$result="";
 	while ($data = mysql_fetch_array($reqs)) {
