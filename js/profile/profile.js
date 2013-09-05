@@ -6,7 +6,8 @@ $(document).ready(function() {
 	if(document.location.hash!='') {
 	    //get the index from URL hash
 	    tabSelect = document.location.hash.substr(1,document.location.hash.length);
-	    $('#myTab a[href="#'+tabSelect+'"]').tab('show')
+	    console.log(tabSelect);
+	    $('#myTab a[href="#'+tabSelect+'"]').tab('show');
 	}
 	
 	$('#myTab a').click(function (e) {
