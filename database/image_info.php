@@ -115,7 +115,7 @@ function get_filtered_images($category, $project, $user_id) {
 		$empty_result = FALSE;		
 		echo '<li class="span3">';
 		echo '<div class="thumbnail">';
-		echo '<a class="imageClick" href="view_image.php?id=' . $data['image_id'] . '">';
+		//echo '<a class="imageClick" href="view_image.php?id=' . $data['image_id'] . '">';
 		echo '<img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
 		echo '</a>';
 		echo '<div><button data-imgid="' . $data['image_id'] . '" class="btn btn-primary btn-small goToImage">Go To Image</button></div>';
@@ -127,7 +127,7 @@ function get_filtered_images($category, $project, $user_id) {
 			echo "<h4>This user has not uploaded or worked on any images</h4>";
 		}
 		else {
-			echo "<h4>There are no images in this category yet!</h4>";		
+			echo "<h4>There are no images in this category yet!</h4>";
 		}
 	}
 }
