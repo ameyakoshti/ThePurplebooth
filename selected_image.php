@@ -2,7 +2,6 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 require_once "database/image_info.php";
 ini_set('memory_limit', '-1');
-ob_start();
 ?>
 
 <html>
@@ -19,7 +18,7 @@ ob_start();
 				<?php if(isset($_SESSION["codenameDS_user_id"]))echo "var userid = '".$_SESSION["codenameDS_user_id"]."';";?>
 				<?php if(isset($_SESSION["codenameDS_user_name"]))echo "var username = '".$_SESSION["codenameDS_user_name"]."';";?>
 				<?php if(isset($_GET['image_id'])) echo 'var imageid = '.$_GET['image_id'].";";?>
-			</script>			
+			</script>
 			<script src="/codenameDS/js/selected_image/selected_image.js"></script>
 			<script src="/codenameDS/js/selected_image/edit_me.js"></script>
 			
@@ -27,6 +26,7 @@ ob_start();
 				$(document).ready(function (){
 					$("#photographerDownload").click(function(){
 						<?php
+							
 						
 						?>
 					});
@@ -148,4 +148,3 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	}
 }
 ?>
-<?php ob_end_flush(); ?>
