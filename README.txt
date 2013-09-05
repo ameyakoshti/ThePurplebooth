@@ -7,30 +7,21 @@ try {
 }
 
 
-<li>
-	<a href="#loginModal" data-toggle="modal">new Login</a>
-</li>
-
-
-<div class="modal hide" id="loginModal" aria-hidden="true">
-	<div class="modal-header">
-		<h2>codenameDS Login</h2>
-	</div>
-
-	<div class="modal-body" style="overflow: hidden">
-		<form method="POST" action="login.php">
-			<div class="row-fluid">
-
-				<div class="span12">
-					<?php include $_SERVER["DOCUMENT_ROOT"].'/codenameDS/socialauth/index.php'?>
-				</div>
-			</div>
-		</form>
-	</div>
-
-	<div class="modal-footer">
-		<button class="btn" data-dismiss="modal" aria-hidden="true">
-			Close
-		</button>
-	</div>
-</div>
+<?php
+						$file = "/codenameDS/edited_images/" . $_GET['image_id'] . ".jpg";
+						
+						if (file_exists($file)) {
+						    header('Content-Description: File Transfer');
+						    header('Content-Type: application/octet-stream');
+						    header('Content-Disposition: attachment; filename='.basename($file));
+						    header('Content-Transfer-Encoding: binary');
+						    header('Expires: 0');
+						    header('Cache-Control: must-revalidate');
+						    header('Pragma: public');
+						    header('Content-Length: ' . filesize($file));
+						    ob_clean();
+						    flush();
+						    readfile($file);
+						    exit;
+						}
+						?>

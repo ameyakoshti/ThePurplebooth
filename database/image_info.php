@@ -36,30 +36,16 @@ function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $
 
 function upload_edited_image($image_id, $file_name, $tmp_name, $file_size, $file_type) {
 	try {
-		$cached_file_name = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/temp/" . $file_name;
-		//move the uploaded file to temp folder
-		move_uploaded_file($tmp_name, $cached_file_name);
-		//create image from the temp file
-		$img = imagecreatefromjpeg($cached_file_name);
-		//compress the temp image by 50% and save it as test.jpg
-		imagejpeg($img, $_SERVER['DOCUMENT_ROOT'] . "/codenameDS/temp/" . $file_name, 50);
-		//open and upload the compressed test image
-		$fp = fopen($_SERVER['DOCUMENT_ROOT'] . "/codenameDS/temp/" . $file_name, 'r');
-		$content = fread($fp, filesize($_SERVER['DOCUMENT_ROOT'] . "/codenameDS/temp/" . $file_name));
-		$content = mysql_real_escape_string($content);
-		if (!get_magic_quotes_gpc()) {
-			$file_name = mysql_real_escape_string($file_name);
-		}
-		unlink($_SERVER['DOCUMENT_ROOT'] . "/codenameDS/temp/" . $file_name);
-		fclose($fp);
-		
-		$query = "UPDATE `codenameDS`.`imageinfo` SET `edited_name`='$file_name', `edited_type`='$file_type', `edited_size`='$file_size', `edited_content`=`$content` WHERE `image_id`=$image_id"; 
-		//$files = glob($_SERVER["DOCUMENT_ROOT"] . '/codenameDS/temp/' . $file_name);
+		$file_location = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/edited_images/" . $image_id . ".jpg";
+		$file_location_db = "/codenameDS/edited_images/" . $image_id . ".jpg";
+		move_uploaded_file($tmp_name, $file_location);
+
+		$query = "UPDATE `codenameDS`.`imageinfo` SET `edited_img_link`='$file_location_db' WHERE `image_id`=$image_id";
+
 		mysql_query($query) or die('Error, query failed');
 
 		return TRUE;
 	} catch(exception $e) {
-		error_log($e);
 		return FALSE;
 	}
 }

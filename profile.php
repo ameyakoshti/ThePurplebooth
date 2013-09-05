@@ -72,7 +72,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		$success = upload_profile_picture($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
 
 		if ($success === TRUE){?>
-<script type="text/javascript">
+			<script type="text/javascript">
 				jSuccess(
 					    'Upload Image Sucessful!',
 					    {
@@ -83,12 +83,22 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 					    }
 					   );
 			</script>
-<?php 
+		 <?php 
 		 }
 		 else {?>
-<sript type="text/javascript"> jError( 'Upload Image Failed!', {
-autoHide : true, TimeShown : 2000, HorizontalPosition : 'center',
-ShowOverlay : false } ); </script> <?php }
+			<script type="text/javascript"> 
+				jError(
+					  'Upload Image Failed!',
+					  {
+						  autoHide : true, 
+						  TimeShown : 2000, 
+						  HorizontalPosition : 'center',
+						  ShowOverlay : false 
+					  }
+					 );
+			</script> 
+		 <?php 
+		 }
 
 echo '<script type="text/javascript">';
 echo 'location.reload(false)';

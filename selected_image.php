@@ -22,6 +22,23 @@ ob_start();
 			</script>			
 			<script src="/codenameDS/js/selected_image/selected_image.js"></script>
 			<script src="/codenameDS/js/selected_image/edit_me.js"></script>
+			
+			<script type="text/javascript">
+				$(document).ready(function (){
+					$("#photographerDownload").click(function(){
+						<?php
+						
+						?>
+					});
+					
+					$("#editorDownload").click(function(){
+						<?php
+						
+						?>
+					});
+				});
+			</script>
+			
 			<div class="oneImage">
 				<?php
 					get_image_by_id($_GET['image_id']);
@@ -34,11 +51,11 @@ ob_start();
 		
 		<div>
 			<div id="photographer" style="background-color:#eee;border: 1px solid #888; border-radius:3px;">
-				<h4>Editor has finished editing your image, here you go : <button id="editorDownload" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Download</button></h4>
+				<h4>Editor has finished editing your image, here you go : <button id="photographerDownload" name="photographerDownload" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Download</button></h4>
 			</div>
 			</br>
 			<div id="editor" style="background-color:#eee;border: 1px solid #888; border-radius:3px;">
-				<h4>Your bid is accepted! Download high quality image here : <button id="photographerDownload" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Download</button></h4>
+				<h4>Your bid is accepted! Download high quality image here : <button id="editorDownload" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Download</button></h4>
 				<h4>If you are done working on the image, you can upload it here : <a href="#loginModal" data-toggle="modal" class="btn btn-primary"><i class="icon-white icon-circle-arrow-up"></i> Upload</a></h4>
 			</div>
 		</div>	
@@ -83,9 +100,7 @@ ob_start();
 				</button>
 			</div>
 		</div>
-		
-		
-			
+					
 	</body>
 </html>
 <?php
