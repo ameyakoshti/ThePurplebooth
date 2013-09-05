@@ -25,10 +25,9 @@ ini_set('memory_limit', '-1');
 			<script type="text/javascript">
 				$(document).ready(function (){
 					$("#photographerDownload").click(function(){
-						<?php
-							
+						e.preventDefault();
+    					window.location.href = 'edited_images/10.jpg';
 						
-						?>
 					});
 					
 					$("#editorDownload").click(function(){
