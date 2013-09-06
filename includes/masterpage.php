@@ -62,7 +62,7 @@ ini_set('display_errors', 'On');
 						<img src="img/notification.ico" height="30px" width="30px" style="margin-top:10px"/>
 					</li>
 					<li>
-						<a class="notification_number" href="profile.php?username=<?php echo $_SESSION['codenameDS_user_name']; ?>">0</a>
+						<a class="notification_number" href="profile.php?username=<?php echo $_SESSION['codenameDS_user_name']; ?>#notifications">0</a>
 					</li>
 				</ul>
 			</div>
