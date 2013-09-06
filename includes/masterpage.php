@@ -8,10 +8,14 @@ ini_set('display_errors', 'On');
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/mosaic.1.0.1.js"></script>
 
+<script type="text/javascript" src="js/masterpage/masterpage.js"></script>
+
 <link href='/codenameDS/css/home.css' rel='stylesheet' type='text/css'>
 <link href='/codenameDS/css/footer.css' rel='stylesheet' type='text/css'>
 
 <script type="text/javascript">
+	<?php if(isset($_SESSION["codenameDS_user_id"])) echo "var user_id=".$_SESSION["codenameDS_user_id"].";";
+	?>
 	$(document).ready(function() {
 		var pathname = window.location.pathname;
 		if (pathname.search('upload') !== -1) {
@@ -56,6 +60,9 @@ ini_set('display_errors', 'On');
 					</li>
 					<li>
 						<img src="img/notification.ico" height="30px" width="30px" style="margin-top:10px"/>
+					</li>
+					<li>
+						<a class="notification_number" href="profile.php?username=<?php echo $_SESSION['codenameDS_user_name']; ?>">0</a>
 					</li>
 				</ul>
 			</div>

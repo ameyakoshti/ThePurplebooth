@@ -32,6 +32,7 @@ function startUp() {
 					data : {
 						'insert_comment' : true,
 						'user_id' : userid,
+						'to_user_id' : $('.selectedImage').data('userid'),
 						'user_name' : username,
 						'image_id' : imageid,
 						'comment_text' : this.value
@@ -76,7 +77,8 @@ function startUp() {
 								'user_name' : username,
 								'image_id' : imageid,
 								'comment_text' : this.value,
-								'comment_id' : $(this).parent('li').data('commentid')
+								'comment_id' : $(this).parent('li').data('commentid'),
+								'comment_user_id' : $(this).parent('li').data('userid')
 							},
 							type : 'post',
 							async: false,
@@ -98,7 +100,7 @@ function displayComments(output) {
 		$.each(res, function(id,value) {
 			var cmntid = value.comment_id;
 			if(replied.indexOf(cmntid)==-1){
-				content += "<li data-commentid="+value.comment_id+">"+value.comment_text+ " (commented by: <a href=http://localhost:8888/codenameDS/profile.php?username=" + value.comment_user_name + ">" + value.comment_user_name + "</a> )"+" on "+value.comment_timestamp+"<br/>";
+				content += "<li data-userid="+value.comment_user_id+" data-commentid="+value.comment_id+">"+value.comment_text+ " (commented by: <a href=http://localhost:8888/codenameDS/profile.php?username=" + value.comment_user_name + ">" + value.comment_user_name + "</a> )"+" on "+value.comment_timestamp+"<br/>";
 			if(typeof userid==='undefined'){
 					
 			}

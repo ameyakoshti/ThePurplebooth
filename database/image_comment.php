@@ -1,9 +1,10 @@
 <?php
 require_once "connections.php";
+require_once "notifications.php";
 open_connection();
 
 if(isset($_POST['insert_comment'])){
-	insert_comment($_POST['user_id'],$_POST['user_name'],$_POST['image_id'],$_POST['comment_text']);
+	insert_comment($_POST['user_id'],$_POST['to_user_id'],$_POST['user_name'],$_POST['image_id'],$_POST['comment_text']);
 }
 
 if(isset($_GET['select_comments'])){
@@ -11,14 +12,14 @@ if(isset($_GET['select_comments'])){
 }
 
 if(isset($_POST['reply_comment'])){
-	insert_reply_comment($_POST['user_id'],$_POST['user_name'],$_POST['image_id'],$_POST['comment_text'],$_POST['comment_id']);
+	insert_reply_comment($_POST['comment_user_id'],$_POST['user_id'],$_POST['user_name'],$_POST['image_id'],$_POST['comment_text'],$_POST['comment_id']);
 }
 
-function insert_reply_comment($user_id,$user_name,$image_id,$comment_text,$comment_id){
+function insert_reply_comment($to_user_id,$user_id,$user_name,$image_id,$comment_text,$comment_id){
 	try {
 		$text = str_replace("\n", "<br/>", $comment_text);
 		$query = "Insert into codenameDS.replycomment values (DEFAULT,".$user_id.",'".$user_name."',".$comment_id.",'".$text."',NOW())";
-		//error_log($query);
+		insert_notification($to_user_id,$user_id,$image_id,2);
 		mysql_query($query) or die('Error, query failed');
 		return TRUE;
 	} catch(Exception $ex) {
@@ -27,11 +28,12 @@ function insert_reply_comment($user_id,$user_name,$image_id,$comment_text,$comme
 	}
 }
 
-function insert_comment($user_id,$user_name,$image_id,$comment_text){
+function insert_comment($user_id,$to_user_id,$user_name,$image_id,$comment_text){
 	try {
 		$text = str_replace("\n", "<br/>", $comment_text);
 		$query = "Insert into codenameDS.imagecomment values (DEFAULT,".$user_id.",'".$text."',".$image_id.",NOW(),'".$user_name."')";
 		//error_log($query);
+		insert_notification($to_user_id,$user_id,$image_id,1);
 		mysql_query($query) or die('Error, query failed');
 		return TRUE;
 	} catch(Exception $ex) {

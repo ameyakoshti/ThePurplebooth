@@ -5,7 +5,24 @@ $(document).ready(function(){
 		});
 	getRequestsMade();
 	getRequestsGot();
+	updateNotificationStatus();
 });
+
+
+function updateNotificationStatus(){
+	$.ajax({
+		url : '/codenameDS/database/notifications.php',
+		data : {
+			'set_notifications_read' : true,
+			'user_id' : userid
+		},
+		type : 'post',
+		async: true,
+		success : function(output) {
+			console.log("done");
+		}
+	});
+}
 
 function getRequestsMade(){
 	$.ajax({
