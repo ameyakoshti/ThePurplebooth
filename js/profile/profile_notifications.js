@@ -19,7 +19,6 @@ function updateNotificationStatus(){
 		type : 'post',
 		async: true,
 		success : function(output) {
-			console.log("done");
 		}
 	});
 }
