@@ -17,10 +17,9 @@ function get_live_notifications(){
 					$.each(json,function(id,value) {
 						$('.notification_number').text(value.unread_notifications);
 					});
-					setTimeout('get_live_notifications()', 1000);
+					setTimeout('get_live_notifications()', 3000);
 		},
-		error : function(XMLHttpRequest, textstatus, error) { 
-					alert(error);
+		error : function(XMLHttpRequest, textstatus, error) {
 					setTimeout('get_live_notifications()', 15000);
 		}		
 	});
