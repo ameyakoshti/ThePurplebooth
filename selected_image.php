@@ -2,6 +2,8 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 require_once "database/image_info.php";
 ini_set('memory_limit', '-1');
+$image_id = $_GET['image_id'];
+//$resultdownload=mysql_query("SELECT name,type,content,edited_img_link FROM codenameDS.imageinfo where image_id=$image_id;");
 ?>
 
 <html>
@@ -21,43 +23,16 @@ ini_set('memory_limit', '-1');
 			</script>
 			<script src="/codenameDS/js/selected_image/selected_image.js"></script>
 			<script src="/codenameDS/js/selected_image/edit_me.js"></script>
-			
-			<script type="text/javascript">
-				$(document).ready(function (){
-					$("#photographerDownload").click(function(){
-						e.preventDefault();
-    					window.location.href = 'edited_images/10.jpg';
 						
-					});
-					
-					$("#editorDownload").click(function(){
-						<?php
-						
-						?>
-					});
-				});
-			</script>
-			
 			<div class="oneImage">
 				<?php
-					get_image_by_id($_GET['image_id']);
+					get_image_by_id($image_id);
 				?>
 				<div class="comments">
 					
 				</div>
 			</div>
 		</div>
-		
-		<div>
-			<div id="photographer" style="background-color:#eee;border: 1px solid #888; border-radius:3px;">
-				<h4>Editor has finished editing your image, here you go : <button id="photographerDownload" name="photographerDownload" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Download</button></h4>
-			</div>
-			</br>
-			<div id="editor" style="background-color:#eee;border: 1px solid #888; border-radius:3px;">
-				<h4>Your bid is accepted! Download high quality image here : <button id="editorDownload" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Download</button></h4>
-				<h4>If you are done working on the image, you can upload it here : <a href="#loginModal" data-toggle="modal" class="btn btn-primary"><i class="icon-white icon-circle-arrow-up"></i> Upload</a></h4>
-			</div>
-		</div>	
 		
 		<?php
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
@@ -112,7 +87,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		$description = $_POST['description'];	
 		$success = FALSE;
 		
-		$success = upload_edited_image($_GET['image_id'],$file_name,$tmp_name,$file_size,$file_type);
+		$success = upload_edited_image($image_id,$file_name,$tmp_name,$file_size,$file_type);
 
 		if ($success === TRUE){?>
 			<script type="text/javascript">

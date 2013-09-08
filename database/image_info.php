@@ -54,9 +54,17 @@ function get_image_by_id($id) {
 	$query = "SELECT * FROM `codenameDS`.`imageinfo` where `image_id`=" . $id;
 	$res = mysql_query($query);
 	$imageHTML = "";
+	$downloadHTML = "";
+	$imagename = "";
+	$edited_img_link = "";
+	
 	while ($data = mysql_fetch_array($res)) {
 		$user_data = get_user_info_by_id($data['user_id']);
 		var_dump($data['user_id']);
+		$imagename = $data['name'];
+		$edited_img_link = $data['edited_img_link'];
+	    file_put_contents('./original_images/'.$imagename, $data['content']);
+		
 		$imageHTML = $imageHTML . '<div data-imageid="' . $data['image_id'] . '" data-userid="' . $data['user_id'] . '" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
 		$imageHTML = $imageHTML . '<div class="title">' . "<h4>Title : " . $data["title"] . '</h4></div>';
 		$imageHTML = $imageHTML . '<div class="desc">' . "<h4>Description : " . $data["description"] . '</h4></div>';
@@ -66,7 +74,16 @@ function get_image_by_id($id) {
 	$imageHTML = $imageHTML . '<div class="requests">' . get_requests_for_image($id) . '</div>';
 	//error_log($imageHTML);
 	$imageHTML = $imageHTML . '<button class="btn btn-primary btn-small editImage">Edit Me!</button></div>';
+	
 	echo $imageHTML;
+	
+	$downloadHTML .= '<div><p>';
+	$downloadHTML .= '<a href="http://localhost:8888/<?php echo $edited_img_link;?>" download="http://localhost:8888/<?php echo $edited_img_link;?>" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i>Photographer Download</a>';
+	$downloadHTML .= ' <a href="http://localhost:8888/codenameDS/original_images/<?php echo $imagename;?>" download="<?php echo $imagename;?>" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i>Editor Download</a>';
+	$downloadHTML .= ' <a href="#loginModal" data-toggle="modal" class="btn btn-primary"><i class="icon-white icon-circle-arrow-up"></i>Editor Upload</a>';
+	$downloadHTML .= '</p></div>';
+	
+	echo $downloadHTML;
 }
 
 function get_all_images() {
