@@ -3,7 +3,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 require_once "database/image_info.php";
 ini_set('memory_limit', '-1');
 $image_id = $_GET['image_id'];
-//$resultdownload=mysql_query("SELECT name,type,content,edited_img_link FROM codenameDS.imageinfo where image_id=$image_id;");
 ?>
 
 <html>
@@ -26,7 +25,7 @@ $image_id = $_GET['image_id'];
 						
 			<div class="oneImage">
 				<?php
-					get_image_by_id($image_id);
+					get_image_by_id($image_id,$_SESSION["codenameDS_user_id"]);
 				?>
 				<div class="comments">
 					
