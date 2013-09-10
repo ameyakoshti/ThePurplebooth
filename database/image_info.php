@@ -60,7 +60,7 @@ function get_image_by_id($id) {
 	
 	while ($data = mysql_fetch_array($res)) {
 		$user_data = get_user_info_by_id($data['user_id']);
-		var_dump($data['user_id']);
+		//var_dump($data['user_id']);
 		$imagename = $data['name'];
 		$edited_img_link = $data['edited_img_link'];
 	    file_put_contents('./original_images/'.$imagename, $data['content']);
@@ -84,6 +84,24 @@ function get_image_by_id($id) {
 	$downloadHTML .= '</p></div>';
 	
 	echo $downloadHTML;
+	get_all_bids($id);
+}
+
+function get_all_bids($id){
+	$query = "SELECT * FROM `codenameDS`.`editrequest` where `request_image_id`=" . $id;
+	$res = mysql_query($query);
+	
+	$biddersHTML = '<form name="myform" method="POST">
+	<p>The following editors have bidded on your image : </p><br>
+	<div align="center"><br>';
+	
+	while ($data = mysql_fetch_array($res)) {
+		$user_data = get_user_info_by_id($data['request_image_user_id']);
+		$username = $user_data['user_name'];		
+		$biddersHTML .= '<input type="radio" name="bidders" value="$username"> <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a><br>';
+	}
+	$biddersHTML .= '</div></form>';
+	echo $biddersHTML;
 }
 
 function get_all_images() {
