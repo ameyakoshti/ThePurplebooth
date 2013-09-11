@@ -1,11 +1,7 @@
 <?php
 require_once "connections.php";
-<<<<<<< HEAD
 require_once "notifications.php";
-=======
 require_once 'users.php';
-
->>>>>>> 7daeacc22b20340f2f27228e63e22b52cf828eaa
 open_connection();
 
 if(isset($_POST['insert_edit_request'])){
@@ -27,10 +23,10 @@ if(isset($_GET['get_request_by'])){
 <<<<<<< HEAD
 if(isset($_GET['get_request_by_approved'])){
 	get_requests_made_by_approved($_GET['user_id']);
-=======
+	}
 if(isset($_POST['editor_found'])){
 	update_editor($_POST['editor_username'],$_POST['image_id']);
->>>>>>> 7daeacc22b20340f2f27228e63e22b52cf828eaa
+
 }
 
 function insert_edit_request($req_usr_id,$req_img_id,$req_img_usr_id){
