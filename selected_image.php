@@ -22,6 +22,7 @@ $image_id = $_GET['image_id'];
 			</script>
 			<script src="/codenameDS/js/selected_image/selected_image.js"></script>
 			<script src="/codenameDS/js/selected_image/edit_me.js"></script>
+			<script src="/codenameDS/js/selected_image/accept_bidder.js"></script>
 						
 			<div class="oneImage">
 				<?php
