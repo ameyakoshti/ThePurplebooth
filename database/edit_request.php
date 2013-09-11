@@ -20,7 +20,6 @@ if(isset($_GET['get_request_by'])){
 	get_requests_made_by($_GET['user_id']);
 }
 
-<<<<<<< HEAD
 if(isset($_GET['get_request_by_approved'])){
 	get_requests_made_by_approved($_GET['user_id']);
 	}
