@@ -23,7 +23,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 					<p>
 						Your email address
 					</p>
-					<input type="email" id="email" name="email" class="enterEmailContactUs" placeholder="Email" value="<?php echo $_SESSION['codenameDS_email']?>" required/>
+					<input type="email" id="email" name="email" class="enterEmailContactUs" placeholder="Email" value="<?php if(isset($_SESSION['codenameDS_email'])){ echo $_SESSION['codenameDS_email'];}?>" required/>
 				</div>
 				
 				<div>

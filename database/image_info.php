@@ -100,28 +100,43 @@ function get_image_by_id($id,$logged_in_user_id) {
 }
 
 function get_all_bids($id){
-	$query = "SELECT * FROM `codenameDS`.`editrequest` where `request_image_id`=" . $id;
-	$res = mysql_query($query);
-	$bidsfound = FALSE;
+	$querycheck = "SELECT editor_id FROM `codenameDS`.`imageinfo` where `image_id`=" . $id;
+	error_log($querycheck);
 	
-	$biddersHTML = '<form name="myform" method="POST">
-	<p>The following editors have bidded on your image : </p><br>
-	<div align="center"><br>';
+	$rescheck = mysql_query($querycheck);
+	$data = mysql_fetch_array($rescheck);
 	
-	while ($data = mysql_fetch_array($res)) {
-		$bidsfound = TRUE;
-		$user_data = get_user_info_by_id($data['request_user_id']);
-		$username = $user_data['user_name'];		
-		$biddersHTML .= '<input type="radio" name="bidders" value="$username"> <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a><br>';
+	error_log($data['editor_id']);
+	// check if an editor is already selected for this image. if yes then disable the editors selection buttons
+	if(!isset($data['editor_id'])){	
+		$query = "SELECT * FROM `codenameDS`.`editrequest` where `request_image_id`=" . $id;
+		$res = mysql_query($query);
+		$bidsfound = FALSE;
+		
+		$biddersHTML = '<form name="myform" method="POST">
+		<p>The following editors have bidded on your image : </p><br>
+		<div align="center"><br>';
+		
+		while ($data = mysql_fetch_array($res)) {
+			$bidsfound = TRUE;
+			$user_data = get_user_info_by_id($data['request_user_id']);
+			$username = $user_data['user_name'];		
+			$biddersHTML .= '<input type="radio" name="bidders" class="radioBtnClass" value='.$user_data["user_name"].'> <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a><br>';
+		}
+		if($bidsfound){
+			$biddersHTML .= '<a href="#" id="acceptbid" class="btn btn-success"><i class="icon-white icon-ok"></i> Accept Bid</a>';
+		}
+		else {
+			$biddersHTML .='<p>No bids yet!</p>';	
+		}
+		$biddersHTML .= '</div></form>';
+		echo $biddersHTML;
 	}
-	if($bidsfound){
-		$biddersHTML .= '<a href="#" class="btn btn-success"><i class="icon-white icon-ok"></i> Accept Bid</a>';
+	else{
+		// show the editor that has been selected for this image
+		$editor_data = get_user_info_by_id($data['editor_id']);
+		echo '<div><p> You have already selected <a href="profile.php?username='.$editor_data["user_name"].'">'.$editor_data['user_name'].'</a> as the editor</p></div>';
 	}
-	else {
-		$biddersHTML .='<p>No bids yet!</p>';	
-	}
-	$biddersHTML .= '</div></form>';
-	echo $biddersHTML;
 }
 
 function get_all_images() {

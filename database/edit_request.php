@@ -1,5 +1,7 @@
 <?php
 require_once "connections.php";
+require_once 'users.php';
+
 open_connection();
 
 if(isset($_POST['insert_edit_request'])){
@@ -16,6 +18,10 @@ if(isset($_GET['get_request_to'])){
 
 if(isset($_GET['get_request_by'])){
 	get_requests_made_by($_GET['user_id']);
+}
+
+if(isset($_POST['editor_found'])){
+	update_editor($_POST['editor_username'],$_POST['image_id']);
 }
 
 function insert_edit_request($req_usr_id,$req_img_id,$req_img_usr_id){
@@ -80,7 +86,7 @@ function check_valid_requester($user_id,$imgid){
 }
 
 function get_requests_for_image($id){
-	$getRequests = "SELECT COUNT(  `request_id` ) AS editRequests FROM editrequest WHERE  `request_image_id` =".$id;
+	$getRequests = "SELECT COUNT(`request_id`) AS editRequests FROM editrequest WHERE `request_image_id` =".$id;
 	//error_log($getRequests);
 	$reqs = mysql_query($getRequests);
 	$result="";
@@ -90,4 +96,17 @@ function get_requests_for_image($id){
 	return $result;
 }
 
+function update_editor($editor_username,$image_id){		
+	try {
+		$data = get_user_info($editor_username);
+		$editor_id = $data['user_id'];
+		
+		$query = "UPDATE `codenameDS`.`imageinfo` SET `editor_id`=".$editor_id." WHERE `image_id`=".$image_id;
+		//error_log($query);
+		mysql_query($query) or die('Error, query failed');
+	} catch(Exception $ex) {
+		error_log($ex);
+		return FALSE;
+	}
+}
 ?>
