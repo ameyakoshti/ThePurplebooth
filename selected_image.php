@@ -89,34 +89,8 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		
 		$success = upload_edited_image($image_id,$file_name,$tmp_name,$file_size,$file_type);
 
-		if ($success === TRUE){?>
-			<script type="text/javascript">
-				jSuccess(
-					    'Upload Image Sucessful!',
-					    {
-					      autoHide : true,
-					      TimeShown : 2000,
-					      HorizontalPosition : 'center',
-					      ShowOverlay : false
-					    }
-					   );
-			</script>	
-			<?php 
-		 }
-		 else {?>
-		 	<script type="text/javascript">
-		 		 jError(
-	 				    'Upload Image Failed!',
-	 				    {
-	 				      autoHide : true,
-	 				      TimeShown : 2000,
-	 				      HorizontalPosition : 'center',
-	 				      ShowOverlay : false
-	 				    }
-	 				  );
-		 	</script>
-		 	<?php 
-		 }
+		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/statuspopup.php';
+		
 	} catch(Exception $e) {
 		error_log($e);
 	}

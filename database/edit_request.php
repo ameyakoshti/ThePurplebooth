@@ -22,7 +22,8 @@ if(isset($_GET['get_request_by'])){
 
 if(isset($_GET['get_request_by_approved'])){
 	get_requests_made_by_approved($_GET['user_id']);
-	}
+}
+
 if(isset($_POST['editor_found'])){
 	update_editor($_POST['editor_username'],$_POST['image_id']);
 
@@ -120,14 +121,22 @@ function get_requests_for_image($id){
 	return $result;
 }
 
+/*
+ * Description : This function updates the database to set the editor's id for an image after the photographer accpets a bid.
+ * Tables involved : image_info, editrequest.
+ */
 function update_editor($editor_username,$image_id){		
 	try {
 		$data = get_user_info($editor_username);
 		$editor_id = $data['user_id'];
 		
 		$query = "UPDATE `codenameDS`.`imageinfo` SET `editor_id`=".$editor_id." WHERE `image_id`=".$image_id;
-		//error_log($query);
 		mysql_query($query) or die('Error, query failed');
+		
+		$query = "UPDATE `codenameDS`.`editrequest` SET `request_status`='1' WHERE `request_image_id`=".$image_id." AND `request_user_id`=".$editor_id;
+		error_log($query);
+		mysql_query($query) or die('Error, query failed');
+		
 	} catch(Exception $ex) {
 		error_log($ex);
 		return FALSE;
