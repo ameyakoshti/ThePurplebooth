@@ -1,6 +1,6 @@
 <script type="text/javascript" src="/codenameDS/js/profile/profile_notifications.js"></script>
 <ul class="nav nav-pills" id="myNotTab">
-  <li class="active"><a href="#reqApproved">Approved Requests</a></li>
+  <li><a href="#reqApproved">Approved Requests</a></li>
   <li><a href="#reqMade">Pending Requests</a></li>
   <li><a href="#reqGot">Recieved Requests</a></li>
   <li><a href="#comments">Comments</a></li>

@@ -3,9 +3,10 @@ $(document).ready(function(){
 		  e.preventDefault();
 		  $(this).tab('show');
 		});
-	getRequestsMade();
 	getRequestsMadeApproved();
+	getRequestsMade();
 	getRequestsGot();
+	$('#myNotTab a[href="#reqApproved"]').tab('show');
 	updateNotificationStatus();
 });
 
@@ -32,7 +33,7 @@ function getRequestsMade(){
 			'user_id' : userid
 		},
 		type : 'get',
-		async: false,
+		async: true,
 		success : function(output) {
 			displayRequests(output, "#reqGot","from");
 		}
@@ -47,7 +48,7 @@ function getRequestsMadeApproved(){
 			'user_id' : userid
 		},
 		type : 'get',
-		async: false,
+		async: true,
 		success : function(output) {
 			displayRequests(output, "#reqApproved","approved");
 		}
@@ -62,7 +63,7 @@ function getRequestsGot(){
 			'user_id' : userid
 		},
 		type : 'get',
-		async: false,
+		async: true,
 		success : function(output) {
 			displayRequests(output, "#reqMade","to");
 		}
@@ -81,7 +82,7 @@ function displayRequests(output,container,direction) {
 			else if(direction=="to"){
 				content+="<li>You have made edit request for <a href='http://localhost:8888/codenameDS/selected_image.php?image_id="+value.request_image_id+"'>this image</a> uploaded by <a href='http://localhost:8888/codenameDS/profile.php?username="+value.user_name+"'>"+value.user_name+"</a></li>"
 			}
-			else {
+			else if(direction=="approved"){
 				content+="<li>Your edit request for <a href='http://localhost:8888/codenameDS/selected_image.php?image_id="+value.request_image_id+"'>this image</a> uploaded by <a href='http://localhost:8888/codenameDS/profile.php?username="+value.user_name+"'>"+value.user_name+"</a> has been approved</li>"
 			}
 		}
