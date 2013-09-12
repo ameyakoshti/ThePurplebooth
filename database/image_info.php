@@ -88,19 +88,19 @@ function get_image_by_id($id,$logged_in_user_id) {
 		
 	    file_put_contents('./original_images/'.$imagename, $data['content']);
 		
-		$imageHTML = $imageHTML . '<div data-imageid="' . $data['image_id'] . '" data-userid="' . $data['user_id'] . '" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
-		$imageHTML = $imageHTML . '<div class="title">' . "<h4>Title : " . $data["title"] . '</h4></div>';
-		$imageHTML = $imageHTML . '<div class="desc">' . "<h4>Description : " . $data["description"] . '</h4></div>';
-		$imageHTML = $imageHTML . '<div class="profileLink">Image uploaded by <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a>';	
+		$imageHTML = $imageHTML . '<div id="image" data-imageid="' . $data['image_id'] . '" data-userid="' . $data['user_id'] . '" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
+		$imageHTML = $imageHTML . '<div id="imagetitle" class="title">' . "<h4>Title : " . $data["title"] . '</h4></div>';
+		$imageHTML = $imageHTML . '<div id="imagedescription" class="desc">' . "<h4>Description : " . $data["description"] . '</h4></div>';
+		$imageHTML = $imageHTML . '<div id="imageuploader" class="profileLink">Image uploaded by <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a>';	
 	}
 	//error_log($id);
-	$imageHTML = $imageHTML . '<div class="requests">' . get_requests_for_image($id) . '</div>';
+	$imageHTML = $imageHTML . '<div id="imagebids" class="requests">' . get_requests_for_image($id) . '</div>';
 	//error_log($imageHTML);
 	$imageHTML = $imageHTML . '<button class="btn btn-primary btn-small editImage">Edit Me!</button></div>';
 	
 	echo $imageHTML;
 	
-	$downloadHTML .= '<div><p>';
+	$downloadHTML .= '<div id="downloads"><p>';
 	if ($owner_user_id === $logged_in_user_id){
 		if($editor_img_link !=''){
 			$downloadHTML .= '<a href="http://localhost:8888/<?php echo $edited_img_link;?>" download="http://localhost:8888/<?php echo $edited_img_link;?>" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i>Photographer Download</a>';
@@ -128,17 +128,16 @@ function get_all_bids($id){
 	$querycheck = "SELECT editor_id FROM `codenameDS`.`imageinfo` where `image_id`=" . $id;	
 	$data = mysql_fetch_array(mysql_query($querycheck));
 	
-	error_log($data['editor_id']);
 	// if the editor has not been selected then show all the options available
 	if($data['editor_id'] == 0){	
 		$query = "SELECT * FROM `codenameDS`.`editrequest` where `request_image_id`=" . $id;
 		$res = mysql_query($query);
 		$bidsfound = FALSE;
 		
-		$biddersHTML = '<form name="biddersform""><div><br>';
+		$biddersHTML = '<div id="bidders"><br>';
+		$biddersHTML .= '<p>The following editors have bidded on your image : </p>';
 		
 		while ($data = mysql_fetch_array($res)) {
-			$biddersHTML .= '<p>The following editors have bidded on your image : </p>';
 			$bidsfound = TRUE;
 			$user_data = get_user_info_by_id($data['request_user_id']);
 			$username = $user_data['user_name'];		
@@ -151,13 +150,13 @@ function get_all_bids($id){
 		else {
 			$biddersHTML .='<p>No bids yet!</p>';	
 		}
-		$biddersHTML .= '</div></form></div>';
+		$biddersHTML .= '</div>';
 		echo $biddersHTML;
 	}
 	else{
 		// show the editor that has been selected for this image
 		$editor_data = get_user_info_by_id($data['editor_id']);
-		echo '<div><p> You have already selected <a href="profile.php?username='.$editor_data["user_name"].'">'.$editor_data['user_name'].'</a> as the editor</p></div>';
+		echo '<div id="assignededitor"><p> You have already selected <a href="profile.php?username='.$editor_data["user_name"].'">'.$editor_data['user_name'].'</a> as the editor</p></div>';
 	}
 }
 
