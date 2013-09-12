@@ -15,6 +15,11 @@ ini_set('display_errors', 'On');
 
 <script type="text/javascript">
 	<?php if(isset($_SESSION["codenameDS_user_id"])) echo "var user_id=".$_SESSION["codenameDS_user_id"].";";
+	else{
+		?>
+		$('.notification_number').hide();
+	<?php 
+	}
 	?>
 	$(document).ready(function() {
 		var pathname = window.location.pathname;
@@ -62,7 +67,7 @@ ini_set('display_errors', 'On');
 						<img src="img/notification.ico" height="30px" width="30px" style="margin-top:10px"/>
 					</li>
 					<li>
-						<a class="notification_number" href="profile.php?username=<?php echo $_SESSION['codenameDS_user_name']; ?>#notifications">0</a>
+						<a class="notification_number" href="profile.php?username=<?php if(isset($_SESSION["codenameDS_user_id"])) echo $_SESSION['codenameDS_user_name']; ?>#notifications">0</a>
 					</li>
 				</ul>
 			</div>

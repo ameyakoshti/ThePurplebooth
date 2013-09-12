@@ -91,7 +91,7 @@ function get_image_by_id($id,$logged_in_user_id) {
 		$imageHTML = $imageHTML . '<div data-imageid="' . $data['image_id'] . '" data-userid="' . $data['user_id'] . '" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
 		$imageHTML = $imageHTML . '<div class="title">' . "<h4>Title : " . $data["title"] . '</h4></div>';
 		$imageHTML = $imageHTML . '<div class="desc">' . "<h4>Description : " . $data["description"] . '</h4></div>';
-		$imageHTML = $imageHTML . '<div class="profileLink">Image uploaded by <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a></div>';	
+		$imageHTML = $imageHTML . '<div class="profileLink">Image uploaded by <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a>';	
 	}
 	//error_log($id);
 	$imageHTML = $imageHTML . '<div class="requests">' . get_requests_for_image($id) . '</div>';
@@ -151,7 +151,7 @@ function get_all_bids($id){
 		else {
 			$biddersHTML .='<p>No bids yet!</p>';	
 		}
-		$biddersHTML .= '</div></form>';
+		$biddersHTML .= '</div></form></div>';
 		echo $biddersHTML;
 	}
 	else{

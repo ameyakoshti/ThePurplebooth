@@ -4,6 +4,7 @@ $(document).ready(function(){
 		  $(this).tab('show');
 		});
 	getRequestsMade();
+	getRequestsMadeApproved();
 	getRequestsGot();
 	updateNotificationStatus();
 });
@@ -38,6 +39,21 @@ function getRequestsMade(){
 	});
 }
 
+function getRequestsMadeApproved(){
+	$.ajax({
+		url : '/codenameDS/database/edit_request.php',
+		data : {
+			'get_request_by_approved' : true,
+			'user_id' : userid
+		},
+		type : 'get',
+		async: false,
+		success : function(output) {
+			displayRequests(output, "#reqApproved","approved");
+		}
+	});
+}
+
 function getRequestsGot(){
 	$.ajax({
 		url : '/codenameDS/database/edit_request.php',
@@ -62,9 +78,12 @@ function displayRequests(output,container,direction) {
 			if(direction=="from"){
 				content+="<li>You have an edit request from <a href='http://localhost:8888/codenameDS/profile.php?username="+value.user_name+"'>"+value.user_name+"</a> for <a href='http://localhost:8888/codenameDS/selected_image.php?image_id="+value.request_image_id+"'>this image</a></li>";
 			}
-			else{
+			else if(direction=="to"){
 				content+="<li>You have made edit request for <a href='http://localhost:8888/codenameDS/selected_image.php?image_id="+value.request_image_id+"'>this image</a> uploaded by <a href='http://localhost:8888/codenameDS/profile.php?username="+value.user_name+"'>"+value.user_name+"</a></li>"
-			}			
+			}
+			else {
+				content+="<li>Your edit request for <a href='http://localhost:8888/codenameDS/selected_image.php?image_id="+value.request_image_id+"'>this image</a> uploaded by <a href='http://localhost:8888/codenameDS/profile.php?username="+value.user_name+"'>"+value.user_name+"</a> has been approved</li>"
+			}
 		}
 		)
 	}
