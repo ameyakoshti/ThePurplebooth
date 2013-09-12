@@ -116,7 +116,7 @@ function get_requests_for_image($id){
 	$reqs = mysql_query($getRequests);
 	$result="";
 	while ($data = mysql_fetch_array($reqs)) {
-		$result = '<p id="totalRequests">This image has '.$data['editRequests'].' requests.</p>';
+		$result = '<p id="totalrequests">This image has '.$data['editRequests'].' requests.</p>';
 	}
 	return $result;
 }

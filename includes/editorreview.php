@@ -4,6 +4,18 @@
 			alert('hi');
 			$("#rating").css("width", "20%");
 		}
+		$('#rating2').click(function(){
+			$("#rating").css("width", "40%");
+		}
+		$('#rating3').click(function(){
+			$("#rating").css("width", "60%");
+		}
+		$('#rating4').click(function(){
+			$("#rating").css("width", "80%");
+		}
+		$('#rating5').click(function(){
+			$("#rating").css("width", "100%");
+		}
 	});
 </script>
 
@@ -27,13 +39,13 @@
 							<li id="rating5"><a href="#" title="5 stars out of 5" class="five-stars">5</a></li>
 						</ul>		
 			     		<p>How would you like to rate his creativity?</p>
-			     		<ul id="creativity" class="star-rating">
-							<li class="current-rating" style="width:60%;">Currently 3/5 Stars.</li>
-							<li><a href="#" title="1 star out of 5" class="one-star">1</a></li>
-							<li><a href="#" title="2 stars out of 5" class="two-stars">2</a></li>
-							<li><a href="#" title="3 stars out of 5" class="three-stars">3</a></li>
-							<li><a href="#" title="4 stars out of 5" class="four-stars">4</a></li>
-							<li><a href="#" title="5 stars out of 5" class="five-stars">5</a></li>
+			     		<ul class="star-rating">
+							<li id="creativity" class="current-rating" style="width:60%;">Currently 3/5 Stars.</li>
+							<li id="creativity1"><a href="#" title="1 star out of 5" class="one-star">1</a></li>
+							<li id="creativity2"><a href="#" title="2 stars out of 5" class="two-stars">2</a></li>
+							<li id="creativity3"><a href="#" title="3 stars out of 5" class="three-stars">3</a></li>
+							<li id="creativity4"><a href="#" title="4 stars out of 5" class="four-stars">4</a></li>
+							<li id="creativity5"><a href="#" title="5 stars out of 5" class="five-stars">5</a></li>
 						</ul>		
 			     	</div>
 					<div>
@@ -44,12 +56,7 @@
 					<div>
 				     	<p>Click below to download the edited picture</p>
 						<p>							
-							<a href="http://localhost:8888/<?php echo $_SESSION['edited_img_link'];?>" download="http://localhost:8888/<?php echo $_SESSION['edited_img_link'];?>" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Download</a>
-							
-							<button class="btn btn-primary btn-small" id="upload" name="upload"
-								type="submit">
-								<i class="icon-camera icon-white"> </i> Upload
-							</button>				
+							<a href="http://localhost:8888/<?php echo $_SESSION['edited_img_link'];?>" download="http://localhost:8888/<?php echo $_SESSION['edited_img_link'];?>" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Download</a>	
 						</p>
 					</div>
 				</div>
