@@ -3,6 +3,8 @@ $(document).ready(function(){
 		if($("input[type='radio'].radioBtnClass").is(':checked')) {
 	    var editor_name = $("input[type='radio'].radioBtnClass:checked").val();
 	    accept_bidder(editor_name);
+	    $('#bidders').hide();
+	    $('#totalrequests').hide();
 		}
 		else{
 			jError(

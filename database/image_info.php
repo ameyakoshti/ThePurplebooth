@@ -95,19 +95,20 @@ function get_image_by_id($id,$logged_in_user_id) {
 	}
 
 	$imageHTML = $imageHTML . '<div id="imagebids" class="requests">' . get_requests_for_image($id) . '</div>';
-	$imageHTML = $imageHTML . '<div id="buttonbids"><button class="btn btn-primary btn-small editImage">Edit Me!</button></div>';
+	$imageHTML = $imageHTML . '<div id="buttonbids"><button class="btn btn-primary btn-small editImage">Edit Me!</button></div></br>';
 	
 	echo $imageHTML;
 	
 	$downloadHTML .= '<div id="downloads"><p>';
 	if ($owner_user_id === $logged_in_user_id){
 		if($editor_img_link != ''){
-			$downloadHTML .= '<a href="http://localhost:8888/<?php echo $edited_img_link;?>" download="http://localhost:8888/<?php echo $edited_img_link;?>" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i>Photographer Download</a>';
+			$_SESSION['edited_img_link'] = $edited_img_link;
+			$downloadHTML .= '<a href="#ratingModal" data-toggle="modal" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Photographer\'s Download</a>';
 		}
 	}
 	if ($editor_user_id === $logged_in_user_id){
-		$downloadHTML .= '<a href="http://localhost:8888/codenameDS/original_images/'.$imagename.'" download="'.$imagename.'" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i>Editor Download</a>';
-		$downloadHTML .= '<a href="#loginModal" data-toggle="modal" class="btn btn-primary"><i class="icon-white icon-circle-arrow-up"></i>Editor Upload</a>';
+		$downloadHTML .= '<a href="http://localhost:8888/codenameDS/original_images/'.$imagename.'" download="'.$imagename.'" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Editor\'s Download</a>&nbsp';
+		$downloadHTML .= '<a href="#uploadModal" data-toggle="modal" class="btn btn-primary"><i class="icon-white icon-circle-arrow-up"></i> Editor\'s Upload</a>';
 	}
 	$downloadHTML .= '</p></div>';
 	
