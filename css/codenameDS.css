@@ -67,7 +67,8 @@ input[type="file"] {
 
 .comments {
 	float:right;
-	max-width:600px;
+	width: 48.93617021276595%;
+  	*width: 48.88297872340425%;
 	max-height:400px;
 	margin-left:20px;
 	margin-top:55px;

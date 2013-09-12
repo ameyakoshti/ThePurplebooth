@@ -91,12 +91,12 @@ function get_image_by_id($id,$logged_in_user_id) {
 		$imageHTML = $imageHTML . '<div id="image" data-imageid="' . $data['image_id'] . '" data-userid="' . $data['user_id'] . '" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
 		$imageHTML = $imageHTML . '<div id="imagetitle" class="title">' . "<h4>Title : " . $data["title"] . '</h4></div>';
 		$imageHTML = $imageHTML . '<div id="imagedescription" class="desc">' . "<h4>Description : " . $data["description"] . '</h4></div>';
-		$imageHTML = $imageHTML . '<div id="imageuploader" class="profileLink">Image uploaded by <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a>';	
+		$imageHTML = $imageHTML . '<div id="imageuploader" class="profileLink">Image uploaded by <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a></div>';	
 	}
 	//error_log($id);
 	$imageHTML = $imageHTML . '<div id="imagebids" class="requests">' . get_requests_for_image($id) . '</div>';
 	//error_log($imageHTML);
-	$imageHTML = $imageHTML . '<button class="btn btn-primary btn-small editImage">Edit Me!</button></div>';
+	$imageHTML = $imageHTML . '<div id="buttonbids"><button class="btn btn-primary btn-small editImage">Edit Me!</button></div>';
 	
 	echo $imageHTML;
 	
@@ -117,6 +117,7 @@ function get_image_by_id($id,$logged_in_user_id) {
 	if ($owner_user_id === $logged_in_user_id){
 		get_all_bids($id);
 	}
+	echo "</div>";
 }
 
 /*

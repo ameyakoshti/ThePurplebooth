@@ -24,11 +24,11 @@ $image_id = $_GET['image_id'];
 			<script src="/codenameDS/js/selected_image/edit_me.js"></script>
 			<script src="/codenameDS/js/selected_image/accept_bidder.js"></script>
 						
-			<div class="oneImage">
-				<?php
-					get_image_by_id($image_id,$_SESSION["codenameDS_user_id"]);
-				?>
-				<div class="comments">
+			<div class="row-fluid">
+				<div id="image" class="span6">
+					<?php get_image_by_id($image_id,$_SESSION["codenameDS_user_id"]);?>
+				</div>
+				<div id="comments" class="comments">
 					
 				</div>
 			</div>
