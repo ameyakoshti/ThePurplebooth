@@ -36,7 +36,7 @@ function make_edit_request(targtObj){
 			'insert_edit_request' : true,
 			'request_user_id' : userid,
 			'image_id' : imageid,
-			'request_image_user_id':$(targtObj).parent().data('userid')
+			'request_image_user_id':$('.selectedImage').data('userid')
 		},
 		type : 'post',
 		async: false,

@@ -106,8 +106,8 @@ function get_image_by_id($id,$logged_in_user_id) {
 		}
 	}
 	if ($editor_user_id === $logged_in_user_id){
-		$downloadHTML .= ' <a href="http://localhost:8888/codenameDS/original_images/<?php echo $imagename;?>" download="<?php echo $imagename;?>" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i>Editor Download</a>';
-		$downloadHTML .= ' <a href="#loginModal" data-toggle="modal" class="btn btn-primary"><i class="icon-white icon-circle-arrow-up"></i>Editor Upload</a>';
+		$downloadHTML .= '<a href="http://localhost:8888/codenameDS/original_images/'.$imagename.'" download="'.$imagename.'" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i>Editor Download</a>';
+		$downloadHTML .= '<a href="#loginModal" data-toggle="modal" class="btn btn-primary"><i class="icon-white icon-circle-arrow-up"></i>Editor Upload</a>';
 	}
 	$downloadHTML .= '</p></div>';
 	
@@ -145,7 +145,7 @@ function get_all_bids($id){
 		}
 		// check if there are some bidders for the this image, if yes then show the accept bid button.
 		if($bidsfound){
-			$biddersHTML .= '<a href="#" id="acceptbid" class="btn btn-success"><i class="icon-white icon-ok"></i> Accept Bid</a>';
+			$biddersHTML .= '<br/><a href="#" id="acceptbid" class="btn btn-success"><i class="icon-white icon-ok"></i> Accept Bid</a>';
 		}
 		else {
 			$biddersHTML .='<p>No bids yet!</p>';	
