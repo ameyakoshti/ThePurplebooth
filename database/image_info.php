@@ -93,16 +93,15 @@ function get_image_by_id($id,$logged_in_user_id) {
 		$imageHTML = $imageHTML . '<div id="imagedescription" class="desc">' . "<h4>Description : " . $data["description"] . '</h4></div>';
 		$imageHTML = $imageHTML . '<div id="imageuploader" class="profileLink">Image uploaded by <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a></div>';	
 	}
-	//error_log($id);
+
 	$imageHTML = $imageHTML . '<div id="imagebids" class="requests">' . get_requests_for_image($id) . '</div>';
-	//error_log($imageHTML);
 	$imageHTML = $imageHTML . '<div id="buttonbids"><button class="btn btn-primary btn-small editImage">Edit Me!</button></div>';
 	
 	echo $imageHTML;
 	
 	$downloadHTML .= '<div id="downloads"><p>';
 	if ($owner_user_id === $logged_in_user_id){
-		if($editor_img_link !=''){
+		if($editor_img_link != ''){
 			$downloadHTML .= '<a href="http://localhost:8888/<?php echo $edited_img_link;?>" download="http://localhost:8888/<?php echo $edited_img_link;?>" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i>Photographer Download</a>';
 		}
 	}
