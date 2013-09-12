@@ -24,7 +24,8 @@ function accept_bidder(editor_name){
 		data:{
 			'editor_found' : true,
 			'editor_username':editor_name,
-			'image_id' : imageid
+			'image_id' : imageid,
+			'image_user_id' : $('.selectedImage').data('userid')
 			 },
 		type:'post',
 		async:false,

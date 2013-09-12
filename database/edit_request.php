@@ -25,7 +25,7 @@ if(isset($_GET['get_request_by_approved'])){
 }
 
 if(isset($_POST['editor_found'])){
-	update_editor($_POST['editor_username'],$_POST['image_id']);
+	update_editor($_POST['editor_username'],$_POST['image_id'],$_POST['image_user_id']);
 
 }
 
@@ -85,7 +85,7 @@ function get_requests_made_by_approved($userid){
 	try{
 		$query = "Select codenameDS.editrequest.*,codenameDS.users.user_name from codenameDS.editrequest LEFT join
 				  codenameDS.users ON codenameDS.editrequest.request_image_user_id = codenameDS.users.user_id
-				  where codenameDS.editrequest.request_user_id=".$userid." AND codenameDS.editrequest.request_status=true";
+				  where codenameDS.editrequest.request_user_id=".$userid." AND codenameDS.editrequest.request_status=1";
 		$res = mysql_query($query);
 		$result = array();
 		while ($data = mysql_fetch_array($res)) {
@@ -116,7 +116,7 @@ function get_requests_for_image($id){
 	$reqs = mysql_query($getRequests);
 	$result="";
 	while ($data = mysql_fetch_array($reqs)) {
-		$result = 'This image has '.$data['editRequests'].' requests.';
+		$result = '<p id="totalRequests">This image has '.$data['editRequests'].' requests.</p>';
 	}
 	return $result;
 }
@@ -125,7 +125,7 @@ function get_requests_for_image($id){
  * Description : This function updates the database to set the editor's id for an image after the photographer accpets a bid.
  * Tables involved : image_info, editrequest.
  */
-function update_editor($editor_username,$image_id){		
+function update_editor($editor_username,$image_id,$image_user_id){		
 	try {
 		$data = get_user_info($editor_username);
 		$editor_id = $data['user_id'];
@@ -136,7 +136,7 @@ function update_editor($editor_username,$image_id){
 		$query = "UPDATE `codenameDS`.`editrequest` SET `request_status`='1' WHERE `request_image_id`=".$image_id." AND `request_user_id`=".$editor_id;
 		error_log($query);
 		mysql_query($query) or die('Error, query failed');
-		
+		insert_notification($editor_id,$image_user_id,$image_id,4);
 	} catch(Exception $ex) {
 		error_log($ex);
 		return FALSE;

@@ -21,6 +21,7 @@ function get_live_notifications(){
 					setTimeout('get_live_notifications()', 1000);
 		},
 		error : function(XMLHttpRequest, textstatus, error) {
+			console.log(error);
 					setTimeout('get_live_notifications()', 15000);
 		}		
 	});
