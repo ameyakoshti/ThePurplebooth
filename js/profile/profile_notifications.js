@@ -12,7 +12,7 @@ $(document).ready(function(){
 			});
 		getRequests();
 		getComments();
-		$('#myNotTab a[href="#reqApproved"]').tab('show');
+		$('#myNotTab a[href="#requests"]').tab('show');
 		updateNotificationStatus();
 	}
 	else{
