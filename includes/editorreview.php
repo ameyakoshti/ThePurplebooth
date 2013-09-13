@@ -9,29 +9,38 @@
 	<div class="modal-body" style="overflow: hidden">
 		<form method="POST" enctype="multipart/form-data">
 			<div class="row-fluid">	
-				<div class="span12">
-					<div class="row-fluid">	
-						<div class='span6'>
-				            Rate the editor:
-				            <div id="rating_1" class="">
-				                <div class="star_1 ratings_stars"></div>
-				                <div class="star_2 ratings_stars"></div>
-				                <div class="star_3 ratings_stars"></div>
-				                <div class="star_4 ratings_stars"></div>
-				                <div class="star_5 ratings_stars"></div>
-			                </div>
-				        </div>			        
-				        <div class='span6'>
-				            Rate the editor's creativity:
-				            <div id="rating_2" class="" id="ratings">
-				                <div class="star_1 ratings_stars"></div>
-				                <div class="star_2 ratings_stars"></div>
-				                <div class="star_3 ratings_stars"></div>
-				                <div class="star_4 ratings_stars"></div>
-				                <div class="star_5 ratings_stars"></div>
-			                </div>
-						</div>
-					</div>
+				<div class="span12">				
+						<?php
+						include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/settings.php';
+						connect();
+									
+						$id=$_SESSION['editor_id'];
+						$j=$v=1;
+						$rat = 0;
+												
+						$q="SELECT total_votes, total_value FROM `ratings` WHERE id=$id";
+						$r=mysql_query($q);
+						if(!$r) echo mysql_error();
+						
+						while($row=mysql_fetch_array($r))
+						{
+							$v=$row['total_votes'];
+							$tv=$row['total_value'];
+							$rat=$tv/$v;
+						}
+						
+						echo'<div class="product" align="center">
+				           Please rate the editor for his efforts!
+				            <div id="rating_'.$id.'" class="ratings">';
+				                for($k=1;$k<6;$k++){
+									if($rat+0.5>$k)$class="star_".$k."  ratings_stars ratings_vote";
+									else $class="star_".$k." ratings_stars ratings_blank";
+									echo '<div class="'.$class.'"></div>';
+									}
+				                echo' <div class="total_votes"><p class="voted"> Rating: <strong>'.@number_format($rat).'</strong>/5 ('.$v. '  vote(s) cast) 
+				            </div>
+				        </div></div>';			
+						?>				
 					<br>
 					<br>
 					<div>

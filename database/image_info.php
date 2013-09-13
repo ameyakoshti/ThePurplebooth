@@ -156,6 +156,7 @@ function get_all_bids($id){
 	}
 	else{
 		// show the editor that has been selected for this image
+		$_SESSION['editor_id'] = $data['editor_id'];
 		$editor_data = get_user_info_by_id($data['editor_id']);
 		echo '<div id="assignededitor"><p> You have already selected <a href="profile.php?username='.$editor_data["user_name"].'">'.$editor_data['user_name'].'</a> as the editor</p></div>';
 	}
