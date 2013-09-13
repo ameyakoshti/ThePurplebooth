@@ -7,7 +7,7 @@ $image_id = $_GET['image_id'];
 
 <html>
 	<head>
-		<title>Selected Image</title>
+		<title>Selected Image</title>			
 	</head>
 	<body>	
 		

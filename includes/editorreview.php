@@ -1,24 +1,6 @@
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#rating1').click(function(){
-			alert('hi');
-			$("#rating").css("width", "20%");
-		}
-		$('#rating2').click(function(){
-			$("#rating").css("width", "40%");
-		}
-		$('#rating3').click(function(){
-			$("#rating").css("width", "60%");
-		}
-		$('#rating4').click(function(){
-			$("#rating").css("width", "80%");
-		}
-		$('#rating5').click(function(){
-			$("#rating").css("width", "100%");
-		}
-	});
-</script>
-
+<link rel="stylesheet" href="/codenameDS/css/rating.css" />
+<script type="text/javascript" src="/codenameDS/js/rating/rating.js"></script>	
+		
 <div class="modal hide" id="ratingModal" aria-hidden="true">
 	<div class="modal-header">
 		<h2>Review Editor</h2>
@@ -28,26 +10,30 @@
 		<form method="POST" enctype="multipart/form-data">
 			<div class="row-fluid">	
 				<div class="span12">
-					<div>
-			     		<p>How would you like rate the editor?</p>
-			     		<ul class="star-rating">
-							<li id="rating" class="current-rating" style="width:60%;">Currently 3/5 Stars.</li>
-							<li id="rating1"><a href="#" title="1 star out of 5" class="one-star">1</a></li>
-							<li id="rating2"><a href="#" title="2 stars out of 5" class="two-stars">2</a></li>
-							<li id="rating3"><a href="#" title="3 stars out of 5" class="three-stars">3</a></li>
-							<li id="rating4"><a href="#" title="4 stars out of 5" class="four-stars">4</a></li>
-							<li id="rating5"><a href="#" title="5 stars out of 5" class="five-stars">5</a></li>
-						</ul>		
-			     		<p>How would you like to rate his creativity?</p>
-			     		<ul class="star-rating">
-							<li id="creativity" class="current-rating" style="width:60%;">Currently 3/5 Stars.</li>
-							<li id="creativity1"><a href="#" title="1 star out of 5" class="one-star">1</a></li>
-							<li id="creativity2"><a href="#" title="2 stars out of 5" class="two-stars">2</a></li>
-							<li id="creativity3"><a href="#" title="3 stars out of 5" class="three-stars">3</a></li>
-							<li id="creativity4"><a href="#" title="4 stars out of 5" class="four-stars">4</a></li>
-							<li id="creativity5"><a href="#" title="5 stars out of 5" class="five-stars">5</a></li>
-						</ul>		
-			     	</div>
+					<div class="row-fluid">	
+						<div class='span6'>
+				            Rate the editor:
+				            <div id="rating_1" class="">
+				                <div class="star_1 ratings_stars"></div>
+				                <div class="star_2 ratings_stars"></div>
+				                <div class="star_3 ratings_stars"></div>
+				                <div class="star_4 ratings_stars"></div>
+				                <div class="star_5 ratings_stars"></div>
+			                </div>
+				        </div>			        
+				        <div class='span6'>
+				            Rate the editor's creativity:
+				            <div id="rating_2" class="" id="ratings">
+				                <div class="star_1 ratings_stars"></div>
+				                <div class="star_2 ratings_stars"></div>
+				                <div class="star_3 ratings_stars"></div>
+				                <div class="star_4 ratings_stars"></div>
+				                <div class="star_5 ratings_stars"></div>
+			                </div>
+						</div>
+					</div>
+					<br>
+					<br>
 					<div>
 			     		<p>Please enter some comments about the editor</p>
 			     		<textarea id="description" name="description" class="enterComment" placeholder="Comments" required></textarea>
