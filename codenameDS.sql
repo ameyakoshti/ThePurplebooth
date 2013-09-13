@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 12, 2013 at 04:48 AM
+-- Generation Time: Sep 13, 2013 at 10:32 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.4.10
 
@@ -103,6 +103,23 @@ CREATE TABLE `notifications` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ratings`
+--
+
+CREATE TABLE `ratings` (
+  `id` int(10) NOT NULL,
+  `total_votes` int(5) NOT NULL DEFAULT '0',
+  `total_value` int(5) NOT NULL DEFAULT '0',
+  `used_ips` longtext NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `class` varchar(45) DEFAULT NULL,
+  `reviews` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `replycomment`
 --
 
@@ -119,24 +136,6 @@ CREATE TABLE `replycomment` (
   KEY `reply_user_name` (`reply_user_name`),
   KEY `reply_user_name_2` (`reply_user_name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `userrating`
---
-
-CREATE TABLE `userrating` (
-  `rating_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) unsigned NOT NULL,
-  `user_name` varchar(45) NOT NULL,
-  `stars` int(1) NOT NULL,
-  `reviews` varchar(200) NOT NULL,
-  `rated_by_user_id` int(11) NOT NULL,
-  `rated_by_user_name` varchar(45) NOT NULL,
-  PRIMARY KEY (`rating_id`),
-  KEY `user_id_idx` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -172,10 +171,3 @@ ALTER TABLE `notifications`
   ADD CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`from_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `notifications_ibfk_2` FOREIGN KEY (`to_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `notifications_ibfk_3` FOREIGN KEY (`notification_image_id`) REFERENCES `imageinfo` (`image_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `userrating`
---
-ALTER TABLE `userrating`
-  ADD CONSTRAINT `rated_by_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
