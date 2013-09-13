@@ -1,15 +1,32 @@
 $(document).ready(function(){
-	$('#myNotTab a').click(function (e) {
-		  e.preventDefault();
-		  $(this).tab('show');
-		});
-	getRequestsMadeApproved();
-	getRequestsMade();
-	getRequestsGot();
-	$('#myNotTab a[href="#reqApproved"]').tab('show');
-	updateNotificationStatus();
+	var show_notifications = false;
+	if(typeof(loggedusername)!='undefined'){
+		if(loggedusername==username){
+			show_notifications = true;
+		}
+	}
+	if(show_notifications){
+		$('#myNotTab a').click(function (e) {
+			  e.preventDefault();
+			  $(this).tab('show');
+			});
+		getRequestsMadeApproved();
+		getRequestsMade();
+		getRequestsGot();
+		getComments();
+		$('#myNotTab a[href="#reqApproved"]').tab('show');
+		updateNotificationStatus();
+	}
+	else{
+		$('#notification_link').remove();
+		$('#notifications').remove();
+	}
+	 $(window).scrollTop(0);
 });
 
+function getComments(){
+	
+}
 
 function updateNotificationStatus(){
 	$.ajax({

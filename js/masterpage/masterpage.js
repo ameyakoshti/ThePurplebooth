@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	if(typeof(user_id)!='undefined')
 		get_live_notifications();
+	else
+		$('.notification_number').hide();
 });
 
 function get_live_notifications(){

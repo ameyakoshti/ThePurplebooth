@@ -43,7 +43,7 @@ require_once "database/user_rating.php";
 
 		<ul class="nav nav-tabs" id="myTab">
 			<li class="active"><a href="#profile">Profile</a></li>
-			<li><a href="#notifications">Notifications</a></li>
+			<li id="notification_link"><a href="#notifications">Notifications</a></li>
 		</ul>
 
 		<div class="tab-content">
