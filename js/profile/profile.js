@@ -8,6 +8,7 @@ $(document).ready(function() {
 	    tabSelect = document.location.hash.substr(1,document.location.hash.length);
 	    console.log(tabSelect);
 	    $('#myTab a[href="#'+tabSelect+'"]').tab('show');
+	    $('.container-fluid').scrollTop(0);
 	}
 	
 	$('#myTab a').click(function (e) {

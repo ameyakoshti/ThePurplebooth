@@ -10,15 +10,43 @@ if(isset($_POST['set_notifications_read'])){
 	set_notifications_read($_POST["user_id"]);
 }
 
-if(isset($_GET['get_comment_notifications'])){
-	get_comment_notifications($_GET["userid"]);
+if(isset($_GET['get_comments'])){
+	get_comment_notifications($_GET["user_id"]);
+}
+
+if(isset($_GET['get_requests'])){
+	get_request_notifications($_GET['user_id']);
+}
+
+function get_request_notifications($userid){
+	try {
+		$query = "SELECT * FROM  `notifications`WHERE  `notification_type` LIKE  '%REQUEST%' and `to_user_id`=$userid ORDER BY  `notification_timestamp` DESC";
+		$res = mysql_query($query);
+		$result = array();
+		while ($data = mysql_fetch_array($res)) {
+			$result[] = $data;
+		}
+		$response = json_encode($result);
+		echo $response;
+	} catch (Exception $e) {
+		error_log($e);
+		return FALSE;
+	}
 }
 
 function get_comment_notifications($userid){
 	try {
-		
+		$query = "SELECT * FROM  `notifications` WHERE (`notification_type` =  'COMMENT' OR `notification_type` =  'REPLY') AND  `to_user_id` =$userid ORDER BY  `notification_timestamp` DESC";
+		$res = mysql_query($query);
+		$result = array();
+		while ($data = mysql_fetch_array($res)) {
+			$result[] = $data;
+		}
+		$response = json_encode($result);
+		echo $response;
 	} catch (Exception $e) {
 		error_log($e);
+		return FALSE;
 	}
 } 
 
