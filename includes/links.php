@@ -12,4 +12,4 @@ session_start();
 <link rel="stylesheet" href="/codenameDS/css/user-profile.css" />
 <link rel="stylesheet" type="text/css" href="/codenameDS/css/jNotify.jquery.css" media="screen" />
 <link rel="stylesheet" href="/codenameDS/css/codenameDS.css" />
-<link rel="stylesheet" href="/codenameDS/css/star_rating.css" />
+<link rel="stylesheet" href="/codenameDS/css/rating.css" />
