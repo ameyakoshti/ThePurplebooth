@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 13, 2013 at 10:32 AM
+-- Generation Time: Sep 15, 2013 at 04:52 AM
 -- Server version: 5.5.29
 -- PHP Version: 5.4.10
 
@@ -107,15 +107,14 @@ CREATE TABLE `notifications` (
 --
 
 CREATE TABLE `ratings` (
-  `id` int(10) NOT NULL,
-  `total_votes` int(5) NOT NULL DEFAULT '0',
-  `total_value` int(5) NOT NULL DEFAULT '0',
-  `used_ips` longtext NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `class` varchar(45) DEFAULT NULL,
-  `reviews` varchar(200) DEFAULT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `rated_by` int(11) DEFAULT NULL,
+  `rating` int(5) DEFAULT '0',
+  `comments` varchar(200) DEFAULT NULL,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 -- --------------------------------------------------------
 
