@@ -6,7 +6,6 @@ $(document).ready(function() {
 	if(document.location.hash!='') {
 	    //get the index from URL hash
 	    tabSelect = document.location.hash.substr(1,document.location.hash.length);
-	    console.log(tabSelect);
 	    $('#myTab a[href="#'+tabSelect+'"]').tab('show');
 	    $('.container-fluid').scrollTop(0);
 	}
@@ -39,8 +38,8 @@ function displayReviews(output) {
 	// if no reviews then handle the foreach loop
 	if (output != null || output != "") {
 		$.each(res, function(id, value) {
-			content += "<li> Rating " + value.stars + "</li>";
-			content += "<li>" + value.reviews + " (rated by: <a href=http://localhost:8888/codenameDS/profile.php?username=" + value.rated_by_user_name + ">" + value.rated_by_user_name + "</a> ) </li>";
+			content += "<li>" + value.rating + " Stars</li>";
+			content += "<li>" + value.comments + " (rated by: <a href=http://localhost:8888/codenameDS/profile.php?username=" + value.rated_by + ">" + value.rated_by + "</a> ) </li>";
 		});
 	}
 	content += '</ul>';
