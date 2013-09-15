@@ -142,11 +142,11 @@ function get_all_bids($id){
 			$bidsfound = TRUE;
 			$user_data = get_user_info_by_id($data['request_user_id']);
 			$username = $user_data['user_name'];		
-			$biddersHTML .= '<input type="radio" name="bidders" class="radioBtnClass" value='.$user_data["user_name"].'> <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a><br>';
+			$biddersHTML .= '<input type="radio" name="bidders" class="radioBtnClass" value='.$user_data["user_name"].'> <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a>';
 		}
 		// check if there are some bidders for the this image, if yes then show the accept bid button.
 		if($bidsfound){
-			$biddersHTML .= '<br/><a href="#" id="acceptbid" class="btn btn-success"><i class="icon-white icon-ok"></i> Accept Bid</a>';
+			$biddersHTML .= '<a href="#" id="acceptbid" class="btn btn-success"><i class="icon-white icon-ok"></i> Accept Bid</a>';
 		}
 		else {
 			$biddersHTML .='<p>No bids yet!</p>';	

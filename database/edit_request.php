@@ -134,9 +134,16 @@ function update_editor($editor_username,$image_id,$image_user_id){
 		mysql_query($query) or die('Error, query failed');
 		
 		$query = "UPDATE `codenameDS`.`editrequest` SET `request_status`='1' WHERE `request_image_id`=".$image_id." AND `request_user_id`=".$editor_id;
-		error_log($query);
+		mysql_query($query) or die('Error, query failed');
+		$query = "UPDATE `codenameDS`.`editrequest` SET `request_status`='2' WHERE `request_image_id`=".$image_id." AND `request_user_id`<>".$editor_id;
 		mysql_query($query) or die('Error, query failed');
 		insert_notification($editor_id,$image_user_id,$image_id,4);
+		$getForNotification = "SELECT * FROM editrequest WHERE `request_image_id`=".$image_id." AND `request_user_id`<>".$editor_id." AND `request_status`='2'";
+		$reqs = mysql_query($getForNotification);
+		$result="";
+		while ($data = mysql_fetch_array($reqs)) {
+			insert_notification($data['request_user_id'],$data['request_image_user_id'],$data['request_image_id'],5);
+		}		
 	} catch(Exception $ex) {
 		error_log($ex);
 		return FALSE;
