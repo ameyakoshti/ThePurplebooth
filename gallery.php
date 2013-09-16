@@ -25,9 +25,10 @@ require_once "database/users.php";
 					$logged_user_id = $_SESSION['codenameDS_user_id'];			
 			?>
 			
-			<div id="gallery-categories" style="margin: 80px 0px 10px 50px;">
-				<div class="btn-group">
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<div id="gallery-categories" style="margin: 80px 0px 30px 50px;">
+				<span style="color: #525252; width: 150px; float: left;"><h4>Image Filters: </h4></span>
+				<div class="btn-group" style="margin-top: 5px;">
+					<button type="button" class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" style="border-radius: 0px;">
 						Category <?php 
 						if($category == 'myimages'){
 							echo "- "."My Images";
@@ -60,8 +61,8 @@ require_once "database/users.php";
 					</ul>
 				</div>
 				
-				<div class="btn-group">
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				<div class="btn-group" style="margin-top: 5px;">
+					<button type="button" class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" style="border-radius: 0px;">
 						Project <?php echo "- ".ucfirst($project);?>
 						<span class="caret"></span>
 					</button>
