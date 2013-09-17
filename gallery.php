@@ -62,18 +62,11 @@ require_once "database/users.php";
 				</div>
 				
 				<div class="btn-group" style="margin-top: 5px;">
-					<button type="button" class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" style="border-radius: 0px;">
-						Project <?php echo "- ".ucfirst($project);?>
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu">
-						<li></li>
-						<li></li>
-						<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=all&userid=<?php echo $user_id;?>">All</a> </li>
-						<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=new&userid=<?php echo $user_id;?>">New</a></li>
-						<li> <a href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=completed&userid=<?php echo $user_id;?>">Completed</a></li>
-					</ul>
+					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=all&userid=<?php echo $user_id;?>">All</a>
+					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=new&userid=<?php echo $user_id;?>">New</a>
+					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=completed&userid=<?php echo $user_id;?>">Completed</a>
 				</div>
+				
 			</div>
 			
 			<div>
