@@ -18,8 +18,7 @@ require_once "database/users.php";
 		<script type="text/javascript">
 			(function ($){
 				imagesLoaded('#images-container', function() {
-					alert('Loaded images..');
-		        	var options = {
+					var options = {
 			        autoResize: true, // This will auto-update the layout when the browser window is resized.
 		            container: $('#tiles'), // Optional, used for some extra CSS styling
 		            offset: 10, // Optional, the distance between grid items
