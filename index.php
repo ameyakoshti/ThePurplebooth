@@ -62,51 +62,52 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 					<div class="span9" style="margin: 10px 0px 30px 0px"><hr class="featurette-divider"></div>
 				</div>
 			</div>
+			
 			<div id="category-container">
 				<div class="row-fluid">
 					<div class="span1"></div>
 					<div class="category-row span2">
-						<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/abstract.jpg"></a>
 						<p>Abstract</p>
+						<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/abstract.jpg"></a>
 					</div>
 					<div class="category-row span2">
-						<a href="/codenameDS/gallery.php?category=landscape&project=all&userid=all"><img src="/codenameDS/img/home_catergories/landscape.jpg"></a>
 						<p>Landscape</p>
+						<a href="/codenameDS/gallery.php?category=landscape&project=all&userid=all"><img src="/codenameDS/img/home_catergories/landscape.jpg"></a>
 					</div>
 					<div class="category-row span2">
-						<a href="/codenameDS/gallery.php?category=street&project=all&userid=all"><img src="/codenameDS/img/home_catergories/street.jpg"></a>
 						<p>Street</p>
+						<a href="/codenameDS/gallery.php?category=street&project=all&userid=all"><img src="/codenameDS/img/home_catergories/street.jpg"></a>
 					</div>
 					<div class="category-row span2">
-						<a href="/codenameDS/gallery.php?category=portrait&project=all&userid=all"><img src="/codenameDS/img/home_catergories/portrait.jpg"></a>
 						<p>Portrait</p>
+						<a href="/codenameDS/gallery.php?category=portrait&project=all&userid=all"><img src="/codenameDS/img/home_catergories/portrait.jpg"></a>
 					</div>
 					<div class="category-row span2">
-						<a href="/codenameDS/gallery.php?category=wildlife&project=all&userid=all"><img src="/codenameDS/img/home_catergories/wildlife.jpg"></a>
 						<p>Wildlife</p>
+						<a href="/codenameDS/gallery.php?category=wildlife&project=all&userid=all"><img src="/codenameDS/img/home_catergories/wildlife.jpg"></a>
 					</div>
 				</div>
 				<div class="row-fluid">
 					<div class="span1"></div>
 					<div class="category-row span2">
-						<a href="/codenameDS/gallery.php?category=architecture&project=all&userid=all"><img src="/codenameDS/img/home_catergories/architecture.jpg"></a>
 						<p>Architecture</p>
+						<a href="/codenameDS/gallery.php?category=architecture&project=all&userid=all"><img src="/codenameDS/img/home_catergories/architecture.jpg"></a>
 					</div>
 					<div class="category-row span2">
-						<a href="/codenameDS/gallery.php?category=macro&project=all&userid=all"><img src="/codenameDS/img/home_catergories/macro.jpg"></a>
 						<p>Macro</p>
+						<a href="/codenameDS/gallery.php?category=macro&project=all&userid=all"><img src="/codenameDS/img/home_catergories/macro.jpg"></a>
 					</div>
 					<div class="category-row span2">
-						<a href="/codenameDS/gallery.php?category=hdr&project=all&userid=all"><img src="/codenameDS/img/home_catergories/hdr.jpg"></a>
 						<p>HDR</p>
+						<a href="/codenameDS/gallery.php?category=hdr&project=all&userid=all"><img src="/codenameDS/img/home_catergories/hdr.jpg"></a>
 					</div>
 					<div class="category-row span2">
-						<a href="/codenameDS/gallery.php?category=event&project=all&userid=all"><img src="/codenameDS/img/home_catergories/event.jpg"></a>
 						<p>Event</p>
+						<a href="/codenameDS/gallery.php?category=event&project=all&userid=all"><img src="/codenameDS/img/home_catergories/event.jpg"></a>
 					</div>
 					<div class="category-row span2">
-						<a href="/codenameDS/gallery.php?category=product&project=all&userid=all"><img src="/codenameDS/img/home_catergories/product.jpg"></a>
 						<p>Product</p>
+						<a href="/codenameDS/gallery.php?category=product&project=all&userid=all"><img src="/codenameDS/img/home_catergories/product.jpg"></a>
 					</div>
 				</div>
 			</div>

@@ -208,25 +208,45 @@ html, body {
 	.category-row {
 		margin-bottom: 40px;
 		position: relative;
+		-moz-box-sizing: border-box;
+   		box-sizing: border-box;
+   		box-shadow: 3px 0px 5px #888888;
+   		align: center;
+	}
+	
+	.category-row img {
+		align: center;
 	}
 	
 	#category-heading, #photographers-heading, #projects-heading {
 		margin-left: 50px;
 	}
 	
-	#category-container p {
-    	white-space: nowrap;
-		width: 225px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		position: absolute;
-		bottom: 1px;
-		word-wrap: break-word;
-		color: #ffffff;
-		text-align: center;
-		font-family: Raleway;
-		font-size: 18px;
-	}
+/* 	#category-container p { */
+/*     	white-space: nowrap; */
+/* 		width: 225px; */
+/* 		overflow: hidden; */
+/* 		text-overflow: ellipsis; */
+/* 		position: absolute; */
+/* 		bottom: 1px; */
+/* 		word-wrap: break-word; */
+/* 		color: #ffffff; */
+/* 		text-align: center; */
+/* 		font-family: Raleway; */
+/* 		font-size: 18px; */
+/* 	} */
+
+#category-container p {
+	text-align: center;
+	padding-top: 10px;
+	color: #525252;
+	font-family: Raleway;
+	font-size: 16px;
+}
+
+#category-container img {
+	text-align: center;
+}
 	
 
 
