@@ -62,12 +62,9 @@ ob_start();
 				     	<p>Click below to select the pic you want to upload</p>
 						<p>
 						
-							<input name="userfile" type="file" id="userfile"
-								class="btn">
-							<button class="btn btn-primary btn-small" id="upload" name="upload"
-								type="submit">
-								<i class="icon-camera icon-white"> </i> Upload
-							</button>			
+							<input name="userfile" type="file" id="userfile" class="btn">
+							<button class="btn btn-inverse btn-small" id="upload" name="upload" type="submit">
+								<i class="icon-camera icon-white"> </i> Upload </button>			
 						</p>
 					</div>
 					</form>
