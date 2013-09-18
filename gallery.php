@@ -122,7 +122,7 @@ require_once "database/users.php";
 	
 				<?php		
 // 					echo '<div class="row">';
- 					echo '<div class="images-container">';
+ 					echo '<div id="images-container">';
  					echo '<ul  id="tiles">'; //echo '<ul class="thumbnails">';
 					
  					get_filtered_images($category,$project,$user_id);
