@@ -214,13 +214,15 @@ function get_filtered_images($category, $project, $user_id) {
 	$empty_result = TRUE;  
 	while ($data = mysql_fetch_array($res)) {
 		$empty_result = FALSE;		
-		echo '<li class="span3">';
-		echo '<div class="thumbnail">';
+		//echo '<li class="span3">';
+		echo '<li>';
+		//echo '<div class="thumbnail">';
 		//echo '<a class="imageClick" href="view_image.php?id=' . $data['image_id'] . '">';
-		echo '<img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
-		echo '</a>';
-		echo '<div><button data-imgid="' . $data['image_id'] . '" class="btn btn-primary btn-small goToImage">Go To Image</button></div>';
-		echo '</div>';
+		//echo '<img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
+		echo '<img src="view_image.php?id=' . $data['image_id'] . '">';
+		//echo '</a>';
+		echo '<p><button data-imgid="' . $data['image_id'] . '" class="btn btn-primary btn-small goToImage">Go To Image</button></p>';
+		//echo '</div>';
 		echo '</li>';
 	}
 	if ($empty_result){

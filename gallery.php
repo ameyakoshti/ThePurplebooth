@@ -101,7 +101,7 @@ require_once "database/users.php";
 				<?php } ?>
 			</div>
 			
-			<div id="images-container">
+			<!--<div id="images-container">
 				<ul id="tiles">
 					<li><img src="http://lorempixel.com/600/500"/><p>Uploaded by: Ameya Koshti</p></li>
 					<li><img src="http://lorempixel.com/500/600"/><p>Uploaded by: Ameya Joshi</p></li>
@@ -119,19 +119,19 @@ require_once "database/users.php";
 					<li><img src="http://lorempixel.com/600/550"/><p>Uploaded by: Sheetal Paranjpe</p></li>
 					<li><img src="http://lorempixel.com/800/800"/><p>Uploaded by: Professor</p></li>
 				</ul>
-			</div>
+			</div>-->
 	
 				<?php		
 // 					echo '<div class="row">';
-// 					echo '<div class="span12">';
-// 					echo '<ul class="thumbnails">';
+ 					echo '<div class="images-container">';
+ 					echo '<ul  id="tiles">'; //echo '<ul class="thumbnails">';
 					
-// 					get_filtered_images($category,$project,$user_id);
-	
-// 					echo '</div>';
-// 					echo '</div>';
-// 					echo '</ul>';			
-// 				?>
+ 					get_filtered_images($category,$project,$user_id);
+					
+					echo '</ul>';
+ 					echo '</div>';
+// 					echo '</div>'; 				
+				?>
 		
 	</div>
 		<?php
