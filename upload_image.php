@@ -23,14 +23,14 @@ ob_start();
 	      	?>
 	      	<div id="upload-signup" class="container-fluid">
 				<div class="offset1" style="margin-top: 100px;">
-					<h2 style="font-family: Raleway;">This is where you upload the raw pics!</h2>
+					<h2 style="color: #525252;">This is where you upload the raw pics!</h2>
 	      			<p>... but before you do, we need you to <a href="http://localhost:8888/codenameDS/socialauth/index.php">sign-in or sign-up</a>.</p>
 				</div>
 			</div>
 		   	<?php } else { ?>
 		   	<div id="upload" class="container-fluid">
 		        <div class="offset1" style="margin-top: 100px;"> 
-		        	<h2 style="font-family: Raleway;">This is where you upload the raw pics!</h2>
+		        	<h2 style="color: #525252;">This is where you upload the raw pics!</h2>
 			        <form method="post" enctype="multipart/form-data">
 				     	<div id="image-title">
 				     		<p>Choose a title for the image</p>
