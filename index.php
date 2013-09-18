@@ -147,6 +147,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			</div>
 
 		</div>
+		
 			<?php
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
 			?>

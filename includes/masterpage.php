@@ -49,8 +49,10 @@ ini_set('display_errors', 'On');
 					<li><a href="/codenameDS/gallery.php?category=all&project=all&userid=all">Gallery</a></li>
 					<li>
 					<?php 	
-					if(!isset($_SESSION['codenameDS_user_name'])) {
-						?> <a href="/codenameDS/socialauth/index.php">Login</a>	<?php
+					if(!isset($_SESSION['codenameDS_user_name'])) { ?> 
+					<a href="/codenameDS/socialauth/index.php">Login</a>	
+<!-- 						<a data-toggle="modal" href="#loginModal">Login</a> -->
+					<?php
 					}
 					else{ 
 					?>
@@ -71,7 +73,35 @@ ini_set('display_errors', 'On');
 					</li>
 				</ul>
 			</div>
-		</div>
+ 		</div> <!-- end container -->
 	</div>
 </div>
 </div>
+
+
+
+<!-- Modal Code used for Login -->
+		
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	          <h4 class="modal-title">Login to thepurplebooth &#153;</h4>
+	        </div>
+	        <div class="modal-body">
+	        	<div style="text-align: center;"><h5>Just sign-in with one of the following social networking web sites!</h5></div>
+	        	<div id="social-login-links" style="margin: 30px; text-align: center;">
+	        		<a style="margin: 0px 20px 0px 20px;" href="javascript:;" onclick="openLoginDialog('?action=login&type=twitter')"><img src="/codenameds/socialauth/images/twitter-login.png"/></a>
+					<a style="margin: 0px 20px 0px 20px;" href="javascript:;" onclick="openLoginDialog('?action=login&type=facebook')"><img src="/codenameds/socialauth/images/facebook-login.png"/></a>
+					<a style="margin: 0px 20px 0px 20px;" href="javascript:;" onclick="openLoginDialog('?action=login&type=google')"><img src="/codenameds/socialauth/images/google-login.png"/></a>
+					<a style="margin: 0px 20px 0px 20px;" href="javascript:;" onclick="openLoginDialog('?action=login&type=linkedin')"><img src="/codenameds/socialauth/images/linkedin-login.png"/></a>
+					<a style="margin: 0px 20px 0px 20px;" href="javascript:;" onclick="openLoginDialog('?action=login&type=yahoo')"><img src="/codenameds/socialauth/images/yahoo-login.png"/></a>
+	        	</div>
+	        	<div style="text-align: center; margin: 30px 0px 10px 0px;">We do not use your profile details to send messages/post to your friends.</div>
+	        </div>
+	      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+<!-- Modal Code used for Login -->

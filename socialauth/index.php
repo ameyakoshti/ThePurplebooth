@@ -98,7 +98,7 @@ if (!empty($_GET['action']) && $_GET['action'] == "logout") {
 							<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=yahoo')"><img src="images/yahoo-login.png"/></a></td>
 							<td width="20%"><a href="/codenameDS/index.php""><img src="images/login.png" title="Your login system"/></a></td>
 							</tr>						
-							</table>
+					</table>
 							<p>
 							</br>
 								We do not use your profile details to send messages/post to your friends.
