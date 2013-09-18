@@ -205,16 +205,18 @@ html, body {
 		border: 0px;
 	}
 	
-	.category-row {
+	.category-row, .photographers-row, .projects-row {
 		margin-bottom: 40px;
 		position: relative;
 		-moz-box-sizing: border-box;
    		box-sizing: border-box;
+   		-webkit-box-shadow: 3px 0px 5px #888888;
+   		-moz-box-shadow: 3px 0px 5px #888888;
    		box-shadow: 3px 0px 5px #888888;
    		align: center;
 	}
 	
-	.category-row img {
+	.category-row img, .projects-row img, .photographers-row img {
 		align: center;
 	}
 	
@@ -236,7 +238,7 @@ html, body {
 /* 		font-size: 18px; */
 /* 	} */
 
-#category-container p {
+#category-container p, #photographers-container p, #projects-container p  {
 	text-align: center;
 	padding-top: 10px;
 	color: #525252;
@@ -244,7 +246,7 @@ html, body {
 	font-size: 16px;
 }
 
-#category-container img {
+#category-container img, #photographers-container img, #projects-container img  { {
 	text-align: center;
 }
 	

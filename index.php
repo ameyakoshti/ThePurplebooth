@@ -121,11 +121,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			<div id="photographers-container">
 				<div class="row-fluid">
 					<div class="span1"></div>
-					<div class="span2"><img src="img/200X150.gif"></div>
-					<div class="span2"><img src="img/200X150.gif"></div>
-					<div class="span2"><img src="img/200X150.gif"></div>
-					<div class="span2"><img src="img/200X150.gif"></div>
-					<div class="span2"><img src="img/200X150.gif"></div>
+					<div class="photographers-row span2"><p>Photographer 1</p><img src="img/200X150.gif"></div>
+					<div class="photographers-row span2"><p>Photographer 2</p><img src="img/200X150.gif"></div>
+					<div class="photographers-row span2"><p>Photographer 3</p><img src="img/200X150.gif"></div>
+					<div class="photographers-row span2"><p>Photographer 4</p><img src="img/200X150.gif"></div>
+					<div class="photographers-row span2"><p>Photographer 5</p><img src="img/200X150.gif"></div>
 				</div>
 			</div>
 			
@@ -138,11 +138,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			<div id="projects-container">
 				<div class="row-fluid">
 					<div class="span1"></div>
-					<div class="span2"><img src="img/200X150.gif"></div>
-					<div class="span2"><img src="img/200X150.gif"></div>
-					<div class="span2"><img src="img/200X150.gif"></div>
-					<div class="span2"><img src="img/200X150.gif"></div>
-					<div class="span2"><img src="img/200X150.gif"></div>
+					<div class="projects-row span2"><p>Project 1</p><img src="img/200X150.gif"></div>
+					<div class="projects-row span2"><p>Project 2</p><img src="img/200X150.gif"></div>
+					<div class="projects-row span2"><p>Project 3</p><img src="img/200X150.gif"></div>
+					<div class="projects-row span2"><p>Project 4</p><img src="img/200X150.gif"></div>
+					<div class="projects-row span2"><p>Project 5</p><img src="img/200X150.gif"></div>
 				</div>
 			</div>
 

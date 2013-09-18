@@ -17,8 +17,8 @@ require_once "database/users.php";
 	
 		<script type="text/javascript">
 			(function ($){
-				$('#tiles').imagesLoaded().done(function() {
-	
+				imagesLoaded('#images-container', function() {
+					alert('Loaded images..');
 		        	var options = {
 			        autoResize: true, // This will auto-update the layout when the browser window is resized.
 		            container: $('#tiles'), // Optional, used for some extra CSS styling

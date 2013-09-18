@@ -7,7 +7,9 @@
 
 #tiles li {
 	list-style: none;
-	border-color: black;
+/* 	-webkit-box-shadow: 2px 0px 2px #888888; */
+/*    	-moz-box-shadow: 2px 0px 2px #888888; */
+/*    	box-shadow: 2px 0px 2px #888888; */
 }
 
 #tiles li img {
