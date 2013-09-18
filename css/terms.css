@@ -5,3 +5,13 @@
 #terms h4 {
 	color: #525252;
 }
+
+.company-caption {
+	font-style: italic;
+	margin-top: 40px;
+}
+
+.caption {
+	color: #525252;
+	font-size: 28px;
+}

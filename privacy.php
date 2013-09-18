@@ -6,6 +6,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 		<title>Privacy</title>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/terms.css" />
 	</head>
 	<body>
 		<?php
@@ -48,14 +49,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 					principles in order to ensure that the confidentiality of personal
 					information is protected and maintained.</p>
 			</div>
-			<div>
-					thepurplebooth.com is a photo editing marketplace built by
-					contributions from its community of photographers and editors. All
-					free services are provided in good faith and we encourage you to
-					respect everyone's content and contributions. thepurplebooth.com
-					reserves the right to remove any content without any notification.
-					Feel free to contact us thepurplebooth@gmail.com for any questions and
-					clarifications regarding the terms of service.
+			<div class="company-caption">
+				<span class="caption">&lsquo;&lsquo;</span>
+				thepurplebooth.com is a photo editing marketplace built by
+				contributions from its community of photographers and editors. All
+				free services are provided in good faith and we encourage you to
+				respect everyone's content and contributions. thepurplebooth.com
+				reserves the right to remove any content without any notification.
+				Feel free to contact us thepurplebooth@gmail.com for any questions and
+				clarifications regarding the terms of service.
+				<span class="caption">&rsquo;&rsquo;</span>
 			</div>
 		</div>		
 		
