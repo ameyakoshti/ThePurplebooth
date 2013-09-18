@@ -8,9 +8,33 @@ require_once "database/users.php";
 	<head>
 		<title>Gallery</title>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script type="text/javascript" src="js/gallery/jquery.wookmark.js"></script>
 		<script type="text/javascript" src="js/gallery/imagesloaded.pkgd.js"></script>
+		<script type="text/javascript" src="js/gallery/jquery.wookmark.js"></script>
 		<script type="text/javascript" src="js/gallery/gallery.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/gallery.css" />
+		
+		<!--  Styling code.. Do Not Touch.. -->
+	
+		<script type="text/javascript">
+			(function ($){
+				$('#tiles').imagesLoaded().done(function() {
+			    	alert('loaded');
+	
+		        	var options = {
+			        autoResize: true, // This will auto-update the layout when the browser window is resized.
+		            container: $('#tiles'), // Optional, used for some extra CSS styling
+		            offset: 10, // Optional, the distance between grid items
+		          	outerOffset: 40, // Optional the distance from grid to parent
+		          	flexibleWidth: 450, // Optional, the maximum width of a grid item
+		          	resizeDelay: 0
+		        	};
+		
+			        var handler = $('#tiles li');
+			        handler.wookmark(options);
+	    		});
+				})(jQuery);
+		</script>	
+  
 	</head>
 	<body>
 		
@@ -25,9 +49,9 @@ require_once "database/users.php";
 					$logged_user_id = $_SESSION['codenameDS_user_id'];			
 			?>
 			
-			<div id="gallery-categories" style="margin: 80px 0px 30px 50px;">
-				<span style="color: #525252; width: 150px; float: left;"><h4>Image Filters: </h4></span>
-				<div class="btn-group" style="margin-top: 5px;">
+			<div id="gallery-categories">
+				<span id="image-filter-heading"><h4>Image Filters: </h4></span>
+				<div class="btn-group project-filters">
 					<button type="button" class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" style="border-radius: 0px;">
 						Category <?php 
 						if($category == 'myimages'){
@@ -61,9 +85,10 @@ require_once "database/users.php";
 					</ul>
 				</div>
 				
-				<div class="btn-group" style="margin-top: 5px;">
+				<div class="btn-group project-filters">
 					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=all&userid=<?php echo $user_id;?>">All</a>
-					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=new&userid=<?php echo $user_id;?>">New</a>
+					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=new&userid=<?php echo $user_id;?>">Open</a>
+					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=new&userid=<?php echo $user_id;?>">In Progress</a>
 					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=completed&userid=<?php echo $user_id;?>">Completed</a>
 				</div>
 				
@@ -77,49 +102,37 @@ require_once "database/users.php";
 				<?php } ?>
 			</div>
 			
-			<div id="images-container" style="width: 100%; margin: 10px; position: relative;">
-				<img src="http://lorempixel.com/400/200" />
-				<img src="http://lorempixel.com/200/400" />
-				<img src="http://lorempixel.com/400/250" />
-				<img src="http://lorempixel.com/400/250" />
-				<img src="http://lorempixel.com/300/300" />
-				<img src="http://lorempixel.com/200/400" />
-				<img src="http://lorempixel.com/400/250" />
-				<img src="http://lorempixel.com/400/200" />
-				<img src="http://lorempixel.com/150/300" />
-				<img src="http://lorempixel.com/400/250" />
-				<img src="http://lorempixel.com/300/300" />
-				<img src="http://lorempixel.com/150/300" />
-				<img src="http://lorempixel.com/150/300" />
-				<img src="http://lorempixel.com/400/250" />
-				<img src="http://lorempixel.com/300/300" />
+			<div id="images-container">
+				<ul id="tiles">
+					<li><img src="http://lorempixel.com/600/500"/><p>Uploaded by: Ameya Koshti</p></li>
+					<li><img src="http://lorempixel.com/500/600"/><p>Uploaded by: Ameya Joshi</p></li>
+					<li><img src="http://lorempixel.com/600/550"/><p>Uploaded by: Sheetal Paranjpe</p></li>
+					<li><img src="http://lorempixel.com/600/550"/><p>Uploaded by: Sushim Koshti</p></li>
+					<li><img src="http://lorempixel.com/800/800"/><p>Uploaded by: Ameya Koshti</p></li>
+					<li><img src="http://lorempixel.com/500/600"/><p>Uploaded by: Sheetal Paranjpe</p></li>
+					<li><img src="http://lorempixel.com/600/550"/><p>Uploaded by: Sushim Koshti</p></li>
+					<li><img src="http://lorempixel.com/600/500"/><p>Uploaded by: Ameya Joshi</p></li>
+					<li><img src="http://lorempixel.com/450/800"/><p>Uploaded by: Sushim Koshti</p></li>
+					<li><img src="http://lorempixel.com/600/550"/><p>Uploaded by: Ameya Koshti</p></li>
+					<li><img src="http://lorempixel.com/800/800"/><p>Uploaded by: Ameya Joshi</p></li>
+					<li><img src="http://lorempixel.com/450/800"/><p>Uploaded by: Sushim Koshti</p></li>
+					<li><img src="http://lorempixel.com/450/800"/><p>Uploaded by: Ameya Koshti</p></li>
+					<li><img src="http://lorempixel.com/600/550"/><p>Uploaded by: Sheetal Paranjpe</p></li>
+					<li><img src="http://lorempixel.com/800/800"/><p>Uploaded by: Professor</p></li>
+				</ul>
 			</div>
 	
-			<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-				<div class="slides"></div>
-				<h3 class="title"></h3>
-				<a class="prev"><</a>
-				<a class="next">></a>
-				<a class="close">x</a>
-				<a class="play-pause"></a>
-				<ol class="indicator"></ol>
-			</div>
-	
-			<div class="imgGallery" id="links">
 				<?php		
-					echo '<div class="row">';
-					echo '<div class="span12">';
-					echo '<ul class="thumbnails">';
+// 					echo '<div class="row">';
+// 					echo '<div class="span12">';
+// 					echo '<ul class="thumbnails">';
 					
-					get_filtered_images($category,$project,$user_id);
+// 					get_filtered_images($category,$project,$user_id);
 	
-					echo '</div>';
-					echo '</div>';
-					echo '</ul>';			
-				?>
-			</div>
-			<script src="/codenameDS/js/blueimp-gallery.min.js"></script>
-			<script src="/codenameDS/js/gallery/gallery.js"></script>
+// 					echo '</div>';
+// 					echo '</div>';
+// 					echo '</ul>';			
+// 				?>
 		
 	</div>
 		<?php
