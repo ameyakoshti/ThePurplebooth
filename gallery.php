@@ -18,7 +18,6 @@ require_once "database/users.php";
 		<script type="text/javascript">
 			(function ($){
 				$('#tiles').imagesLoaded().done(function() {
-			    	alert('loaded');
 	
 		        	var options = {
 			        autoResize: true, // This will auto-update the layout when the browser window is resized.
