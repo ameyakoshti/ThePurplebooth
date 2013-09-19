@@ -79,7 +79,6 @@ ini_set('display_errors', 'On');
 </div>
 
 
-
 <!-- Modal Code used for Login -->
 		
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
