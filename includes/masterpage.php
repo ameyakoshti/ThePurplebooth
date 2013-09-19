@@ -42,9 +42,7 @@ ini_set('display_errors', 'On');
 
 			<div class="nav-collapse collapse">
 				<ul class="nav pull-right" id="codenameDSnavigationbar">
-					<!--<li><a href="/codenameDS/index.php"><i class="icon-home" style="color: #9b00F0;"></i>&nbsp;Home</a></li>
-					<li><a href="/codenameDS/contact.php">Contact</a></li>
-					<li><a href="/codenameDS/about_us.php">About Us</a></li>-->
+					<!--<li><a href="/codenameDS/index.php"><i class="icon-home" style="color: #9b00F0;"></i>&nbsp;Home</a></li>-->
 					<li><a href="/codenameDS/upload_image.php">Upload Image</a></li>
 					<li><a href="/codenameDS/gallery.php?category=all&project=all&userid=all">Gallery</a></li>
 					<li>
