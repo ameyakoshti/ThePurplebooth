@@ -48,7 +48,7 @@ ini_set('display_errors', 'On');
 					<li>
 					<?php 	
 					if(!isset($_SESSION['codenameDS_user_name'])) { ?> 
-					<a href="/codenameDS/socialauth/index.php">Login</a>	
+						<a href="/codenameDS/socialauth/index.php">Login</a>	
 <!-- 						<a data-toggle="modal" href="#loginModal">Login</a> -->
 					<?php
 					}
@@ -76,6 +76,9 @@ ini_set('display_errors', 'On');
 </div>
 </div>
 
+<?php
+//include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/socialauth/index.php'; 
+?>
 
 <!-- Modal Code used for Login -->
 		

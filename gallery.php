@@ -105,26 +105,6 @@ require_once "database/users.php";
 				<?php } ?>
 			</div>
 			
-			<!--<div id="images-container">
-				<ul id="tiles">
-					<li><img src="http://lorempixel.com/600/500"/><p>Uploaded by: Ameya Koshti</p></li>
-					<li><img src="http://lorempixel.com/500/600"/><p>Uploaded by: Ameya Joshi</p></li>
-					<li><img src="http://lorempixel.com/600/550"/><p>Uploaded by: Sheetal Paranjpe</p></li>
-					<li><img src="http://lorempixel.com/600/550"/><p>Uploaded by: Sushim Koshti</p></li>
-					<li><img src="http://lorempixel.com/800/800"/><p>Uploaded by: Ameya Koshti</p></li>
-					<li><img src="http://lorempixel.com/500/600"/><p>Uploaded by: Sheetal Paranjpe</p></li>
-					<li><img src="http://lorempixel.com/600/550"/><p>Uploaded by: Sushim Koshti</p></li>
-					<li><img src="http://lorempixel.com/600/500"/><p>Uploaded by: Ameya Joshi</p></li>
-					<li><img src="http://lorempixel.com/450/800"/><p>Uploaded by: Sushim Koshti</p></li>
-					<li><img src="http://lorempixel.com/600/550"/><p>Uploaded by: Ameya Koshti</p></li>
-					<li><img src="http://lorempixel.com/800/800"/><p>Uploaded by: Ameya Joshi</p></li>
-					<li><img src="http://lorempixel.com/450/800"/><p>Uploaded by: Sushim Koshti</p></li>
-					<li><img src="http://lorempixel.com/450/800"/><p>Uploaded by: Ameya Koshti</p></li>
-					<li><img src="http://lorempixel.com/600/550"/><p>Uploaded by: Sheetal Paranjpe</p></li>
-					<li><img src="http://lorempixel.com/800/800"/><p>Uploaded by: Professor</p></li>
-				</ul>
-			</div>-->
-	
 				<?php		
 // 					echo '<div class="row">';
  					echo '<div id="images-container" role="main">';
