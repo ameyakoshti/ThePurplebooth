@@ -205,53 +205,6 @@ html, body {
 		border: 0px;
 	}
 	
-	.category-row, .photographers-row, .projects-row {
-		margin-bottom: 40px;
-		position: relative;
-		-moz-box-sizing: border-box;
-   		box-sizing: border-box;
-   		-webkit-box-shadow: 3px 0px 5px #888888;
-   		-moz-box-shadow: 3px 0px 5px #888888;
-   		box-shadow: 3px 0px 5px #888888;
-   		align: center;
-	}
-	
-	.category-row img, .projects-row img, .photographers-row img {
-		align: center;
-	}
-	
-	#category-heading, #photographers-heading, #projects-heading {
-		margin-left: 50px;
-	}
-	
-/* 	#category-container p { */
-/*     	white-space: nowrap; */
-/* 		width: 225px; */
-/* 		overflow: hidden; */
-/* 		text-overflow: ellipsis; */
-/* 		position: absolute; */
-/* 		bottom: 1px; */
-/* 		word-wrap: break-word; */
-/* 		color: #ffffff; */
-/* 		text-align: center; */
-/* 		font-family: Raleway; */
-/* 		font-size: 18px; */
-/* 	} */
-
-#category-container p, #photographers-container p, #projects-container p  {
-	text-align: center;
-	padding-top: 10px;
-	color: #525252;
-	font-family: Raleway;
-	font-size: 16px;
-}
-
-#category-container img, #photographers-container img, #projects-container img  { {
-	text-align: center;
-}
-	
-
-
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
 background-image : none;
 background-color : #8A2BE2;

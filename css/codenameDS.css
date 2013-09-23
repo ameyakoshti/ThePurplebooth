@@ -103,3 +103,29 @@ input[type="file"] {
 .tab-pane{
 	min-height:100%;
 }
+
+
+#category-container, #photographers-container, #projects-container {
+	margin: 10px 25px 30px 15px;
+	float: left;
+}
+
+#category-list li, #photographers-list li, #projects-list li {
+	list-style: none;
+	float: left;
+	margin: 0px 20px 20px 20px;
+	-webkit-box-shadow: 3px 0px 5px #888888;
+   	-moz-box-shadow: 3px 0px 5px #888888;
+   	box-shadow: 3px 0px 5px #888888;
+}
+
+#category-list li p, #photographers-list li p, #projects-list li p {
+	text-align: center;
+	padding: 5px 0px 5px 0px;
+	font-family: Raleway;
+	font-size: 16px;
+}
+
+#category-heading, #photographers-heading, #projects-heading {
+	margin-left: 50px;
+}
