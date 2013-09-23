@@ -63,25 +63,30 @@
 					</div>
 				</div>
 
-				<h2>About Me:</h2>
-				<p>
-					<?php if($user_found) {
-						echo $user_data['about_me'];
-					}?>
-				</p>
-				<p>
-					Check out my gallery<a
-						href="http://localhost:8888/codenameDS/gallery.php?category=all&project=all&userid=<?php echo $user_data_profile_view["user_id"];?>">
-						here</a>
-				</p>
-
-				<h2>Review:</h2>
-				<script type="text/javascript">
-						<?php if($user_name_profile_view != "")echo "var username = '".$user_name_profile_view."';";?>
-						<?php if(isset($_SESSION['codenameDS_user_name']))echo "var loggedusername = '".$_SESSION['codenameDS_user_name']."';";?>
-				</script>
-				<script src="/codenameDS/js/profile/profile.js"></script>
-				<div class="reviews"></div>
+				<div>
+					<div id="about-me" style="float: left; margin: 30px 10px 10px 10px;">
+						<h2>About Me:</h2>
+						<p>
+							<?php if($user_found) {
+								echo $user_data['about_me'];
+							}?>
+						</p>
+						<p>
+							Check out my gallery<a
+								href="http://localhost:8888/codenameDS/gallery.php?category=all&project=all&userid=<?php echo $user_data_profile_view["user_id"];?>">
+								here</a>
+						</p>
+					</div>
+					<div id="user-reviews" style="float: right; margin: 30px 10px 10px 10px;">
+						<h2>Review:</h2>
+						<script type="text/javascript">
+								<?php if($user_name_profile_view != "")echo "var username = '".$user_name_profile_view."';";?>
+								<?php if(isset($_SESSION['codenameDS_user_name']))echo "var loggedusername = '".$_SESSION['codenameDS_user_name']."';";?>
+						</script>
+						<script src="/codenameDS/js/profile/profile.js"></script>
+						<div class="reviews"></div>
+					</div>
+				</div>
 
 			</div>
 </div>

@@ -38,8 +38,9 @@ function displayReviews(output) {
 	// if no reviews then handle the foreach loop
 	if (output != null || output != "") {
 		$.each(res, function(id, value) {
-			content += "<li>" + value.rating + " Stars</li>";
-			content += "<li>" + value.comments + " (rated by: <a href=http://localhost:8888/codenameDS/profile.php?username=" + value.rated_by + ">" + value.rated_by + "</a> ) </li>";
+			content += "<li style='list-style-type: square;'>" + value.rating + " Stars</li>";
+			content += "<li style='list-style: none;'> <a href=http://localhost:8888/codenameDS/profile.php?username=" + value.rated_by + ">" + value.rated_by + "</a> wrote &#8230; </li>";
+			content += "<li style='list-style: none;'> " + value.comments + " </li>";
 		});
 	}
 	content += '</ul>';
