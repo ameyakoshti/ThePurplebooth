@@ -28,7 +28,7 @@
 			<div id="boring-stuff" class="span5">
 				<h4>Boring Stuff</h4>
 				<p>
-					Copyright �� 2013 We Are thepurplebooth, Inc. All Rights Reserved | Site Map | <a href="/codenameDS/terms.php">Terms & Conditions</a> | <a href="/codenameDS/privacy.php">Privacy Policy</a> | <a href="/codenameDS/dmca.php">DMCA</a> | <a href="#">Cookie Policy</a>
+					Copyright 2013 | We are thepurplebooth, Inc. All Rights Reserved | Site Map | <a href="/codenameDS/terms.php">Terms & Conditions</a> | <a href="/codenameDS/privacy.php">Privacy Policy</a> | <a href="/codenameDS/dmca.php">DMCA</a> | <a href="#">Cookie Policy</a>
 				</p>
 			</div>
 		</div>
