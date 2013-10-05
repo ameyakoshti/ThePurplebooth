@@ -35,7 +35,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 						Wouldn't it be awesome to leave the processing to the experts, whether enthusiasts like ourselves, or professionals ? That was the inception of thepurplebooth.com.
  					</br>
  					</br>
-						While the idea to start thepurplebooth.com was a stereotypical AHA moment, the journey since then has been a start contrast. 
+						While the idea to start thepurplebooth.com was a stereotypical AHA moment, the journey since then has been a stark contrast. 
 						Our busy schedules along with personal and professional commitments have been a greater challenge than we expected. 
 						But our passion for photography and entrepreneurship as well as the nerd skills we have acquired through a combined 25 years of engineering experience drove the creation of thepurplebooth.com.
  					</br>
