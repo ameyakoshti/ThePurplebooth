@@ -49,7 +49,7 @@ ini_set('display_errors', 'On');
 					<?php 	
 					if(!isset($_SESSION['codenameDS_user_name'])) { ?> 
 						<a href="/codenameDS/socialauth/index.php">Login</a>	
-<!-- 						<a data-toggle="modal" href="#loginModal">Login</a> -->
+						<!--<a data-toggle="modal" href="#loginModal">Login</a>--> 
 					<?php
 					}
 					else{ 

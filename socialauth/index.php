@@ -94,8 +94,8 @@ if (!empty($_GET['action']) && $_GET['action'] == "logout") {
 							<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=twitter')"><img src="images/twitter-login.png"/></a></td>
 							<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=facebook')"><img src="images/facebook-login.png"/></a></td>
 							<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=google')"><img src="images/google-login.png"/></a></td>
-							<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=linkedin')"><img src="images/linkedin-login.png"/></a></td>
-							<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=yahoo')"><img src="images/yahoo-login.png"/></a></td>
+							<!--<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=linkedin')"><img src="images/linkedin-login.png"/></a></td>
+							<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=yahoo')"><img src="images/yahoo-login.png"/></a></td>-->
 							<td width="20%"><a href="/codenameDS/index.php""><img src="images/login.png" title="Your login system"/></a></td>
 							</tr>						
 					</table>

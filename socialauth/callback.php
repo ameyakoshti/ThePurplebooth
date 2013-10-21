@@ -54,7 +54,7 @@ if (!empty($_GET['type'])) {
                     $url = '?fields=' . $fields;
                 }
                 // Get detailed user info.
-                $facebookUserInfo = $facebookObj->api('/me');
+                $facebookUserInfo = $facebookObj->api('/me' . $url);
                   /**
                    * Prepare data inorder to send it to the complete registration page
                    **/
