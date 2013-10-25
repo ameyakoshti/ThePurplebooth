@@ -1,4 +1,9 @@
 <?php
+/**
+ * This class for managing social authorization operations
+ *
+ * @author Hüseyin BABAL <turkiye.java@gmail.com>
+ */
 
 class SocialAuth
 {
@@ -139,7 +144,6 @@ class SocialAuth
     public static function clearSessionData($key) {
         setcookie($key, '', -3600, "/");
 		session_destroy();
-		error_log($_SESSION);
     }
 
     /**

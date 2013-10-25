@@ -12,7 +12,6 @@ if (!empty($_GET['type'])) {
     $cookieArr = array();
     switch ($_GET['type']) {
         case 'twitter':
- 			try {
             //Initialize twitter by using factory pattern over main class(SocialAuth)
             $twitterObj = SocialAuth::init('twitter');
 
@@ -37,9 +36,6 @@ if (!empty($_GET['type'])) {
             );
             //Redirect main page for user data ceck from db
             SocialAuth::redirectParentWindow('twitter', $dataArr, $_COOKIE['ref']);
-			} catch (Exception $e) {
-              error_log($e);
-            }
             break;
         case 'facebook':
             //Initialize facebook by using factory pattern over main class(SocialAuth)
@@ -152,3 +148,6 @@ if (!empty($_GET['type'])) {
 
     }
 }
+
+
+ 
