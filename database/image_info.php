@@ -11,6 +11,7 @@ open_connection();
  */
 function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $title, $description, $category) {
 	try {
+		/*
 		$cached_file_name = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/temp/" . $file_name;
 		//move the uploaded file to temp folder
 		move_uploaded_file($tmp_name, $cached_file_name);
@@ -29,8 +30,25 @@ function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $
 		fclose($fp);
 		
 		$query = "INSERT INTO codenameDS.imageinfo VALUES (DEFAULT,'$user_id','NULL','$file_name','$file_type','$file_size','$content',NULL,'$title','$description','$category','N',NOW(),NOW(),'0')";
-		mysql_query($query) or die('Error, query failed');
-
+		mysql_query($query) or die('Error, query failed');*/
+	
+		// Get the image id for the image name
+		$res = mysql_query("SELECT MAX(image_id) as count FROM codenameDS.imageinfo");
+		$data = mysql_fetch_array($res);
+		$image_id = $data['count'];
+		if($image_id < 1){
+			$image_id = 1;
+		}
+		// Move the uploaded image to original_images folder 
+		$file_location = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/original_images/" . $image_id . ".jpg";
+		$file_location_db = "/codenameDS/original_images/" . $image_id . ".jpg";
+		move_uploaded_file($tmp_name, $file_location);
+		
+		$result = mysql_query("INSERT INTO `codenameDS`.`imageinfo` VALUES (DEFAULT,'$user_id',0,'$file_name','$file_type','$file_size','$file_location_db',NULL,'$title','$description','$category','N',NOW(),NOW(),'0')");
+		if(!$result){
+			error_log(mysql_error());
+		}
+		
 		return TRUE;
 	} catch(exception $e) {
 		error_log($e);
@@ -67,6 +85,7 @@ function upload_edited_image($image_id, $file_name, $tmp_name, $file_size, $file
  * 5. If the editor has uploaded his version of the image then it displays a download button for the photographer to download the
  * 	  edited image. 
  * 6. Show all the comments and replies for this image.
+ * 7. If the project is closed then it hides bids information 
  * Tables involved : image_info.
  */
 function get_image_by_id($id,$logged_in_user_id) {
@@ -87,10 +106,12 @@ function get_image_by_id($id,$logged_in_user_id) {
 		$imagename = $data['name'];
 		$edited_img_link = $data['edited_img_link'];
 		$closed_project = $data['closed_project'];
+		$original_image_location = $data['content'];
 		
 	    file_put_contents('./original_images/'.$imagename, $data['content']);
 		
-		$imageHTML = $imageHTML . '<div id="image" data-imageid="' . $data['image_id'] . '" data-userid="' . $data['user_id'] . '" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
+		//$imageHTML = $imageHTML . '<div id="image" data-imageid="' . $data['image_id'] . '" data-userid="' . $data['user_id'] . '" class="selectedImage"><img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
+		$imageHTML = $imageHTML . '<div id="image" data-imageid="' . $data['image_id'] . '" data-userid="' . $data['user_id'] . '" class="selectedImage"><img class="galleryImage" src="' . $original_image_location . '">';
 		$imageHTML = $imageHTML . '<div id="imagetitle" class="title">' . "<h4>Title : " . $data["title"] . '</h4></div>';
 		$imageHTML = $imageHTML . '<div id="imagedescription" class="desc">' . "<h4>Description : " . $data["description"] . '</h4></div>';
 		$imageHTML = $imageHTML . '<div id="imageuploader" class="profileLink">Image uploaded by <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a></div>';	
@@ -175,13 +196,13 @@ function get_all_bids($id){
  * Tables involved : image_info.
  */
 function get_all_images() {
-	$query = "SELECT `image_id` FROM `codenameDS`.`imageinfo`";
+	$query = "SELECT `image_id`,`content` FROM `codenameDS`.`imageinfo`";
 	$res = mysql_query($query);
 	while ($data = mysql_fetch_array($res)) {
 		echo '<li class="span3">';
 		echo '<div class="thumbnail">';
 		echo '<a class="imageClick" href="view_image.php?id=' . $data['image_id'] . '">';
-		echo '<img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
+		echo '<img class="galleryImage" src="' . $data['content'] . '">';
 		echo '</a>';
 		echo '<div><button data-imgid="' . $data['image_id'] . '" class="btn btn-primary btn-small goToImage">Go To Image</button></div>';
 		echo '</div>';
@@ -215,7 +236,7 @@ function get_filtered_images($category, $project, $user_id) {
 	}
 	
 	$where_clause = substr($where_clause, 0, -4);;
-	$query = "SELECT `image_id` FROM `codenameDS`.`imageinfo` $where_clause";
+	$query = "SELECT `image_id`,`content` FROM `codenameDS`.`imageinfo` $where_clause";
 	//echo $query;
 	$res = mysql_query($query);
 	
@@ -223,7 +244,7 @@ function get_filtered_images($category, $project, $user_id) {
 	while ($data = mysql_fetch_array($res)) {
 		$empty_result = FALSE;		
 		echo '<li>';
-		echo '<img src="view_image.php?id=' . $data['image_id'] . '">';
+		echo '<img src="' . $data['content'] . '">';
 		echo '<p><button data-imgid="' . $data['image_id'] . '" class="btn btn-primary btn-small goToImage">Go To Image</button></p>';
 		echo '</li>';
 	}
