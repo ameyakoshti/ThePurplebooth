@@ -1,7 +1,4 @@
 $(document).ready(function(){
-	if(userid==$('.selectedImage').data('userid')){
-		$('.editImage').hide();
-	}
 	$('.editImage').click(function(event){
 		make_request(event.target);
 	});

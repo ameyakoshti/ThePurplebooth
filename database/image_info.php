@@ -77,6 +77,7 @@ function get_image_by_id($id,$logged_in_user_id) {
 	$imagename = "";
 	$edited_img_link = "";
 	$owner_user_id ="";
+	$closed_project = "";
 	
 	while ($data = mysql_fetch_array($res)) {
 		$owner_user_id = $data['user_id'];
@@ -85,6 +86,7 @@ function get_image_by_id($id,$logged_in_user_id) {
 		$user_data = get_user_info_by_id($data['user_id']);
 		$imagename = $data['name'];
 		$edited_img_link = $data['edited_img_link'];
+		$closed_project = $data['closed_project'];
 		
 	    file_put_contents('./original_images/'.$imagename, $data['content']);
 		
@@ -94,8 +96,13 @@ function get_image_by_id($id,$logged_in_user_id) {
 		$imageHTML = $imageHTML . '<div id="imageuploader" class="profileLink">Image uploaded by <a href="profile.php?username='.$user_data["user_name"].'">'.$user_data['user_name'].'</a></div>';	
 	}
 
-	$imageHTML = $imageHTML . '<div id="imagebids" class="requests">' . get_requests_for_image($id) . '</div>';
-	$imageHTML = $imageHTML . '<div id="buttonbids"><button class="btn btn-primary btn-small editImage">Edit Me!</button></div></br>';
+	// if the project is closed then no need to show the bids info and the edit me button
+	if($closed_project === "0"){
+		$imageHTML = $imageHTML . '<div id="imagebids" class="requests">' . get_requests_for_image($id) . '</div>';
+		if ($owner_user_id != $logged_in_user_id){
+			$imageHTML = $imageHTML . '<div id="buttonbids"><button class="btn btn-primary btn-small editImage">Edit Me!</button></div></br>';
+		}
+	}
 	
 	echo $imageHTML;
 	
@@ -114,7 +121,8 @@ function get_image_by_id($id,$logged_in_user_id) {
 	
 	echo $downloadHTML;
 	
-	if ($owner_user_id === $logged_in_user_id){
+	// if the project is closed then no need to show the bids info
+	if (($owner_user_id === $logged_in_user_id) && $closed_project = "0"){
 		get_all_bids($id);
 	}
 	echo "</div>";
@@ -214,15 +222,9 @@ function get_filtered_images($category, $project, $user_id) {
 	$empty_result = TRUE;  
 	while ($data = mysql_fetch_array($res)) {
 		$empty_result = FALSE;		
-		//echo '<li class="span3">';
 		echo '<li>';
-		//echo '<div class="thumbnail">';
-		//echo '<a class="imageClick" href="view_image.php?id=' . $data['image_id'] . '">';
-		//echo '<img class="galleryImage" src="view_image.php?id=' . $data['image_id'] . '">';
 		echo '<img src="view_image.php?id=' . $data['image_id'] . '">';
-		//echo '</a>';
 		echo '<p><button data-imgid="' . $data['image_id'] . '" class="btn btn-primary btn-small goToImage">Go To Image</button></p>';
-		//echo '</div>';
 		echo '</li>';
 	}
 	if ($empty_result){
