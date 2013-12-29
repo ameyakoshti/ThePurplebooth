@@ -1,0 +1,131 @@
+.imgGallery {
+	margin-top: 55px;
+	margin-left: 89px;
+}
+
+.modal-image {
+	max-width: 600px;
+	max-height: 400px;
+}
+
+
+#img_container {
+	width: 150px;
+	height: 150px;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+.buttonProfilePic {
+	position: absolute;
+	bottom: -18px;
+	right: 30px;
+	width: 100px;
+	height: 30px;
+	background: transparent;
+	border: none;
+	font-size: 0;
+}
+
+.buttonProfilePicSave {
+	position: absolute;
+	bottom: -50px;
+	right: 25px;
+	width: 100px;
+	height: 30px;
+	background: transparent;
+	border: none;
+	font-size: 12;
+}
+
+input[type="file"] {
+	background: transparent;
+	border: none;
+	outline: none;
+}
+
+.oneImage{
+	display:inline-block;
+}
+
+.selectedImage{
+	max-width:800px;
+  	max-height:400px;
+	float:left;
+	margin-top:65px;
+	margin-left:15px;
+}
+
+.selectedImage img {
+	height:100%;
+}
+
+.editImage {
+	margin-top:10px;
+}
+
+.comments {
+	float:right;
+	width: 48.93617021276595%;
+  	*width: 48.88297872340425%;
+  	max-height:400px;
+	margin-left:20px;
+	margin-top:65px;
+}
+
+.enterComment, .enterReply {
+	resize:none;
+	width:400px;
+}
+
+.enterCommentContactUs {
+	resize:none;
+	height: 150px !important;
+	width:400px;
+}
+
+.enterEmailContactUs {
+	resize:none;
+	width:400px;
+}
+
+.threadedComment {
+	margin-left:50px;
+}
+
+.centerOfTheScreen { 
+	float: none;
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+.tab-pane{
+	min-height:100%;
+}
+
+
+#category-container, #photographers-container, #projects-container {
+	margin: 10px 25px 30px 15px;
+	float: left;
+}
+
+#category-list li, #photographers-list li, #projects-list li {
+	list-style: none;
+	float: left;
+	margin: 0px 20px 20px 20px;
+	-webkit-box-shadow: 3px 0px 5px #888888;
+   	-moz-box-shadow: 3px 0px 5px #888888;
+   	box-shadow: 3px 0px 5px #888888;
+}
+
+#category-list li p, #photographers-list li p, #projects-list li p {
+	text-align: center;
+	padding: 5px 0px 5px 0px;
+	font-family: Raleway;
+	font-size: 16px;
+}
+
+#category-heading, #photographers-heading, #projects-heading {
+	margin-left: 50px;
+}

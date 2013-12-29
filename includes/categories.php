@@ -1,0 +1,11 @@
+<option value="landscape">Landscape</option>
+<option value="portrait">Portrait</option>
+<option value="wildlife">Wildlife</option>
+<option value="architecture">Architecture</option>
+<option value="street">Street</option>
+<option value="wedding">Wedding</option>
+<option value="macro">Macro</option>
+<option value="abstract">Abstract</option>
+<option value="hdr">HDR</option>
+<option value="event">Event</option>
+<option value="sport">Sport</option>

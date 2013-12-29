@@ -1,0 +1,76 @@
+@CHARSET "ISO-8859-1";
+
+/**
+* Grid items
+*/
+
+
+#tiles li {
+	list-style: none;
+	cursor: pointer;
+/* 	-webkit-box-shadow: 2px 0px 2px #888888 !important; */
+/*    	-moz-box-shadow: 2px 0px 2px #888888 !important; */
+/*    	box-shadow: 2px 0px 2px #888888 !important; */
+}
+
+#tiles li img {
+  	-moz-box-sizing: border-box;
+   	box-sizing: border-box;
+	height: auto;
+  	width: 100% !important;
+  	padding: 5px;
+}
+
+#tiles li p {
+	text-align: center;
+	padding: 5px 0px 5px 0px;
+}
+
+#images-container {
+	margin: 10px; 
+	position: relative;
+}
+
+.project-filters {
+	marging-top: 5px;
+}
+
+#gallery-categories {
+	margin: 80px 0px 30px 50px;
+}
+
+#image-filter-heading {
+	color: #525252; 
+	width: 150px; 
+	float: left;
+}
+
+
+
+
+/**
+ * Grid container
+ */
+#tiles {
+  list-style-type: none;
+  position: relative; /** Needed to ensure items are laid out relative to this container **/
+  margin: 0;
+  padding: 0;
+}
+
+#tiles li.inactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/**
+ * Placerholder css
+ */
+.wookmark-placeholder {
+          border-radius: 2px;
+     -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  z-index: -1;
+}

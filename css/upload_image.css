@@ -1,0 +1,25 @@
+@CHARSET "ISO-8859-1";
+
+html body {
+	height: 100%;
+}
+
+.container-fluid {
+	min-height: 100%;
+}
+
+.container-fluid textarea, .container-fluid select {
+	border-radius: 0px;
+}
+
+#upload, #upload-signup {
+	font-size: 16px;
+}
+
+#upload p, #upload-signup p {
+	color: #525252;
+}
+
+#upload {
+	border-radius: 0px;
+}
