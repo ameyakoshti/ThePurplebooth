@@ -26,15 +26,20 @@ $image_id = $_GET['image_id'];
 						
 			<div class="row-fluid">
 				<div id="image" class="span6">
-					<?php get_image_by_id($image_id,$_SESSION["codenameDS_user_id"]);?>
+					<?php get_image_by_id($image_id,$_SESSION["codenameDS_user_id"],"1");?>
 				</div>
+				
 				<div id="image" class="span6">
-					<?php get_image_by_id($image_id,$_SESSION["codenameDS_user_id"]);?>
+					<?php get_image_by_id($image_id,$_SESSION["codenameDS_user_id"],"2");?>
 				</div>
-			</div>			
-			<div id="comments" class="comments">
+			</div>	
+			</br></br>		
+			<div class="row-fluid">
+				<div id="comments" class="comments span-12">
 					
-			</div>			
+				</div>	
+			</div>				
+						
 		</div>
 		
 		<?php

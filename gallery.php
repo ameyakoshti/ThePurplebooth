@@ -91,7 +91,7 @@ require_once "database/users.php";
 				<div class="btn-group project-filters">
 					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=all&userid=<?php echo $user_id;?>">All</a>
 					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=new&userid=<?php echo $user_id;?>">Open</a>
-					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=new&userid=<?php echo $user_id;?>">In Progress</a>
+					<!--<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=new&userid=<?php echo $user_id;?>">In Progress</a>-->
 					<a class="btn btn-inverse" style="border-radius: 0px;" href="http://localhost:8888/codenameDS/gallery.php?category=<?php echo $category;?>&project=completed&userid=<?php echo $user_id;?>">Completed</a>
 				</div>
 				

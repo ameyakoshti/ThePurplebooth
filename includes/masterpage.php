@@ -38,7 +38,7 @@ ini_set('display_errors', 'On');
 	<div class="navbar-inner" id="navbar">
 		<div class="container">
 			<a class="btn btn-navbar" data-toggle="collapse"
-			data-target=".nav-collapse"> <span class="icon-th-list"></span> </a><a href="/codenameDS/index.php" class="brand"><img alt="" style="margin-right:4px" width="25px" height="25px" src="img/purplebooth (2).png">thepurplebooth &#153;</a>
+			data-target=".nav-collapse"> <span class="icon-th-list"></span> </a><a href="/codenameDS/index.php" class="brand"><img alt="" style="margin-right:4px" width="25px" height="25px" src="img/purplebooth.png">thepurplebooth &#153;</a>
 
 			<div class="nav-collapse collapse">
 				<ul class="nav pull-right" id="codenameDSnavigationbar">
@@ -64,10 +64,10 @@ ini_set('display_errors', 'On');
 					<?php } ?>
 					</li>
 					<li>
-						<img src="img/notification.ico" height="30px" width="30px" style="margin-top:10px"/>
-					</li>
-					<li>
-						<a class="notification_number" href="profile.php?username=<?php if(isset($_SESSION["codenameDS_user_id"])) echo $_SESSION['codenameDS_user_name']; ?>#notifications">0</a>
+						<div>
+							<img src="img/notification.png" height="30px" width="30px" style="margin-top:10px"/>
+							<a class="notification_number" href="profile.php?username=<?php if(isset($_SESSION["codenameDS_user_id"])) echo $_SESSION['codenameDS_user_name']; ?>#notifications">0</a>
+						</div>
 					</li>
 				</ul>
 			</div>

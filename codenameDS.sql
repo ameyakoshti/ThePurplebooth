@@ -3,16 +3,42 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 15, 2013 at 04:52 AM
+-- Generation Time: Dec 30, 2013 at 12:21 PM
 -- Server version: 5.5.29
 -- PHP Version: 5.4.10
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
 --
 -- Database: `codenameDS`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GET_MAX_IMAGE_ID`()
+BEGIN
+	DECLARE count INT;
+	SET count = (SELECT MAX(image_id) FROM codenameDS.imageinfo);
+	
+	IF count > 0 THEN
+		SET count = count + 1;
+	ELSE
+		SET count = 1;
+	END IF;
+
+	SELECT count;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -29,7 +55,7 @@ CREATE TABLE `editrequest` (
   `request_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`request_id`),
   KEY `request_user_id` (`request_user_id`,`request_image_id`,`request_image_user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -51,7 +77,7 @@ CREATE TABLE `imagecomment` (
   KEY `comment_image_id_2` (`comment_image_id`),
   KEY `comment_timestamp` (`comment_timestamp`),
   KEY `comment_user_name` (`comment_user_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -66,10 +92,11 @@ CREATE TABLE `imageinfo` (
   `name` varchar(45) NOT NULL,
   `type` varchar(45) DEFAULT NULL,
   `size` int(11) NOT NULL,
-  `content` longblob NOT NULL,
+  `content` varchar(45) NOT NULL,
   `edited_img_link` varchar(45) DEFAULT NULL,
   `title` varchar(45) DEFAULT NULL,
   `description` varchar(200) DEFAULT NULL,
+  `editor_description` varchar(200) DEFAULT NULL,
   `category` varchar(45) DEFAULT NULL,
   `deletable` varchar(1) NOT NULL,
   `created_on` datetime NOT NULL,
@@ -78,7 +105,7 @@ CREATE TABLE `imageinfo` (
   PRIMARY KEY (`image_id`),
   KEY `user_id` (`user_id`),
   KEY `user_id_2` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -98,7 +125,7 @@ CREATE TABLE `notifications` (
   KEY `from_user_id` (`from_user_id`,`to_user_id`),
   KEY `notification_image_id` (`notification_image_id`),
   KEY `to_user_id` (`to_user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 -- --------------------------------------------------------
 
@@ -114,7 +141,7 @@ CREATE TABLE `ratings` (
   `comments` varchar(200) DEFAULT NULL,
   `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 -- --------------------------------------------------------
 
@@ -134,7 +161,7 @@ CREATE TABLE `replycomment` (
   KEY `reply_comment_id` (`reply_comment_id`),
   KEY `reply_user_name` (`reply_user_name`),
   KEY `reply_user_name_2` (`reply_user_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -170,3 +197,7 @@ ALTER TABLE `notifications`
   ADD CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`from_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `notifications_ibfk_2` FOREIGN KEY (`to_user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `notifications_ibfk_3` FOREIGN KEY (`notification_image_id`) REFERENCES `imageinfo` (`image_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

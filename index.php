@@ -91,6 +91,7 @@ if ( in_array( strtolower( ini_get( 'magic_quotes_gpc' ) ), array( '1', 'on' ) )
 							<p>Wildlife</p>
 							<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/wildlife.jpg"></a>
 						</li>
+						</br>
 						<li>
 							<p>Architecture</p>
 							<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/architecture.jpg"></a>
@@ -115,25 +116,6 @@ if ( in_array( strtolower( ini_get( 'magic_quotes_gpc' ) ), array( '1', 'on' ) )
 				</div>
 			</div>
 			
-			
-			<div id="photographers-container">
-				<div id="photographers-heading">
-					<div class="row-fluid">
-						<div class="span4"><h3 class="featurette-heading" style="font-family: Raleway;">Featured Photographers</h3></div>
-						<div class="span8" style="margin: 10px 0px 30px 0px"><hr class="featurette-divider"></div>
-					</div>
-				</div>
-				<div>
-					<ul id="photographers-list">
-						<li><p>Photographer 1</p><a href="#"><img src="img/200X150.gif"></a></li>
-						<li><p>Photographer 2</p><a href="#"><img src="img/200X150.gif"></a></li>
-						<li><p>Photographer 3</p><a href="#"><img src="img/200X150.gif"></a></li>
-						<li><p>Photographer 4</p><a href="#"><img src="img/200X150.gif"></a></li>
-						<li><p>Photographer 5</p><a href="#"><img src="img/200X150.gif"></a></li>
-					</ul>
-				</div>
-			</div>
-			
 			<div id="projects-container">
 				<div id="projects-heading">
 					<div class="row-fluid">
@@ -148,14 +130,20 @@ if ( in_array( strtolower( ini_get( 'magic_quotes_gpc' ) ), array( '1', 'on' ) )
 						<li><p>Project 3</p><a href="#"><img src="img/200X150.gif"></a></li>
 						<li><p>Project 4</p><a href="#"><img src="img/200X150.gif"></a></li>
 						<li><p>Project 5</p><a href="#"><img src="img/200X150.gif"></a></li>
+						</br>
+						<li><p>Project 6</p><a href="#"><img src="img/200X150.gif"></a></li>
+						<li><p>Project 7</p><a href="#"><img src="img/200X150.gif"></a></li>
+						<li><p>Project 8</p><a href="#"><img src="img/200X150.gif"></a></li>
+						<li><p>Project 9</p><a href="#"><img src="img/200X150.gif"></a></li>
+						<li><p>Project 10</p><a href="#"><img src="img/200X150.gif"></a></li>
 					</ul>
 				</div>
 			</div>
 
 		</div>
 		
-			<?php
+		<?php
 			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
-			?>
+		?>
 	</body>
 </html>

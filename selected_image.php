@@ -26,7 +26,7 @@ $image_id = $_GET['image_id'];
 						
 			<div class="row-fluid">
 				<div id="image" class="span6">
-					<?php get_image_by_id($image_id,$_SESSION["codenameDS_user_id"]);?>
+					<?php get_image_by_id($image_id,$_SESSION["codenameDS_user_id"],"1");?>
 				</div>
 				<div id="comments" class="comments">
 					
@@ -58,7 +58,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		$description = $_POST['description'];	
 		$success = FALSE;
 		
-		$success = upload_edited_image($image_id,$file_name,$tmp_name,$file_size,$file_type);
+		$success = upload_edited_image($image_id,$file_name,$tmp_name,$file_size,$file_type,$description);
 
 		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/statuspopup.php';
 		

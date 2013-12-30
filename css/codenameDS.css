@@ -106,8 +106,7 @@ input[type="file"] {
 
 
 #category-container, #photographers-container, #projects-container {
-	margin: 10px 25px 30px 15px;
-	float: left;
+	float: left; 
 }
 
 #category-list li, #photographers-list li, #projects-list li {

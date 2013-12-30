@@ -8,7 +8,15 @@ html, body {
 .container-fluid {
 	padding: 0px !important; 
 }
-      
+     
+.notification_number{
+ 	z-index:100;
+    position:absolute;    
+    color:#9b50ba;
+    font-weight:bold;
+    left:359px;
+    top:14px;
+} 
 /* CUSTOMIZE THE CAROUSEL
     -------------------------------------------------- */
 

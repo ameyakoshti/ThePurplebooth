@@ -20,7 +20,9 @@ $(document).ready(function(){
 		$('#notifications').remove();
 	}
 
-    $('.container-fluid').scrollTop(0);
+    //$('body').scrollTop(0);
+    $('<a name="top"/>').insertBefore($('body').children().eq(0));
+   window.location.hash = 'top';
 });
 
 function getComments(){
