@@ -97,24 +97,22 @@ require_once "database/users.php";
 				
 			</div>
 			
-			<div>
+			<!--<div>
 				<?php
 				if ($user_id !="all"){
 					echo "<h4>You are viewing ".$user_data['user_name']."'s gallery</h4>";
 					?><p>Click <a href="/codenameDS/gallery.php?category=all&project=all&userid=all">here</a> to view complete gallery</p>
 				<?php } ?>
-			</div>
+			</div>-->
 			
-				<?php		
-// 					echo '<div class="row">';
+				<?php
  					echo '<div id="images-container" role="main">';
  					echo '<ul id="tiles">'; //echo '<ul class="thumbnails">';
 					
  					get_filtered_images($category,$project,$user_id);
 					
 					echo '</ul>';
- 					echo '</div>';
-// 					echo '</div>'; 				
+ 					echo '</div>';			
 				?>
 		
 	</div>

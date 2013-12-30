@@ -2,19 +2,37 @@ $(document).ready(function() {
 	$("#img_container").click(function() {
 		$("#userfile").show();
 	});
-	
-	if(document.location.hash!='') {
-	    //get the index from URL hash
-	    tabSelect = document.location.hash.substr(1,document.location.hash.length);
-	    $('#myTab a[href="#'+tabSelect+'"]').tab('show');
-	    $('.container-fluid').scrollTop(0);
+
+	if (document.location.hash != '') {
+		//get the index from URL hash
+		tabSelect = document.location.hash.substr(1, document.location.hash.length);
+		$('#myTab a[href="#' + tabSelect + '"]').tab('show');
+		$('.container-fluid').scrollTop(0);
 	}
-	
-	$('#myTab a').click(function (e) {
-		  e.preventDefault();
-		  $(this).tab('show');
-		});
+
+	$('#myTab a').click(function(e) {
+		e.preventDefault();
+		$(this).tab('show');
+	});
 	getAllReviews();
+
+	imagesLoaded('#tiles', function() {
+		var options = {
+			itemWidth : 200, // Optional min width of a grid item
+			autoResize : true, // This will auto-update the layout when the browser window is resized.
+			container : $('#tiles'), // Optional, used for some extra CSS styling
+			offset : 5, // Optional, the distance between grid items
+			outerOffset : 20, // Optional the distance from grid to parent
+			flexibleWidth : 300 // Optional, the maximum width of a grid item
+		};
+
+		var handler = $('#tiles li');
+		handler.wookmark(options);
+
+		$(window).load(function() {
+			handler.wookmark(options);
+		});
+	});
 });
 
 function getAllReviews() {

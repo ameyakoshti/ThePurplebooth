@@ -1,6 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 require_once "database/users.php";
+require_once "database/image_info.php";
 require_once "database/user_rating.php";
 ?>
 
@@ -44,11 +45,13 @@ require_once "database/user_rating.php";
 		<ul class="nav nav-tabs" id="myTab">
 			<li class="active"><a href="#profile">Profile</a></li>
 			<li id="notification_link"><a href="#notifications">Notifications</a></li>
+			<li id="review_link"><a href="#reviews">Reviews</a></li>
 		</ul>
 
 		<div class="tab-content">
 			<div class="tab-pane active" id="profile"><?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/profile_home.php';?></div>
 			<div class="tab-pane" id="notifications"><?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/profile_notifications.php';?></div>
+			<div class="tab-pane" id="reviews"><?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/profile_reviews.php';?></div>
 		</div>
 	</div>
 

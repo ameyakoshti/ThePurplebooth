@@ -1,3 +1,7 @@
+<script type="text/javascript" src="js/gallery/imagesloaded.pkgd.js"></script>
+<script type="text/javascript" src="js/gallery/jquery.wookmark.js"></script>
+<script type="text/javascript" src="js/gallery/gallery.js"></script>
+<link rel="stylesheet" type="text/css" href="css/gallery.css" />
 <div id="content" class="clearfix">
 			<!--<section id="left">-->
 			<div class="span-6 centerOfTheScreen">
@@ -64,27 +68,31 @@
 				</div>
 
 				<div>
-					<div id="about-me" style="float: left; margin: 30px 10px 10px 10px;">
+					<div id="about-me">
 						<h2>About Me:</h2>
 						<p>
 							<?php if($user_found) {
 								echo $user_data['about_me'];
 							}?>
 						</p>
-						<p>
+						<!--<p>
 							Check out my gallery<a
 								href="http://localhost:8888/codenameDS/gallery.php?category=all&project=all&userid=<?php echo $user_data_profile_view["user_id"];?>">
 								here</a>
-						</p>
+						</p>-->
+						
 					</div>
-					<div id="user-reviews" style="float: right; margin: 30px 10px 10px 10px;">
-						<h2>Review:</h2>
-						<script type="text/javascript">
-								<?php if($user_name_profile_view != "")echo "var username = '".$user_name_profile_view."';";?>
-								<?php if(isset($_SESSION['codenameDS_user_name']))echo "var loggedusername = '".$_SESSION['codenameDS_user_name']."';";?>
-						</script>
-						<script src="/codenameDS/js/profile/profile.js"></script>
-						<div class="reviews"></div>
+					<div id="user_gallery">
+						<h2>My Gallery:</h2>
+						<?php
+ 					echo '<div id="images-container" role="main">';
+ 					echo '<ul id="tiles">'; 
+					
+ 					get_filtered_images("all","all",$user_data["user_id"]);
+					
+					echo '</ul>';
+ 					echo '</div>';				
+				?>
 					</div>
 				</div>
 
