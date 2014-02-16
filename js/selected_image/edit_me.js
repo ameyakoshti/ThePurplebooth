@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 function make_request(trgtObj){
 	var res = $.ajax({
-		url : '/codenameDS/database/edit_request.php',
+		url : '/thepurplebooth/database/edit_request.php',
 		data : {
 			'check_valid_request' : true,
 			'request_user_id' : userid,
@@ -28,7 +28,7 @@ function make_request(trgtObj){
 
 function make_edit_request(targtObj){
 	$.ajax({
-		url : '/codenameDS/database/edit_request.php',
+		url : '/thepurplebooth/database/edit_request.php',
 		data : {
 			'insert_edit_request' : true,
 			'request_user_id' : userid,

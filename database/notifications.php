@@ -52,7 +52,7 @@ function get_comment_notifications($userid){
 
 function insert_notification($to_user_id,$from_user_id,$image_id,$type){
 	try {
-		$query = "INSERT INTO `codenameDS`.`notifications` VALUES (DEFAULT,$from_user_id,$to_user_id,$image_id,$type,false,NOW())";
+		$query = "INSERT INTO `thepurplebooth`.`notifications` VALUES (DEFAULT,$from_user_id,$to_user_id,$image_id,$type,false,NOW())";
 		mysql_query($query) or die('Error, query failed');
 		return TRUE;
 	} catch(Exception $ex) {
@@ -63,7 +63,7 @@ function insert_notification($to_user_id,$from_user_id,$image_id,$type){
 
 function get_unread_notifications($userid){
 	try {
-		$query = "SELECT count(notification_id) as unread_notifications FROM `codenameDS`.`notifications` WHERE to_user_id=".$userid." AND notification_read=false";
+		$query = "SELECT count(notification_id) as unread_notifications FROM `thepurplebooth`.`notifications` WHERE to_user_id=".$userid." AND notification_read=false";
 		$res = mysql_query($query);
 		$result = array();
 		while ($data = mysql_fetch_array($res)) {
@@ -79,7 +79,7 @@ function get_unread_notifications($userid){
 
 function set_notifications_read($to_user_id){
 	try {
-		$query = "Update `codenameDS`.`notifications` set `notification_read`=true where `to_user_id`=$to_user_id";
+		$query = "Update `thepurplebooth`.`notifications` set `notification_read`=true where `to_user_id`=$to_user_id";
 		mysql_query($query) or die('Error, query failed');
 		return TRUE;
 	} catch (Exception $e) {

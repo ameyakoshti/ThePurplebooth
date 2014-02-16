@@ -31,7 +31,7 @@ function getComments(){
 
 function getRequests(){
 	$.ajax({
-		url : '/codenameDS/database/notifications.php',
+		url : '/thepurplebooth/database/notifications.php',
 		data : {
 			'get_requests' : true,
 			'user_id' : userid
@@ -46,7 +46,7 @@ function getRequests(){
 
 function getComments(){
 	$.ajax({
-		url : '/codenameDS/database/notifications.php',
+		url : '/thepurplebooth/database/notifications.php',
 		data : {
 			'get_comments' : true,
 			'user_id' : userid
@@ -61,7 +61,7 @@ function getComments(){
 
 function updateNotificationStatus(){
 	$.ajax({
-		url : '/codenameDS/database/notifications.php',
+		url : '/thepurplebooth/database/notifications.php',
 		data : {
 			'set_notifications_read' : true,
 			'user_id' : userid
@@ -80,19 +80,19 @@ function displayNotifications(output,container) {
 	if (output != null || output != "") {
 		$.each(res, function(id,value) {
 			if(value.notification_type=="REQUEST_NEW"){
-				content+="<li>You have an edit request for <a href='http://localhost:8888/codenameDS/selected_image.php?image_id="+value.notification_image_id+"'>this image</a></li>";
+				content+="<li>You have an edit request for <a href='http://localhost:8888/thepurplebooth/selected_image.php?image_id="+value.notification_image_id+"'>this image</a></li>";
 			}
 			else if(value.notification_type=="REQUEST_DENIED"){
-				content+="<li>Your edit request for <a href='http://localhost:8888/codenameDS/selected_image.php?image_id="+value.notification_image_id+"'>this image</a> has been denied.</li>";
+				content+="<li>Your edit request for <a href='http://localhost:8888/thepurplebooth/selected_image.php?image_id="+value.notification_image_id+"'>this image</a> has been denied.</li>";
 			}
 			else if(value.notification_type=="REQUEST_APPROVED"){
-				content+="<li>Your edit request for <a href='http://localhost:8888/codenameDS/selected_image.php?image_id="+value.notification_image_id+"'>this image</a> has been approved</li>";
+				content+="<li>Your edit request for <a href='http://localhost:8888/thepurplebooth/selected_image.php?image_id="+value.notification_image_id+"'>this image</a> has been approved</li>";
 			}
 			else if(value.notification_type=="COMMENT"){
-				content+="<li>Your <a href='http://localhost:8888/codenameDS/selected_image.php?image_id="+value.notification_image_id+"'>image</a> has got a comment.</li>";
+				content+="<li>Your <a href='http://localhost:8888/thepurplebooth/selected_image.php?image_id="+value.notification_image_id+"'>image</a> has got a comment.</li>";
 			}
 			else if(value.notification_type=="REPLY"){
-				content+="<li>Your comment on <a href='http://localhost:8888/codenameDS/selected_image.php?image_id="+value.notification_image_id+"'>image</a> has got a reply.</li>";
+				content+="<li>Your comment on <a href='http://localhost:8888/thepurplebooth/selected_image.php?image_id="+value.notification_image_id+"'>image</a> has got a reply.</li>";
 			}
 		}
 		)

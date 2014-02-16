@@ -15,7 +15,7 @@ if(isset($_POST['update_comments'])){
 function get_reviews_by_user_id($user_name_rating){
 	$user_data = get_user_info($user_name_rating);
 	$user_id = $user_data['user_id'];
-	$query = "SELECT * FROM `codenameDS`.`ratings` where `user_id` = \"$user_id\"";
+	$query = "SELECT * FROM `thepurplebooth`.`ratings` where `user_id` = \"$user_id\"";
 	$res = mysql_query($query);
 	$result = array();
 
@@ -27,12 +27,12 @@ function get_reviews_by_user_id($user_name_rating){
 }
 
 function get_ratings_info($id){
-	$ratingquery="SELECT count(id) as total_votes, sum(rating) as total_value FROM `codenameDS`.`ratings` WHERE user_id=$id";
+	$ratingquery="SELECT count(id) as total_votes, sum(rating) as total_value FROM `thepurplebooth`.`ratings` WHERE user_id=$id";
 	return mysql_query($ratingquery);
 }
 
 function update_user_comments($editor_user_id,$rated_by,$comments){
-	$query = "UPDATE `codenameDS`.`ratings` SET `comments`=\"".$comments."\" WHERE `user_id`=$editor_user_id AND `rated_by`=$rated_by order by id desc limit 1;";
+	$query = "UPDATE `thepurplebooth`.`ratings` SET `comments`=\"".$comments."\" WHERE `user_id`=$editor_user_id AND `rated_by`=$rated_by order by id desc limit 1;";
 	mysql_query($query);
 }
 ?>

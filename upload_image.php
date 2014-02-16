@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/links.php';
 require_once "database/image_info.php";
 ini_set('memory_limit', '-1');
 ob_start();
@@ -8,7 +8,7 @@ ob_start();
 <html>
 	<head>
 		<title>Upload Picture</title>
-		<link href='/codenameDS/css/upload_image.css' rel='stylesheet' type='text/css'>
+		<link href='/thepurplebooth/css/upload_image.css' rel='stylesheet' type='text/css'>
 		
 		<script type="text/javascript">
 			
@@ -16,15 +16,15 @@ ob_start();
 	</head>
 	<body>
 			<?php
-				include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
+				include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/masterpage.php';
 			?>
 			<?php
-				if(!isset($_SESSION['codenameDS_user_name'])){
+				if(!isset($_SESSION['thepurplebooth_user_name'])){
 	      	?>
 	      	<div id="upload-signup" class="container-fluid">
 				<div class="offset1" style="margin-top: 100px;">
 					<h2 style="color: #525252;">This is where you upload the raw pics!</h2>
-	      			<p>... but before you do, we need you to <a href="http://localhost:8888/codenameDS/socialauth/index.php">sign-in or sign-up</a>.</p>
+	      			<p>... but before you do, we need you to <a href="http://localhost:8888/thepurplebooth/socialauth/index.php">sign-in or sign-up</a>.</p>
 				</div>
 			</div>
 		   	<?php } else { ?>
@@ -40,7 +40,7 @@ ob_start();
 			     	<div>
 						<p>Choose a category for the image</p>			
 						<select name="category">
-						    <?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/categories.php'; ?>
+						    <?php include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/categories.php'; ?>
 						</select>
 						<!--<div class="btn-group">
 							<button id="catergory" name='category' type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -48,7 +48,7 @@ ob_start();
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
-								<?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/categories.php'; ?>
+								<?php include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/categories.php'; ?>
 							</ul>
 						</div>	-->
 					</div>
@@ -73,7 +73,7 @@ ob_start();
 		<!-- 	End Container -->
 			<?php } ?>
 			<?php
-				include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+				include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/footer.php';
 			?>
 	</body>
 </html>
@@ -89,9 +89,9 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		$category = $_POST['category'];
 		$success = FALSE;
 		
-		$success = upload_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type,$title,$description,$category);
+		$success = upload_image($_SESSION['thepurplebooth_user_id'],$file_name,$tmp_name,$file_size,$file_type,$title,$description,$category);
 
-		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/statuspopup.php';
+		include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/statuspopup.php';
 		
 	} catch(Exception $e) {
 		error_log($e);
@@ -106,7 +106,7 @@ if (isset($_POST['uploadmany']) && $_FILES['uploadedfiles']['size'] > 0) {
 			$file_size = $_FILES["uploadedfiles"]['size'][$i];
 			$file_type = $_FILES["uploadedfiles"]['type'][$i];
 			
-			$success = upload_image($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
+			$success = upload_image($_SESSION['thepurplebooth_user_id'],$file_name,$tmp_name,$file_size,$file_type);
 		}
 		
 		if ($success === TRUE){?>			

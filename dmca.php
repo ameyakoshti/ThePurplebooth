@@ -1,6 +1,6 @@
 <html>
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/links.php';
 ?>
 	<head>
 		<title>Digital Millenium Copyright Act</title>
@@ -9,7 +9,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 	</head>
 	<body>
 		<?php
-			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
+			include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/masterpage.php';
 		?>	
 		<div class="container">
 
@@ -75,7 +75,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 		</div>		
 		
 		<?php
-		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+		include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/footer.php';
 		?>	
 	</body>
 </html>	

@@ -31,7 +31,7 @@ if(isset($_POST['editor_found'])){
 
 function insert_edit_request($req_usr_id,$req_img_id,$req_img_usr_id){
 	try {
-		$query = "Insert into codenameDS.editrequest values (DEFAULT,".$req_usr_id.",".$req_img_usr_id.",".$req_img_id.",DEFAULT,NOW())";
+		$query = "Insert into thepurplebooth.editrequest values (DEFAULT,".$req_usr_id.",".$req_img_usr_id.",".$req_img_id.",DEFAULT,NOW())";
 		//error_log($query);
 		mysql_query($query) or die('Error, query failed');
 		insert_notification($req_img_usr_id,$req_usr_id,$req_img_id,3);
@@ -45,9 +45,9 @@ function insert_edit_request($req_usr_id,$req_img_id,$req_img_usr_id){
 
 function get_requests_got_by($userid){
 	try{
-		$query = "Select codenameDS.editrequest.*,codenameDS.users.user_name from codenameDS.editrequest LEFT join
-				  codenameDS.users ON codenameDS.editrequest.request_user_id = codenameDS.users.user_id 
-				  where codenameDS.editrequest.request_image_user_id=".$userid." AND codenameDS.editrequest.request_status=false";
+		$query = "Select thepurplebooth.editrequest.*,thepurplebooth.users.user_name from thepurplebooth.editrequest LEFT join
+				  thepurplebooth.users ON thepurplebooth.editrequest.request_user_id = thepurplebooth.users.user_id 
+				  where thepurplebooth.editrequest.request_image_user_id=".$userid." AND thepurplebooth.editrequest.request_status=false";
 		$res = mysql_query($query);
 		$result = array();
 		while ($data = mysql_fetch_array($res)) {
@@ -64,9 +64,9 @@ function get_requests_got_by($userid){
 
 function get_requests_made_by($userid){
 	try{
-		$query = "Select codenameDS.editrequest.*,codenameDS.users.user_name from codenameDS.editrequest LEFT join
-				  codenameDS.users ON codenameDS.editrequest.request_image_user_id = codenameDS.users.user_id
-				  where codenameDS.editrequest.request_user_id=".$userid." AND codenameDS.editrequest.request_status=false";
+		$query = "Select thepurplebooth.editrequest.*,thepurplebooth.users.user_name from thepurplebooth.editrequest LEFT join
+				  thepurplebooth.users ON thepurplebooth.editrequest.request_image_user_id = thepurplebooth.users.user_id
+				  where thepurplebooth.editrequest.request_user_id=".$userid." AND thepurplebooth.editrequest.request_status=false";
 		$res = mysql_query($query);
 		$result = array();
 		while ($data = mysql_fetch_array($res)) {
@@ -83,9 +83,9 @@ function get_requests_made_by($userid){
 
 function get_requests_made_by_approved($userid){
 	try{
-		$query = "Select codenameDS.editrequest.*,codenameDS.users.user_name from codenameDS.editrequest LEFT join
-				  codenameDS.users ON codenameDS.editrequest.request_image_user_id = codenameDS.users.user_id
-				  where codenameDS.editrequest.request_user_id=".$userid." AND codenameDS.editrequest.request_status=1";
+		$query = "Select thepurplebooth.editrequest.*,thepurplebooth.users.user_name from thepurplebooth.editrequest LEFT join
+				  thepurplebooth.users ON thepurplebooth.editrequest.request_image_user_id = thepurplebooth.users.user_id
+				  where thepurplebooth.editrequest.request_user_id=".$userid." AND thepurplebooth.editrequest.request_status=1";
 		$res = mysql_query($query);
 		$result = array();
 		while ($data = mysql_fetch_array($res)) {
@@ -130,12 +130,12 @@ function update_editor($editor_username,$image_id,$image_user_id){
 		$data = get_user_info($editor_username);
 		$editor_id = $data['user_id'];
 		
-		$query = "UPDATE `codenameDS`.`imageinfo` SET `editor_id`=".$editor_id." WHERE `image_id`=".$image_id;
+		$query = "UPDATE `thepurplebooth`.`imageinfo` SET `editor_id`=".$editor_id." WHERE `image_id`=".$image_id;
 		mysql_query($query) or die('Error, query failed');
 		
-		$query = "UPDATE `codenameDS`.`editrequest` SET `request_status`='1' WHERE `request_image_id`=".$image_id." AND `request_user_id`=".$editor_id;
+		$query = "UPDATE `thepurplebooth`.`editrequest` SET `request_status`='1' WHERE `request_image_id`=".$image_id." AND `request_user_id`=".$editor_id;
 		mysql_query($query) or die('Error, query failed');
-		$query = "UPDATE `codenameDS`.`editrequest` SET `request_status`='2' WHERE `request_image_id`=".$image_id." AND `request_user_id`<>".$editor_id;
+		$query = "UPDATE `thepurplebooth`.`editrequest` SET `request_status`='2' WHERE `request_image_id`=".$image_id." AND `request_user_id`<>".$editor_id;
 		mysql_query($query) or die('Error, query failed');
 		insert_notification($editor_id,$image_user_id,$image_id,4);
 		$getForNotification = "SELECT * FROM editrequest WHERE `request_image_id`=".$image_id." AND `request_user_id`<>".$editor_id." AND `request_status`='2'";

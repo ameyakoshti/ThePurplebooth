@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/codenameDS/css/rating.css" />
+<link rel="stylesheet" href="/thepurplebooth/css/rating.css" />
 		
 <div class="modal hide" id="ratingModal" aria-hidden="true">
 	<div class="modal-header">
@@ -10,11 +10,11 @@
 			<div class="row-fluid">	
 				<div class="span12">				
 						<?php
-						include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/database/user_rating.php';
+						include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/database/user_rating.php';
 						open_connection();
 									
 						$id=$_SESSION['editor_id'];
-						$rated_by=$_SESSION['codenameDS_user_id'];
+						$rated_by=$_SESSION['thepurplebooth_user_id'];
 						$j=$v=1;
 						$rat=0;
 												
@@ -69,4 +69,4 @@
 <script type="text/javascript">
 	<?php echo "var editor_id = '".$_SESSION['editor_id']."';";?>
 </script>
-<script type="text/javascript" src="/codenameDS/js/rating/rating.js"></script>
+<script type="text/javascript" src="/thepurplebooth/js/rating/rating.js"></script>

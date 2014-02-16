@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 function getAllReviews() {
 	var resp = $.ajax({
-		url : '/codenameDS/database/user_rating.php',
+		url : '/thepurplebooth/database/user_rating.php',
 		data : {
 			'select_reviews' : true,
 			'user_name_rating' : username
@@ -57,7 +57,7 @@ function displayReviews(output) {
 	if (output != null || output != "") {
 		$.each(res, function(id, value) {
 			content += "<li style='list-style-type: square;'>" + value.rating + " Stars</li>";
-			content += "<li style='list-style: none;'> <a href=http://localhost:8888/codenameDS/profile.php?username=" + value.rated_by + ">" + value.rated_by + "</a> wrote &#8230; </li>";
+			content += "<li style='list-style: none;'> <a href=http://localhost:8888/thepurplebooth/profile.php?username=" + value.rated_by + ">" + value.rated_by + "</a> wrote &#8230; </li>";
 			content += "<li style='list-style: none;'> " + value.comments + " </li>";
 		});
 	}

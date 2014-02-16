@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/links.php';
 if ( in_array( strtolower( ini_get( 'magic_quotes_gpc' ) ), array( '1', 'on' ) ) ) {
     $_POST = array_map( 'stripslashes', $_POST );
     $_GET = array_map( 'stripslashes', $_GET );
@@ -11,7 +11,7 @@ if ( in_array( strtolower( ini_get( 'magic_quotes_gpc' ) ), array( '1', 'on' ) )
 	<head>
 		<title>The Purple Booth</title>
 		<style>
-			@font-face { font-family: Raleway; src: url('/codenameds/font/raleway_thin.ttf'); } 
+			@font-face { font-family: Raleway; src: url('/thepurplebooth/font/raleway_thin.ttf'); } 
 		</style>
 	</head>
 	
@@ -20,14 +20,14 @@ if ( in_array( strtolower( ini_get( 'magic_quotes_gpc' ) ), array( '1', 'on' ) )
 		<div class="container-fluid" style="width: auto; min-height: 100%;">
 		
 		<?php
-		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
+		include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/masterpage.php';
 		?>
 		
 			<!-- Carousel ================================================== -->
 			<div id="myCarousel" class="carousel slide">
 				<div class="carousel-inner">
 					<div class="item active">
-						<img src="/codenameDS/img/home/carousel/DSC_0001.jpg">
+						<img src="/thepurplebooth/img/home/carousel/DSC_0001.jpg">
 						<div class="container">
 							<div class="carousel-caption">
 								<h1>Griffith Observatory</h1>
@@ -37,7 +37,7 @@ if ( in_array( strtolower( ini_get( 'magic_quotes_gpc' ) ), array( '1', 'on' ) )
 						</div>
 					</div>
 					<div class="item">
-						<img src="/codenameDS/img/home/carousel/DSC_0002.jpg">
+						<img src="/thepurplebooth/img/home/carousel/DSC_0002.jpg">
 						<div class="container">
 							<div class="carousel-caption">
 								<h1>Way to Cape Town</h1>
@@ -47,7 +47,7 @@ if ( in_array( strtolower( ini_get( 'magic_quotes_gpc' ) ), array( '1', 'on' ) )
 						</div>
 					</div>
 					<div class="item">
-						<img src="/codenameDS/img/home/carousel/DSC_0003.jpg">
+						<img src="/thepurplebooth/img/home/carousel/DSC_0003.jpg">
 						<div class="container">
 							<div class="carousel-caption">
 								<h1>Grand Canyon</h1>
@@ -73,44 +73,44 @@ if ( in_array( strtolower( ini_get( 'magic_quotes_gpc' ) ), array( '1', 'on' ) )
 					<ul id="category-list">
 						<li>
 							<p>Abstract</p>
-							<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/abstract.jpg"></a>
+							<a href="/thepurplebooth/gallery.php?category=abstract&project=all&userid=all"><img src="/thepurplebooth/img/home_catergories/abstract.jpg"></a>
 						</li>
 						<li>
 							<p>Landscape</p>
-							<a href="/codenameDS/gallery.php?category=landscape&project=all&userid=all"><img src="/codenameDS/img/home_catergories/landscape.jpg"></a>
+							<a href="/thepurplebooth/gallery.php?category=landscape&project=all&userid=all"><img src="/thepurplebooth/img/home_catergories/landscape.jpg"></a>
 						</li>
 						<li>
 							<p>Street</p>
-							<a href="/codenameDS/gallery.php?category=street&project=all&userid=all"><img src="/codenameDS/img/home_catergories/street.jpg"></a>
+							<a href="/thepurplebooth/gallery.php?category=street&project=all&userid=all"><img src="/thepurplebooth/img/home_catergories/street.jpg"></a>
 						</li>
 						<li>
 							<p>Portrait</p>
-							<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/portrait.jpg"></a>
+							<a href="/thepurplebooth/gallery.php?category=abstract&project=all&userid=all"><img src="/thepurplebooth/img/home_catergories/portrait.jpg"></a>
 						</li>
 						<li>
 							<p>Wildlife</p>
-							<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/wildlife.jpg"></a>
+							<a href="/thepurplebooth/gallery.php?category=abstract&project=all&userid=all"><img src="/thepurplebooth/img/home_catergories/wildlife.jpg"></a>
 						</li>
 						</br>
 						<li>
 							<p>Architecture</p>
-							<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/architecture.jpg"></a>
+							<a href="/thepurplebooth/gallery.php?category=abstract&project=all&userid=all"><img src="/thepurplebooth/img/home_catergories/architecture.jpg"></a>
 						</li>
 						<li>
 							<p>Macro</p>
-							<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/macro.jpg"></a>
+							<a href="/thepurplebooth/gallery.php?category=abstract&project=all&userid=all"><img src="/thepurplebooth/img/home_catergories/macro.jpg"></a>
 						</li>
 						<li>
 							<p>HDR</p>
-							<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/hdr.jpg"></a>
+							<a href="/thepurplebooth/gallery.php?category=abstract&project=all&userid=all"><img src="/thepurplebooth/img/home_catergories/hdr.jpg"></a>
 						</li>
 						<li>
 							<p>Event</p>
-							<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/event.jpg"></a>
+							<a href="/thepurplebooth/gallery.php?category=abstract&project=all&userid=all"><img src="/thepurplebooth/img/home_catergories/event.jpg"></a>
 						</li>
 						<li>
 							<p>Product</p>
-							<a href="/codenameDS/gallery.php?category=abstract&project=all&userid=all"><img src="/codenameDS/img/home_catergories/product.jpg"></a>
+							<a href="/thepurplebooth/gallery.php?category=abstract&project=all&userid=all"><img src="/thepurplebooth/img/home_catergories/product.jpg"></a>
 						</li>
 					</ul>
 				</div>
@@ -143,7 +143,7 @@ if ( in_array( strtolower( ini_get( 'magic_quotes_gpc' ) ), array( '1', 'on' ) )
 		</div>
 		
 		<?php
-			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+			include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/footer.php';
 		?>
 	</body>
 </html>

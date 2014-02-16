@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `codenameDS`
+-- Database: `thepurplebooth`
 --
 
 DELIMITER $$
@@ -27,7 +27,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GET_MAX_IMAGE_ID`()
 BEGIN
 	DECLARE count INT;
-	SET count = (SELECT MAX(image_id) FROM codenameDS.imageinfo);
+	SET count = (SELECT MAX(image_id) FROM thepurplebooth.imageinfo);
 	
 	IF count > 0 THEN
 		SET count = count + 1;

@@ -15,7 +15,7 @@ $(document).ready(function() {
 		}
 		else{
 			$.ajax({
-				url:'/codenameDS/database/user_rating.php',
+				url:'/thepurplebooth/database/user_rating.php',
 				data:{
 				'update_comments' : true,
 				'editor_user_id':editor_id,
@@ -45,7 +45,7 @@ $(document).ready(function() {
 		var rated_by = $(this).attr("id");
 		var poststr = "id=" + id + "&stars=" + num + "&rated_by="+ rated_by;
 		$.ajax({
-			url : "/codenameDS/database/ratings.php",
+			url : "/thepurplebooth/database/ratings.php",
 			cache : 0,
 			data : poststr,
 			success : function(result) {

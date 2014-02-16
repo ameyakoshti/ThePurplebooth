@@ -77,7 +77,7 @@
 						</p>
 						<!--<p>
 							Check out my gallery<a
-								href="http://localhost:8888/codenameDS/gallery.php?category=all&project=all&userid=<?php echo $user_data_profile_view["user_id"];?>">
+								href="http://localhost:8888/thepurplebooth/gallery.php?category=all&project=all&userid=<?php echo $user_data_profile_view["user_id"];?>">
 								here</a>
 						</p>-->
 						

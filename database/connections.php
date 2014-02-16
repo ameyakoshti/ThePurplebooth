@@ -5,7 +5,7 @@ function open_connection(){
 	if (!$link) {
 		die('Could not connect: ' . mysql_error());
 	}
-	$db_selected = mysql_select_db('codenameDS', $link);
+	$db_selected = mysql_select_db('thepurplebooth', $link);
 }
 
 function close_connection(){

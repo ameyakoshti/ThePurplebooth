@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/links.php';
 require_once "database/users.php";
 require_once "database/image_info.php";
 require_once "database/user_rating.php";
@@ -11,15 +11,15 @@ require_once "database/user_rating.php";
 </head>
 <body>
 <script type="text/javascript">
-<?php if(isset($_SESSION["codenameDS_user_id"]))echo "var userid = '".$_SESSION["codenameDS_user_id"]."';";?>
+<?php if(isset($_SESSION["thepurplebooth_user_id"]))echo "var userid = '".$_SESSION["thepurplebooth_user_id"]."';";?>
 </script>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script type="text/javascript" src="/codenameDS/js/profile/profile.js"></script>
+	<script type="text/javascript" src="/thepurplebooth/js/profile/profile.js"></script>
 	<div class="container" style="min-height: 100%;">
 		<?php
-		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
+		include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/masterpage.php';
 		$user_name_profile_view = $_GET['username'];
-		$user_name_session = $_SESSION['codenameDS_user_name'];
+		$user_name_session = $_SESSION['thepurplebooth_user_name'];
 		$user_data_profile_view = get_user_info($user_name_profile_view);
 			
 		if ($user_name_profile_view != "") {
@@ -49,16 +49,16 @@ require_once "database/user_rating.php";
 		</ul>
 
 		<div class="tab-content">
-			<div class="tab-pane active" id="profile"><?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/profile_home.php';?></div>
-			<div class="tab-pane" id="notifications"><?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/profile_notifications.php';?></div>
-			<div class="tab-pane" id="reviews"><?php include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/profile_reviews.php';?></div>
+			<div class="tab-pane active" id="profile"><?php include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/profile_home.php';?></div>
+			<div class="tab-pane" id="notifications"><?php include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/profile_notifications.php';?></div>
+			<div class="tab-pane" id="reviews"><?php include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/profile_reviews.php';?></div>
 		</div>
 	</div>
 
 
 	<!--  End container -->
 	<?php
-	include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+	include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/footer.php';
 	?>
 
 </body>
@@ -72,7 +72,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 		$file_size = $_FILES['userfile']['size'];
 		$file_type = $_FILES['userfile']['type'];
 
-		$success = upload_profile_picture($_SESSION['codenameDS_user_id'],$file_name,$tmp_name,$file_size,$file_type);
+		$success = upload_profile_picture($_SESSION['thepurplebooth_user_id'],$file_name,$tmp_name,$file_size,$file_type);
 
 		if ($success === TRUE){?>
 			<script type="text/javascript">

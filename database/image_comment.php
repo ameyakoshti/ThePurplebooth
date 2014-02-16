@@ -18,7 +18,7 @@ if(isset($_POST['reply_comment'])){
 function insert_reply_comment($to_user_id,$user_id,$user_name,$image_id,$comment_text,$comment_id){
 	try {
 		$text = str_replace("\n", "<br/>", $comment_text);
-		$query = "Insert into codenameDS.replycomment values (DEFAULT,".$user_id.",'".$user_name."',".$comment_id.",'".$text."',NOW())";
+		$query = "Insert into thepurplebooth.replycomment values (DEFAULT,".$user_id.",'".$user_name."',".$comment_id.",'".$text."',NOW())";
 		insert_notification($to_user_id,$user_id,$image_id,2);
 		mysql_query($query) or die('Error, query failed');
 		return TRUE;
@@ -31,7 +31,7 @@ function insert_reply_comment($to_user_id,$user_id,$user_name,$image_id,$comment
 function insert_comment($user_id,$to_user_id,$user_name,$image_id,$comment_text){
 	try {
 		$text = str_replace("\n", "<br/>", $comment_text);
-		$query = "Insert into codenameDS.imagecomment values (DEFAULT,".$user_id.",'".$text."',".$image_id.",NOW(),'".$user_name."')";
+		$query = "Insert into thepurplebooth.imagecomment values (DEFAULT,".$user_id.",'".$text."',".$image_id.",NOW(),'".$user_name."')";
 		//error_log($query);
 		insert_notification($to_user_id,$user_id,$image_id,1);
 		mysql_query($query) or die('Error, query failed');
@@ -45,9 +45,9 @@ function insert_comment($user_id,$to_user_id,$user_name,$image_id,$comment_text)
 function select_comments($image_id){
 	try {
 		$query = "SELECT * 
-			FROM codenameDS.imagecomment
-			LEFT JOIN codenameDS.replycomment ON codenameDS.imagecomment.comment_id = codenameDS.replycomment.reply_comment_id
-			WHERE codenameDS.imagecomment.comment_image_id =".$image_id;
+			FROM thepurplebooth.imagecomment
+			LEFT JOIN thepurplebooth.replycomment ON thepurplebooth.imagecomment.comment_id = thepurplebooth.replycomment.reply_comment_id
+			WHERE thepurplebooth.imagecomment.comment_image_id =".$image_id;
 		//error_log($query);
 		$res = mysql_query($query);
 		$result = array();

@@ -7,17 +7,17 @@
             height:     100px;
         }
 .ratings_stars {
-            background: url('/codenameDS/img/star_blank.png') no-repeat;
+            background: url('/thepurplebooth/img/star_blank.png') no-repeat;
             float:      left;
             height:     28px;
             padding:    2px;
             width:      32px;
         }
 .ratings_vote {
-            background: url('/codenameDS/img/star_voted.png') no-repeat;
+            background: url('/thepurplebooth/img/star_voted.png') no-repeat;
         }
 .ratings_over {
-            background: url('/codenameDS/img/star_overs.png') no-repeat;
+            background: url('/thepurplebooth/img/star_overs.png') no-repeat;
         }
 		
 .total_votes {

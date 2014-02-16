@@ -13,10 +13,10 @@ $units = 5; //max number of stars
 
 open_connection();
 
-mysql_query("insert into `codenameDS`.`ratings` (id,user_id,rated_by,rating,date) values (DEFAULT,$id_sent,$rated_by,$vote_sent,curdate())");
+mysql_query("insert into `thepurplebooth`.`ratings` (id,user_id,rated_by,rating,date) values (DEFAULT,$id_sent,$rated_by,$vote_sent,curdate())");
 
 // this is a new queries to get the new values
-$newdataquery = "SELECT count(id) as total_votes, sum(rating) as total_value FROM `codenameDS`.`ratings` WHERE user_id='$id_sent' ";
+$newdataquery = "SELECT count(id) as total_votes, sum(rating) as total_value FROM `thepurplebooth`.`ratings` WHERE user_id='$id_sent' ";
 $newtotals = mysql_query($newdataquery);
 $numbers = mysql_fetch_assoc($newtotals);
 $count = $numbers['total_votes'];

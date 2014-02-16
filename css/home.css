@@ -14,7 +14,7 @@ html, body {
     position:absolute;    
     color:#9b50ba;
     font-weight:bold;
-    left:359px;
+    left:337px;
     top:14px;
 } 
 /* CUSTOMIZE THE CAROUSEL
@@ -147,7 +147,7 @@ html, body {
         line-height: 1.5;
       }
       
-      #codenameDSnavigationbar > li > a {
+      #thepurpleboothnavigationbar > li > a {
           background-color: pink;   
           color: white;
         }

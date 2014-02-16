@@ -7,8 +7,8 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	}
 	//echo 'Connected successfully';
 
-	// make codenameDS the current db
-	$db_selected = mysql_select_db('codenameDS', $link);
+	// make thepurplebooth the current db
+	$db_selected = mysql_select_db('thepurplebooth', $link);
 
 	$fileName = $_FILES['userfile']['name'];
 	$tmpName = $_FILES['userfile']['tmp_name'];
@@ -26,7 +26,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 	include 'library/config.php';
 	include 'library/opendb.php';
 
-	$query = "INSERT INTO codenameDS.ImageInfo VALUES (DEFAULT,'1','2','$fileName',  '$fileType','$fileSize', '$content','N',NOW())";
+	$query = "INSERT INTO thepurplebooth.ImageInfo VALUES (DEFAULT,'1','2','$fileName',  '$fileType','$fileSize', '$content','N',NOW())";
 
 	mysql_query($query) or die('Error, query failed');
 	include 'library/closedb.php';
@@ -58,7 +58,7 @@ if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
 				<div class="navbar-inner">
 					<div class="container">
 						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-th-list"></span> </a>
-						<a href="#" class="brand">codenameDS</a>
+						<a href="#" class="brand">thepurplebooth</a>
 
 						<div class="nav-collapse collapse">
 							<ul class="nav pull-right">

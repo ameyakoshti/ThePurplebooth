@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 function accept_bidder(editor_name){
 	$.ajax({
-		url:'/codenameDS/database/edit_request.php',
+		url:'/thepurplebooth/database/edit_request.php',
 		data:{
 			'editor_found' : true,
 			'editor_username':editor_name,

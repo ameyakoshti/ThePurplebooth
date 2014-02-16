@@ -20,15 +20,15 @@
 				</div>
 				<div class="row-fluid">
 					<div class="span6">
-						<div> <a href="/codenameDS/contact.php">Contact Us</a></div>
-						<div> <a href="/codenameDS/about_us.php">About Us</a></div>
+						<div> <a href="/thepurplebooth/contact.php">Contact Us</a></div>
+						<div> <a href="/thepurplebooth/about_us.php">About Us</a></div>
 					</div>
 				</div>
 			</div>
 			<div id="boring-stuff" class="span5">
 				<h4>Boring Stuff</h4>
 				<p>
-					Copyright 2013 | We are thepurplebooth, Inc. All Rights Reserved | Site Map | <a href="/codenameDS/terms.php">Terms & Conditions</a> | <a href="/codenameDS/privacy.php">Privacy Policy</a> | <a href="/codenameDS/dmca.php">DMCA</a> | <a href="#">Cookie Policy</a>
+					Copyright 2013 | We are thepurplebooth, Inc. All Rights Reserved | Site Map | <a href="/thepurplebooth/terms.php">Terms & Conditions</a> | <a href="/thepurplebooth/privacy.php">Privacy Policy</a> | <a href="/thepurplebooth/dmca.php">DMCA</a> | <a href="#">Cookie Policy</a>
 				</p>
 			</div>
 		</div>

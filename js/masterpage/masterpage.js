@@ -8,7 +8,7 @@ $(document).ready(function(){
 function get_live_notifications(){
 	$.ajax({
 		type : 'Get',
-		url  : '/codenameDS/database/notifications.php',
+		url  : '/thepurplebooth/database/notifications.php',
 		async : true,
 		cache : false,
 		data : {

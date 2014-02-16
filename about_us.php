@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/links.php';
 ?>
 
 <html>
@@ -8,10 +8,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 	</head>
 	<body>
 		<?php
-		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
+		include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/masterpage.php';
 		?>
 		<div class="hero-unit" style="padding: 0px !important; font-size: 35px; color: #fff; text-shadow: 0 1px 1px rgba(0,0,0,.4);">
-			<img src="/codenameds/img/masthead.jpg"/>
+			<img src="/thepurplebooth/img/masthead.jpg"/>
 			<div style="width: 550px; line-height: 40px; top: 200; position: absolute; z-index: 10; margin: 0px 0px 0px 40px;">We are a small group of developers and designers in California</div>
 		</div>
 
@@ -46,22 +46,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 					
 				<div id="devp_info" class="span4" style="margin-left: 25px;">
 					<div class="pull_right" style="margin: 5px 0px 30px 0px;">
-						<img src="/codenameds/img/team/sheetalparanjpe.jpg" class="img-circle" style="max-width: 40% !important">
+						<img src="/thepurplebooth/img/team/sheetalparanjpe.jpg" class="img-circle" style="max-width: 40% !important">
 						<span style="margin-left: 20px;">Sheetal Paranjpe</span>
 					</div>
 					
 					<div class="pull_right" style="margin: 5px 0px 30px 0px;">
-						<img src="/codenameds/img/team/ameyajoshi.jpg" class="img-circle" style="max-width: 40% !important">
+						<img src="/thepurplebooth/img/team/ameyajoshi.jpg" class="img-circle" style="max-width: 40% !important">
 						<span style="margin-left: 20px;">Ameya Joshi</span>
 					</div>
 					
 					<div class="pull_right" style="margin: 5px 0px 30px 0px;">
-						<img src="/codenameds/img/team/sushimkoshti.jpg" class="img-circle" style="max-width: 40% !important">
+						<img src="/thepurplebooth/img/team/sushimkoshti.jpg" class="img-circle" style="max-width: 40% !important">
 						<span style="margin-left: 20px;">Sushim Koshti</span>
 					</div>
 					
 	 				<div class="pull_right" style="margin: 5px 0px 30px 0px;">
-						<img src="/codenameds/img/team/ameyakoshti.jpg" class="img-circle" style="max-width: 40% !important">
+						<img src="/thepurplebooth/img/team/ameyakoshti.jpg" class="img-circle" style="max-width: 40% !important">
 						<span style="margin-left: 20px;">Ameya Koshti</span>
 					</div>				
  				</div>
@@ -70,7 +70,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 				
 			</div>
 			<?php
-			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+			include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/footer.php';
 			?>
 	</body>
 </html>

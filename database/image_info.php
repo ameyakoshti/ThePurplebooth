@@ -12,18 +12,18 @@ open_connection();
 function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $title, $description, $category) {
 	try {	
 		// Get the image id for the image name
-		$res = mysql_query("SELECT MAX(image_id) as count FROM codenameDS.imageinfo");
+		$res = mysql_query("SELECT MAX(image_id) as count FROM thepurplebooth.imageinfo");
 		$data = mysql_fetch_array($res);
 		$image_id = $data['count'];
 		if($image_id < 1){
 			$image_id = 1;
 		}
 		// Move the uploaded image to original_images folder 
-		$file_location = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/original_images/" . $image_id . ".jpg";
-		$file_location_db = "/codenameDS/original_images/" . $image_id . ".jpg";
+		$file_location = $_SERVER["DOCUMENT_ROOT"] . "/thepurplebooth/original_images/" . $image_id . ".jpg";
+		$file_location_db = "/thepurplebooth/original_images/" . $image_id . ".jpg";
 		move_uploaded_file($tmp_name, $file_location);
 		
-		$result = mysql_query("INSERT INTO `codenameDS`.`imageinfo` VALUES (DEFAULT,'$user_id',0,'$file_name','$file_type','$file_size','$file_location_db',NULL,'$title','$description',NULL,'$category','N',NOW(),NOW(),'0')");
+		$result = mysql_query("INSERT INTO `thepurplebooth`.`imageinfo` VALUES (DEFAULT,'$user_id',0,'$file_name','$file_type','$file_size','$file_location_db',NULL,'$title','$description',NULL,'$category','N',NOW(),NOW(),'0')");
 		if(!$result){
 			error_log(mysql_error());
 		}
@@ -41,11 +41,11 @@ function upload_image($user_id, $file_name, $tmp_name, $file_size, $file_type, $
  */
 function upload_edited_image($image_id, $file_name, $tmp_name, $file_size, $file_type, $description) {
 	try {
-		$file_location = $_SERVER["DOCUMENT_ROOT"] . "/codenameDS/edited_images/" . $image_id . ".jpg";
-		$file_location_db = "/codenameDS/edited_images/" . $image_id . ".jpg";
+		$file_location = $_SERVER["DOCUMENT_ROOT"] . "/thepurplebooth/edited_images/" . $image_id . ".jpg";
+		$file_location_db = "/thepurplebooth/edited_images/" . $image_id . ".jpg";
 		move_uploaded_file($tmp_name, $file_location);
 
-		$query = "UPDATE `codenameDS`.`imageinfo` SET `edited_img_link`='$file_location_db', `editor_description`='$description' WHERE `image_id`=$image_id";
+		$query = "UPDATE `thepurplebooth`.`imageinfo` SET `edited_img_link`='$file_location_db', `editor_description`='$description' WHERE `image_id`=$image_id";
 		mysql_query($query) or die('Error, query failed');
 
 		return TRUE;
@@ -68,7 +68,7 @@ function upload_edited_image($image_id, $file_name, $tmp_name, $file_size, $file
  * Tables involved : image_info.
  */
 function get_image_by_id($id,$logged_in_user_id,$status) {
-	$query = "SELECT * FROM `codenameDS`.`imageinfo` where `image_id`=" . $id;
+	$query = "SELECT * FROM `thepurplebooth`.`imageinfo` where `image_id`=" . $id;
 	$res = mysql_query($query);
 	$imageHTML = "";
 	$downloadHTML = "";
@@ -119,7 +119,7 @@ function get_image_by_id($id,$logged_in_user_id,$status) {
 			}
 		}
 		if ($editor_user_id === $logged_in_user_id){
-			$downloadHTML .= '<a href="http://localhost:8888/codenameDS/original_images/'.$imagename.'" download="'.$imagename.'" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Editor\'s Download</a>&nbsp';
+			$downloadHTML .= '<a href="http://localhost:8888/thepurplebooth/original_images/'.$imagename.'" download="'.$imagename.'" class="btn btn-inverse"><i class="icon-white icon-circle-arrow-down"></i> Editor\'s Download</a>&nbsp';
 			$downloadHTML .= '<a href="#uploadModal" data-toggle="modal" class="btn btn-primary"><i class="icon-white icon-circle-arrow-up"></i> Editor\'s Upload</a>';
 		}
 		$downloadHTML .= '</p></div>';
@@ -141,12 +141,12 @@ function get_image_by_id($id,$logged_in_user_id,$status) {
  */
 function get_all_bids($id){
 	// check if an editor is already selected for this image. if yes then disable the editors selection buttons
-	$querycheck = "SELECT editor_id FROM `codenameDS`.`imageinfo` where `image_id`=" . $id;
+	$querycheck = "SELECT editor_id FROM `thepurplebooth`.`imageinfo` where `image_id`=" . $id;
 	$data = mysql_fetch_array(mysql_query($querycheck));
 	
 	// if the editor has not been selected then show all the options available
 	if($data['editor_id'] == 0){	
-		$query = "SELECT * FROM `codenameDS`.`editrequest` where `request_image_id`=" . $id;
+		$query = "SELECT * FROM `thepurplebooth`.`editrequest` where `request_image_id`=" . $id;
 		$res = mysql_query($query);
 		$bidsfound = FALSE;
 		
@@ -182,7 +182,7 @@ function get_all_bids($id){
  * Tables involved : image_info.
  */
 function get_all_images() {
-	$query = "SELECT `image_id`,`content` FROM `codenameDS`.`imageinfo`";
+	$query = "SELECT `image_id`,`content` FROM `thepurplebooth`.`imageinfo`";
 	$res = mysql_query($query);
 	while ($data = mysql_fetch_array($res)) {
 		echo '<li class="span3">';
@@ -222,7 +222,7 @@ function get_filtered_images($category, $project, $user_id) {
 	}
 	
 	$where_clause = substr($where_clause, 0, -4);;
-	$query = "SELECT `image_id`,`content`,`closed_project` FROM `codenameDS`.`imageinfo` $where_clause";
+	$query = "SELECT `image_id`,`content`,`closed_project` FROM `thepurplebooth`.`imageinfo` $where_clause";
 	//echo $query;
 	$res = mysql_query($query);
 	

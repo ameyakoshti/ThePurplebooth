@@ -2,9 +2,9 @@ $(document).ready(function(){
 	$('.goToImage').click(function(event){
 		event.preventDefault();
 		if($(this).data('imgstatus')=='0'){
-			document.location.href='http://localhost:8888/codenameDS/selected_image.php?image_id='+$(this).data('imgid');
+			document.location.href='http://localhost:8888/thepurplebooth/selected_image.php?image_id='+$(this).data('imgid');
 		}else{
-			document.location.href='http://localhost:8888/codenameDS/completed_image.php?image_id='+$(this).data('imgid');
+			document.location.href='http://localhost:8888/thepurplebooth/completed_image.php?image_id='+$(this).data('imgid');
 		}
 	});
 });

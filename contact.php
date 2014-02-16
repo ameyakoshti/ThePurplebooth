@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/links.php';
 ?>
 
 <html>
@@ -9,7 +9,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 	<body>
 
 		<?php
-			include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/masterpage.php';
+			include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/masterpage.php';
 		?>
 
 		<div class="hero-unit">
@@ -23,7 +23,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 					<p>
 						Your email address
 					</p>
-					<input type="email" id="email" name="email" class="enterEmailContactUs" placeholder="Email" value="<?php echo $_SESSION['codenameDS_email']?>" required/>
+					<input type="email" id="email" name="email" class="enterEmailContactUs" placeholder="Email" value="<?php if(isset($_SESSION['thepurplebooth_email'])) echo $_SESSION['thepurplebooth_email']?>" required/>
 				</div>
 				
 				<div>
@@ -51,7 +51,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 			</form>
 		</div>
 			<?php
-		include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/footer.php';
+		include $_SERVER['DOCUMENT_ROOT'] . '/thepurplebooth/includes/footer.php';
 		?>
 	</body>
 </html>
@@ -59,7 +59,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/codenameDS/includes/links.php';
 if (isset($_POST['send'])) {
 	try {
 		$to = "ameyakoshti@gmail.com";
-		$subject = "codenameDS Feedback";
+		$subject = "thepurplebooth Feedback";
 		$email_field = $_POST['email'];
 		$title_field = $_POST['title'];
 		$message = $_POST['message'];

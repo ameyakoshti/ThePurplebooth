@@ -74,7 +74,7 @@ if (!empty($_GET['action']) && $_GET['action'] == "logout") {
         SocialAuth::clearSessionData('SocialAuth');
         //var_dump($_COOKIE);exit;
         console.log("this-------->",SocialAuth::getConfig('main','base_path_codenamDS'));
-        header("Location:" . SocialAuth::getConfig('main', 'base_path_codenameDS'));
+        header("Location:" . SocialAuth::getConfig('main', 'base_path_thepurplebooth'));
 }
 ?>
 <!DOCTYPE HTML>
@@ -106,7 +106,7 @@ if (!empty($_GET['action']) && $_GET['action'] == "logout") {
                     <td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=google')"><img src="images/google-login.png"/></a></td>
                     <!--<td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=linkedin')"><img src="images/linkedin-login.png"/></a></td>
                     <td width="20%"><a href="javascript:;" onclick="openLoginDialog('?action=login&type=yahoo')"><img src="images/yahoo-login.png"/></a></td>-->
-                    <td width="20%"><a href="/codenameDS/index.php"><img src="images/login.png" title="Home Page"/></a></td>
+                    <td width="20%"><a href="/thepurplebooth/index.php"><img src="images/login.png" title="Home Page"/></a></td>
                 </tr>
             </table>
             <p>
@@ -114,10 +114,10 @@ if (!empty($_GET['action']) && $_GET['action'] == "logout") {
 				Trust me, we do not use your profile details to send messages/post to your friends!
 			</p>
         <?php else: 
-	        	$_SESSION['codenameDS_user_id'] = $data['user_id'];
-				$_SESSION['codenameDS_user_name'] = $data['user_name'];
-				$_SESSION['codenameDS_email'] = $data['email'];
-				header("Location: http://localhost:8888/codenameDS/index.php?username=".$data['user_name'], TRUE);      	
+	        	$_SESSION['thepurplebooth_user_id'] = $data['user_id'];
+				$_SESSION['thepurplebooth_user_name'] = $data['user_name'];
+				$_SESSION['thepurplebooth_email'] = $data['email'];
+				header("Location: http://localhost:8888/thepurplebooth/index.php?username=".$data['user_name'], TRUE);      	
          endif ?>
       </div>
     </div>
